@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>cae68434-62ff-4671-ad53-d1ca8cd95c40</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).Default.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props" />
+  <PropertyGroup>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetPlatformVersion>8.0</TargetPlatformVersion>
+    <DefaultLanguage>en-US</DefaultLanguage>
+<!--    <PackageCertificateKeyFile>App1_TemporaryKey.pfx</PackageCertificateKeyFile>  -->
+  </PropertyGroup>
+  <ItemGroup>
+    <AppxManifest Include="package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="images\logo.png" />
+    <Content Include="images\smalllogo.png" />
+    <Content Include="images\splashscreen.png" />
+    <Content Include="images\storelogo.png" />
+   	<!-- __start_worklight_web_resources__ -->
+<Content Include="www\default\.DS_Store" />
+<Content Include="www\default\css\.DS_Store" />
+<Content Include="www\default\css\images\ajax-loader.gif" />
+<Content Include="www\default\css\images\carCrashPlash.png" />
+<Content Include="www\default\css\images\icons-png\action-black.png" />
+<Content Include="www\default\css\images\icons-png\action-white.png" />
+<Content Include="www\default\css\images\icons-png\alert-black.png" />
+<Content Include="www\default\css\images\icons-png\alert-red.png" />
+<Content Include="www\default\css\images\icons-png\alert-white.png" />
+<Content Include="www\default\css\images\icons-png\arrow-d-black.png" />
+<Content Include="www\default\css\images\icons-png\arrow-d-l-black.png" />
+<Content Include="www\default\css\images\icons-png\arrow-d-l-white.png" />
+<Content Include="www\default\css\images\icons-png\arrow-d-r-black.png" />
+<Content Include="www\default\css\images\icons-png\arrow-d-r-white.png" />
+<Content Include="www\default\css\images\icons-png\arrow-d-white.png" />
+<Content Include="www\default\css\images\icons-png\arrow-l-black.png" />
+<Content Include="www\default\css\images\icons-png\arrow-l-white.png" />
+<Content Include="www\default\css\images\icons-png\arrow-r-black.png" />
+<Content Include="www\default\css\images\icons-png\arrow-r-white.png" />
+<Content Include="www\default\css\images\icons-png\arrow-u-black.png" />
+<Content Include="www\default\css\images\icons-png\arrow-u-l-black.png" />
+<Content Include="www\default\css\images\icons-png\arrow-u-l-white.png" />
+<Content Include="www\default\css\images\icons-png\arrow-u-r-black.png" />
+<Content Include="www\default\css\images\icons-png\arrow-u-r-white.png" />
+<Content Include="www\default\css\images\icons-png\arrow-u-white.png" />
+<Content Include="www\default\css\images\icons-png\audio-black.png" />
+<Content Include="www\default\css\images\icons-png\audio-white.png" />
+<Content Include="www\default\css\images\icons-png\back-black.png" />
+<Content Include="www\default\css\images\icons-png\back-white.png" />
+<Content Include="www\default\css\images\icons-png\bars-black.png" />
+<Content Include="www\default\css\images\icons-png\bars-white.png" />
+<Content Include="www\default\css\images\icons-png\bullets-black.png" />
+<Content Include="www\default\css\images\icons-png\bullets-white.png" />
+<Content Include="www\default\css\images\icons-png\calendar-black.png" />
+<Content Include="www\default\css\images\icons-png\calendar-white.png" />
+<Content Include="www\default\css\images\icons-png\camera-black.png" />
+<Content Include="www\default\css\images\icons-png\camera-white.png" />
+<Content Include="www\default\css\images\icons-png\carat-d-black.png" />
+<Content Include="www\default\css\images\icons-png\carat-d-white.png" />
+<Content Include="www\default\css\images\icons-png\carat-l-black.png" />
+<Content Include="www\default\css\images\icons-png\carat-l-white.png" />
+<Content Include="www\default\css\images\icons-png\carat-r-black.png" />
+<Content Include="www\default\css\images\icons-png\carat-r-white.png" />
+<Content Include="www\default\css\images\icons-png\carat-u-black.png" />
+<Content Include="www\default\css\images\icons-png\carat-u-white.png" />
+<Content Include="www\default\css\images\icons-png\check-black.png" />
+<Content Include="www\default\css\images\icons-png\check-white.png" />
+<Content Include="www\default\css\images\icons-png\clock-black.png" />
+<Content Include="www\default\css\images\icons-png\clock-white.png" />
+<Content Include="www\default\css\images\icons-png\cloud-black.png" />
+<Content Include="www\default\css\images\icons-png\cloud-white.png" />
+<Content Include="www\default\css\images\icons-png\comment-black.png" />
+<Content Include="www\default\css\images\icons-png\comment-white.png" />
+<Content Include="www\default\css\images\icons-png\delete-black.png" />
+<Content Include="www\default\css\images\icons-png\delete-white.png" />
+<Content Include="www\default\css\images\icons-png\edit-black.png" />
+<Content Include="www\default\css\images\icons-png\edit-white.png" />
+<Content Include="www\default\css\images\icons-png\eye-black.png" />
+<Content Include="www\default\css\images\icons-png\eye-white.png" />
+<Content Include="www\default\css\images\icons-png\forbidden-black.png" />
+<Content Include="www\default\css\images\icons-png\forbidden-white.png" />
+<Content Include="www\default\css\images\icons-png\forward-black.png" />
+<Content Include="www\default\css\images\icons-png\forward-white.png" />
+<Content Include="www\default\css\images\icons-png\gear-black.png" />
+<Content Include="www\default\css\images\icons-png\gear-white.png" />
+<Content Include="www\default\css\images\icons-png\grid-black.png" />
+<Content Include="www\default\css\images\icons-png\grid-white.png" />
+<Content Include="www\default\css\images\icons-png\heart-black.png" />
+<Content Include="www\default\css\images\icons-png\heart-white.png" />
+<Content Include="www\default\css\images\icons-png\home-black.png" />
+<Content Include="www\default\css\images\icons-png\home-white.png" />
+<Content Include="www\default\css\images\icons-png\info-black.png" />
+<Content Include="www\default\css\images\icons-png\info-white.png" />
+<Content Include="www\default\css\images\icons-png\location-black.png" />
+<Content Include="www\default\css\images\icons-png\location-white.png" />
+<Content Include="www\default\css\images\icons-png\lock-black.png" />
+<Content Include="www\default\css\images\icons-png\lock-white.png" />
+<Content Include="www\default\css\images\icons-png\mail-black.png" />
+<Content Include="www\default\css\images\icons-png\mail-white.png" />
+<Content Include="www\default\css\images\icons-png\minus-black.png" />
+<Content Include="www\default\css\images\icons-png\minus-white.png" />
+<Content Include="www\default\css\images\icons-png\navigation-black.png" />
+<Content Include="www\default\css\images\icons-png\navigation-white.png" />
+<Content Include="www\default\css\images\icons-png\phone-black.png" />
+<Content Include="www\default\css\images\icons-png\phone-white.png" />
+<Content Include="www\default\css\images\icons-png\plus-black.png" />
+<Content Include="www\default\css\images\icons-png\plus-white.png" />
+<Content Include="www\default\css\images\icons-png\power-black.png" />
+<Content Include="www\default\css\images\icons-png\power-white.png" />
+<Content Include="www\default\css\images\icons-png\recycle-black.png" />
+<Content Include="www\default\css\images\icons-png\recycle-white.png" />
+<Content Include="www\default\css\images\icons-png\refresh-black.png" />
+<Content Include="www\default\css\images\icons-png\refresh-white.png" />
+<Content Include="www\default\css\images\icons-png\search-black.png" />
+<Content Include="www\default\css\images\icons-png\search-white.png" />
+<Content Include="www\default\css\images\icons-png\shop-black.png" />
+<Content Include="www\default\css\images\icons-png\shop-white.png" />
+<Content Include="www\default\css\images\icons-png\star-black.png" />
+<Content Include="www\default\css\images\icons-png\star-white.png" />
+<Content Include="www\default\css\images\icons-png\tag-black.png" />
+<Content Include="www\default\css\images\icons-png\tag-white.png" />
+<Content Include="www\default\css\images\icons-png\user-black.png" />
+<Content Include="www\default\css\images\icons-png\user-white.png" />
+<Content Include="www\default\css\images\icons-png\video-black.png" />
+<Content Include="www\default\css\images\icons-png\video-white.png" />
+<Content Include="www\default\css\images\icons-svg\action-black.svg" />
+<Content Include="www\default\css\images\icons-svg\action-white.svg" />
+<Content Include="www\default\css\images\icons-svg\alert-black.svg" />
+<Content Include="www\default\css\images\icons-svg\alert-white.svg" />
+<Content Include="www\default\css\images\icons-svg\arrow-d-black.svg" />
+<Content Include="www\default\css\images\icons-svg\arrow-d-l-black.svg" />
+<Content Include="www\default\css\images\icons-svg\arrow-d-l-white.svg" />
+<Content Include="www\default\css\images\icons-svg\arrow-d-r-black.svg" />
+<Content Include="www\default\css\images\icons-svg\arrow-d-r-white.svg" />
+<Content Include="www\default\css\images\icons-svg\arrow-d-white.svg" />
+<Content Include="www\default\css\images\icons-svg\arrow-l-black.svg" />
+<Content Include="www\default\css\images\icons-svg\arrow-l-white.svg" />
+<Content Include="www\default\css\images\icons-svg\arrow-r-black.svg" />
+<Content Include="www\default\css\images\icons-svg\arrow-r-white.svg" />
+<Content Include="www\default\css\images\icons-svg\arrow-u-black.svg" />
+<Content Include="www\default\css\images\icons-svg\arrow-u-l-black.svg" />
+<Content Include="www\default\css\images\icons-svg\arrow-u-l-white.svg" />
+<Content Include="www\default\css\images\icons-svg\arrow-u-r-black.svg" />
+<Content Include="www\default\css\images\icons-svg\arrow-u-r-white.svg" />
+<Content Include="www\default\css\images\icons-svg\arrow-u-white.svg" />
+<Content Include="www\default\css\images\icons-svg\audio-black.svg" />
+<Content Include="www\default\css\images\icons-svg\audio-white.svg" />
+<Content Include="www\default\css\images\icons-svg\back-black.svg" />
+<Content Include="www\default\css\images\icons-svg\back-white.svg" />
+<Content Include="www\default\css\images\icons-svg\bars-black.svg" />
+<Content Include="www\default\css\images\icons-svg\bars-white.svg" />
+<Content Include="www\default\css\images\icons-svg\bullets-black.svg" />
+<Content Include="www\default\css\images\icons-svg\bullets-white.svg" />
+<Content Include="www\default\css\images\icons-svg\calendar-black.svg" />
+<Content Include="www\default\css\images\icons-svg\calendar-white.svg" />
+<Content Include="www\default\css\images\icons-svg\camera-black.svg" />
+<Content Include="www\default\css\images\icons-svg\camera-white.svg" />
+<Content Include="www\default\css\images\icons-svg\carat-d-black.svg" />
+<Content Include="www\default\css\images\icons-svg\carat-d-white.svg" />
+<Content Include="www\default\css\images\icons-svg\carat-l-black.svg" />
+<Content Include="www\default\css\images\icons-svg\carat-l-white.svg" />
+<Content Include="www\default\css\images\icons-svg\carat-r-black.svg" />
+<Content Include="www\default\css\images\icons-svg\carat-r-white.svg" />
+<Content Include="www\default\css\images\icons-svg\carat-u-black.svg" />
+<Content Include="www\default\css\images\icons-svg\carat-u-white.svg" />
+<Content Include="www\default\css\images\icons-svg\check-black.svg" />
+<Content Include="www\default\css\images\icons-svg\check-white.svg" />
+<Content Include="www\default\css\images\icons-svg\clock-black.svg" />
+<Content Include="www\default\css\images\icons-svg\clock-white.svg" />
+<Content Include="www\default\css\images\icons-svg\cloud-black.svg" />
+<Content Include="www\default\css\images\icons-svg\cloud-white.svg" />
+<Content Include="www\default\css\images\icons-svg\comment-black.svg" />
+<Content Include="www\default\css\images\icons-svg\comment-white.svg" />
+<Content Include="www\default\css\images\icons-svg\delete-black.svg" />
+<Content Include="www\default\css\images\icons-svg\delete-white.svg" />
+<Content Include="www\default\css\images\icons-svg\edit-black.svg" />
+<Content Include="www\default\css\images\icons-svg\edit-white.svg" />
+<Content Include="www\default\css\images\icons-svg\eye-black.svg" />
+<Content Include="www\default\css\images\icons-svg\eye-white.svg" />
+<Content Include="www\default\css\images\icons-svg\forbidden-black.svg" />
+<Content Include="www\default\css\images\icons-svg\forbidden-white.svg" />
+<Content Include="www\default\css\images\icons-svg\forward-black.svg" />
+<Content Include="www\default\css\images\icons-svg\forward-white.svg" />
+<Content Include="www\default\css\images\icons-svg\gear-black.svg" />
+<Content Include="www\default\css\images\icons-svg\gear-white.svg" />
+<Content Include="www\default\css\images\icons-svg\grid-black.svg" />
+<Content Include="www\default\css\images\icons-svg\grid-white.svg" />
+<Content Include="www\default\css\images\icons-svg\heart-black.svg" />
+<Content Include="www\default\css\images\icons-svg\heart-white.svg" />
+<Content Include="www\default\css\images\icons-svg\home-black.svg" />
+<Content Include="www\default\css\images\icons-svg\home-white.svg" />
+<Content Include="www\default\css\images\icons-svg\info-black.svg" />
+<Content Include="www\default\css\images\icons-svg\info-white.svg" />
+<Content Include="www\default\css\images\icons-svg\location-black.svg" />
+<Content Include="www\default\css\images\icons-svg\location-white.svg" />
+<Content Include="www\default\css\images\icons-svg\lock-black.svg" />
+<Content Include="www\default\css\images\icons-svg\lock-white.svg" />
+<Content Include="www\default\css\images\icons-svg\mail-black.svg" />
+<Content Include="www\default\css\images\icons-svg\mail-white.svg" />
+<Content Include="www\default\css\images\icons-svg\minus-black.svg" />
+<Content Include="www\default\css\images\icons-svg\minus-white.svg" />
+<Content Include="www\default\css\images\icons-svg\navigation-black.svg" />
+<Content Include="www\default\css\images\icons-svg\navigation-white.svg" />
+<Content Include="www\default\css\images\icons-svg\phone-black.svg" />
+<Content Include="www\default\css\images\icons-svg\phone-white.svg" />
+<Content Include="www\default\css\images\icons-svg\plus-black.svg" />
+<Content Include="www\default\css\images\icons-svg\plus-white.svg" />
+<Content Include="www\default\css\images\icons-svg\power-black.svg" />
+<Content Include="www\default\css\images\icons-svg\power-white.svg" />
+<Content Include="www\default\css\images\icons-svg\recycle-black.svg" />
+<Content Include="www\default\css\images\icons-svg\recycle-white.svg" />
+<Content Include="www\default\css\images\icons-svg\refresh-black.svg" />
+<Content Include="www\default\css\images\icons-svg\refresh-white.svg" />
+<Content Include="www\default\css\images\icons-svg\search-black.svg" />
+<Content Include="www\default\css\images\icons-svg\search-white.svg" />
+<Content Include="www\default\css\images\icons-svg\shop-black.svg" />
+<Content Include="www\default\css\images\icons-svg\shop-white.svg" />
+<Content Include="www\default\css\images\icons-svg\star-black.svg" />
+<Content Include="www\default\css\images\icons-svg\star-white.svg" />
+<Content Include="www\default\css\images\icons-svg\tag-black.svg" />
+<Content Include="www\default\css\images\icons-svg\tag-white.svg" />
+<Content Include="www\default\css\images\icons-svg\user-black.svg" />
+<Content Include="www\default\css\images\icons-svg\user-white.svg" />
+<Content Include="www\default\css\images\icons-svg\video-black.svg" />
+<Content Include="www\default\css\images\icons-svg\video-white.svg" />
+<Content Include="www\default\css\jquery.mobile.icons.min.css" />
+<Content Include="www\default\css\jquery.mobile.structure-1.4.5.min.css" />
+<Content Include="www\default\css\main.css" />
+<Content Include="www\default\css\rotomagno.min.css" />
+<Content Include="www\default\css\styles.css" />
+<Content Include="www\default\css\swiper.min.css" />
+<Content Include="www\default\filelist" />
+<Content Include="www\default\images\general\autos\.DS_Store" />
+<Content Include="www\default\images\general\autos\compacto\.DS_Store" />
+<Content Include="www\default\images\general\autos\compacto\atras.jpg" />
+<Content Include="www\default\images\general\autos\compacto\frente.jpg" />
+<Content Include="www\default\images\general\autos\compacto\inicio.png" />
+<Content Include="www\default\images\general\autos\compacto\lado.jpg" />
+<Content Include="www\default\images\general\autos\pickup\.DS_Store" />
+<Content Include="www\default\images\general\autos\pickup\atras.jpg" />
+<Content Include="www\default\images\general\autos\pickup\frente.jpg" />
+<Content Include="www\default\images\general\autos\pickup\frenteTotal.jpg" />
+<Content Include="www\default\images\general\autos\pickup\inicio.png" />
+<Content Include="www\default\images\general\autos\pickup\lado.jpg" />
+<Content Include="www\default\images\general\autos\sedan\.DS_Store" />
+<Content Include="www\default\images\general\autos\sedan\atras.jpg" />
+<Content Include="www\default\images\general\autos\sedan\frente.jpg" />
+<Content Include="www\default\images\general\autos\sedan\inicio.png" />
+<Content Include="www\default\images\general\autos\sedan\lado.jpg" />
+<Content Include="www\default\images\general\autos\suv\.DS_Store" />
+<Content Include="www\default\images\general\autos\suv\atras.jpg" />
+<Content Include="www\default\images\general\autos\suv\frente.jpg" />
+<Content Include="www\default\images\general\autos\suv\inicio.png" />
+<Content Include="www\default\images\general\autos\suv\lado.jpg" />
+<Content Include="www\default\images\general\familias\.DS_Store" />
+<Content Include="www\default\images\general\familias\depo.png" />
+<Content Include="www\default\images\general\familias\hu.png" />
+<Content Include="www\default\images\general\familias\polyway.png" />
+<Content Include="www\default\images\general\familias\tyg.png" />
+<Content Include="www\default\images\general\flechaAbajo.png" />
+<Content Include="www\default\images\general\flechaDerecha.png" />
+<Content Include="www\default\images\general\listView.png" />
+<Content Include="www\default\images\general\logo.png" />
+<Content Include="www\default\images\general\marcas\audiLogo.png" />
+<Content Include="www\default\images\general\marcas\chevroletLogo.jpeg" />
+<Content Include="www\default\images\general\marcas\chryslerLogo.png" />
+<Content Include="www\default\images\general\marcas\dodgeLogo.png" />
+<Content Include="www\default\images\general\marcas\fiatLogo.png" />
+<Content Include="www\default\images\general\marcas\fordLogo.png" />
+<Content Include="www\default\images\general\marcas\gmcLogo.png" />
+<Content Include="www\default\images\general\marcas\hondaLogo.png" />
+<Content Include="www\default\images\general\marcas\jeepLogo.png" />
+<Content Include="www\default\images\general\marcas\mazdaLogo.png" />
+<Content Include="www\default\images\general\marcas\nissanLogo.png" />
+<Content Include="www\default\images\general\marcas\seatLogo.png" />
+<Content Include="www\default\images\general\marcas\toyotaLogo.png" />
+<Content Include="www\default\images\general\marcas\vwLogo.png" />
+<Content Include="www\default\images\icon.png" />
+<Content Include="www\default\images\thumbnail.png" />
+<Content Include="www\default\index.html" />
+<Content Include="www\default\js\.DS_Store" />
+<Content Include="www\default\js\controllers\familias.js" />
+<Content Include="www\default\js\controllers\initial.js" />
+<Content Include="www\default\js\controllers\MMASelect.js" />
+<Content Include="www\default\js\controllers\productos.js" />
+<Content Include="www\default\js\Defiant.min.js" />
+<Content Include="www\default\js\doneTyping.js" />
+<Content Include="www\default\js\initOptions.js" />
+<Content Include="www\default\js\jquery-1.11.2.js" />
+<Content Include="www\default\js\jquery.mobile-1.4.5.js" />
+<Content Include="www\default\js\JSonStore\collections\collections.js" />
+<Content Include="www\default\js\JSonStore\jsonStoreHelper.js" />
+<Content Include="www\default\js\layout.js" />
+<Content Include="www\default\js\main.js" />
+<Content Include="www\default\js\messages.js" />
+<Content Include="www\default\js\restHelper.js" />
+<Content Include="www\default\js\swiper.jquery.min.js" />
+<Content Include="www\default\js\swiper.min.js" />
+<Content Include="www\default\pages\detalles.html" />
+<Content Include="www\default\pages\familias.html" />
+<Content Include="www\default\pages\general\header.html" />
+<Content Include="www\default\pages\general\left_panel.html" />
+<Content Include="www\default\pages\general\popup.html" />
+<Content Include="www\default\pages\initial.html" />
+<Content Include="www\default\pages\MMASelect.html" />
+<Content Include="www\default\pages\productos.html" />
+<Content Include="www\default\worklight\cordova.js" />
+<Content Include="www\default\worklight\cordova_plugins.js" />
+<Content Include="www\default\worklight\messages\de\messages.json" />
+<Content Include="www\default\worklight\messages\es\messages.json" />
+<Content Include="www\default\worklight\messages\fr\messages.json" />
+<Content Include="www\default\worklight\messages\he\messages.json" />
+<Content Include="www\default\worklight\messages\it\messages.json" />
+<Content Include="www\default\worklight\messages\ja\messages.json" />
+<Content Include="www\default\worklight\messages\ko\messages.json" />
+<Content Include="www\default\worklight\messages\messages.json" />
+<Content Include="www\default\worklight\messages\pt-BR\messages.json" />
+<Content Include="www\default\worklight\messages\ru\messages.json" />
+<Content Include="www\default\worklight\messages\zh\messages.json" />
+<Content Include="www\default\worklight\messages\zh-TW\messages.json" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.battery-status\www\battery.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.camera\src\windows8\CameraProxy.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.camera\www\Camera.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.camera\www\CameraConstants.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.console\www\console-via-logger.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.console\www\logger.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.contacts\src\windows8\ContactProxy.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.contacts\www\Contact.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactAddress.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactError.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactField.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactFieldType.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactFindOptions.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactName.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactOrganization.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.contacts\www\contacts.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.device\src\windows8\DeviceProxy.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.device\www\device.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.device-motion\src\windows8\AccelerometerProxy.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.device-motion\www\Acceleration.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.device-motion\www\accelerometer.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.device-orientation\src\windows8\CompassProxy.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.device-orientation\www\compass.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.device-orientation\www\CompassError.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.device-orientation\www\CompassHeading.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.dialogs\src\windows8\NotificationProxy.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.dialogs\www\notification.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\src\windows8\FileProxy.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\DirectoryEntry.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\DirectoryReader.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\Entry.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\File.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\FileEntry.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\FileError.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\FileReader.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\FileSystem.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\fileSystemPaths.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\fileSystems-roots.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\fileSystems.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\FileUploadOptions.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\FileUploadResult.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\FileWriter.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\Flags.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\LocalFileSystem.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\Metadata.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\ProgressEvent.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\requestFileSystem.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file\www\resolveLocalFileSystemURI.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file-transfer\www\FileTransfer.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file-transfer\www\FileTransferError.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.file-transfer\www\windows8\FileTransferProxy.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.geolocation\www\Coordinates.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.geolocation\www\geolocation.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.geolocation\www\Position.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.geolocation\www\PositionError.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.geolocation\www\windows8\GeolocationProxy.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.globalization\www\globalization.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.globalization\www\GlobalizationError.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.inappbrowser\www\inappbrowser.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.inappbrowser\www\windows8\InAppBrowserProxy.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.media\src\windows8\MediaProxy.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.media\www\Media.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.media\www\MediaError.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.media-capture\src\windows8\CaptureProxy.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.media-capture\src\windows8\MediaFile.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.media-capture\www\capture.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.media-capture\www\CaptureAudioOptions.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.media-capture\www\CaptureError.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.media-capture\www\CaptureImageOptions.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.media-capture\www\CaptureVideoOptions.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.media-capture\www\ConfigurationData.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.media-capture\www\MediaFile.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.media-capture\www\MediaFileData.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.network-information\src\windows8\NetworkInfoProxy.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.network-information\www\Connection.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.network-information\www\network.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.splashscreen\www\splashscreen.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.splashscreen\www\windows8\SplashScreenProxy.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.statusbar\www\statusbar.js" />
+<Content Include="www\default\worklight\plugins\org.apache.cordova.vibration\www\vibration.js" />
+<Content Include="www\default\worklight\wljq.js" />
+<Content Include="www\default\worklight\worklight.css" />
+<Content Include="www\default\worklight\worklight.js" />
+<Content Include="www\skinLoader.html" />
+<!-- __end_worklight_web_resources__ -->    
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="WLWin8Native">
+      <HintPath>WLWin8Native.winmd</HintPath>
+      <IsWinMDFile>true</IsWinMDFile>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="Exists('buildtarget\$(Platform)\sqlite3.dll')">
+    <Content Include="buildtarget\$(Platform)\sqlite3.dll" >
+      <Link>sqlite3.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Reference Include="JSONStoreWin8" >
+      <HintPath>JSONStoreWin8.winmd</HintPath>
+      <IsWinMDFile>true</IsWinMDFile>
+    </Reference>
+  </ItemGroup>
+  <Import Condition="Exists('buildtarget\JSONStore.targets')" Project="buildtarget\JSONStore.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

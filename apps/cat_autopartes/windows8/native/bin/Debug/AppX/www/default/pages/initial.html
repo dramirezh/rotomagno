@@ -1,0 +1,47 @@
+﻿<div data-role="page" id="{id}" class="ui-page-header-fixed ui-page-footer-fixed">
+	<div role="main" class="ui-content">
+		<div style="text-align: center; margin-top: 15px;">
+			<img src="images/general/logo.png"/>
+			<h1>TIPO DE AUTO</h1>
+		</div>
+   		<fieldset class="ui-grid-a" id="tiposAuto">
+   			<div onclick="selectTipo('#divCompacto');" id="divCompacto" class="div-rounded ui-block-a" style="text-align:center;">
+   				<div id="divCompactoPic">
+   					<img style="height:80%; width:80%;" src="images/general/autos/compacto/lado.jpg"/>
+   				</div>
+   				<h2>Compacto</h2>
+   			</div>
+   			<div onclick="selectTipo('#divSedan');" id="divSedan" class="div-rounded ui-block-b" style="text-align: center;">
+				<div id="divSedanPic">
+					<img style="height:80%; width:80%; margin-top: 13%;" src="images/general/autos/sedan/lado.jpg"/>	
+				</div>
+				<h2>Sedan</h2>
+   			</div>
+   			<div onclick="selectTipo('#divSuv');" id="divSuv" class="div-rounded ui-block-a" style="text-align: center;">
+   				<div id="divSuvPic">
+   					<img style="height:80%; width:80%;" src="images/general/autos/suv/lado.jpg"/>
+   				</div>
+   				<h2>SUV</h2>
+   			</div>
+   			<div onclick="selectTipo('#divPickUp');" id="divPickUp" class="div-rounded ui-block-b" style="text-align: center;">
+   				<div id="divPickUpPic">
+   					<img style="height:80%; width:80%; margin-top: 2%;" src="images/general/autos/pickup/lado.jpg"/>
+   				</div>
+   				<h2>PickUp</h2>
+   			</div>
+   		</fieldset>
+   		<div style="text-align: right; color:gray;">
+   			<label>Imagen solamente ilustrativa</label>
+   		</div>
+   		<div style="margin: 0 15% 0 15%;">
+   			<input type="search" />
+   		</div>
+   		<div class="ui-field-contain" style="margin: 0 10px 0 10px">
+   			<a href="#" onclick="goToMMASelect();" class="ui-btn ui-icon-arrow-r ui-btn-icon-right ui-corner-all" >Siguiente</a>
+   		</div>
+   		<div style="text-align: right;" onclick="listView();">
+			<img style="width: 50px; height: 50px; margin-right: 20px;" src="images/general/listView.png" />
+			<label id="lblVista">Vista en lista</label>
+   		</div>
+	</div>
+</div>

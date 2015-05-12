@@ -1,0 +1,56 @@
+﻿<div data-role="page" id="{id}" class="ui-page-header-fixed ui-page-footer-fixed">
+	<div role="main" class="ui-content">
+	<div style="height: 400px;">
+		<div style="margin: 15px 15px 0 15px;">
+			<div class="ui-grid-a">
+				<div class="ui-block-a">
+					<img style="max-width: 300px;" width="100%" height="100%" src="images/general/logo.png" />
+				</div>
+				<div class="ui-block-b">
+					<!-- <input type="search" style="display: inline;" />-->
+				</div>
+			</div>
+			
+			<div style="height: 100px;">
+				<div id="divMarcaImage" style="display:inline-block; height:100%; text-align: right; vertical-align: middle;">
+					
+				</div>
+				<div style="display:inline-block; height:100%; margin-top:50px; text-align: left; vertical-align: middle;">
+					<label id="lblAutoModelo" style="font-weight: bold;"></label>
+					<label id="lblAutoAnio" style="font-weight: bold;"></label>
+				</div>
+			</div>
+		</div>
+		 <div style="text-align: center;" class="selectedText">
+				<label id="lblTipoAuto" style=" font-size: x-large; font-weight: bold;"></label>
+			</div>
+			<br/>
+		<div style="position: absolute; width: 100%;" class="selectedText">
+			<div id="divTipoAutoImage" style="margin:0 10% 0 10%;">
+				
+			</div>
+			<div id="divDepo" onclick="selectFamilia('#divDepo');" style="position:absolute; left:10%; top:38%; height: 15%; width: 42%;">
+				<img height="80%" style="margin-right: 5%;" src="images/general/familias/depo.png"/>
+				<img height="55%" width="auto" src="images/general/flechaDerecha.png"/>
+			</div>
+			<div id="divPolyway" onclick="selectFamilia('#divPolyway');" style="text-align:center;position:absolute; right:32%; top:2%;height: 32%; width: 15%;">
+				<img width="100%" src="images/general/familias/polyway.png"/>
+				<div id="divSeparacion" style="height: 25%;"></div>
+				<img width="20%" height="auto" src="images/general/flechaAbajo.png"/>
+			</div>
+			<div id="divHu" onclick="selectFamilia('#divHu');" style="text-align:center;position:absolute; right:23%; top:14%;height: 35%; width: 10%;">
+				<img width="90%" src="images/general/familias/hu.png"/>
+				<img width="30%" height="auto" src="images/general/flechaAbajo.png"/>
+			</div>
+			<div id="divTyg" onclick="selectFamilia('#divTyg');" style="text-align:center;position:absolute; left:20%; top:15%;height: 22%; width: 15%;">
+				<img width="90%" src="images/general/familias/tyg.png"/>
+				<img width="20%" height="auto" src="images/general/flechaAbajo.png"/>
+			</div>
+		</div>
+		
+		<div style="text-align: right; color:gray; position: absolute; top:100%; right: 0;">
+   			<p>Imagen solamente ilustrativa</p>
+   		</div>
+	</div>
+	</div>
+</div>

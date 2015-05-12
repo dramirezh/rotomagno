@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Rotomagno">
+        <wb-resource deploy-path="/" source-path="/apps/cat_autopartes/common"/>
+        <wb-resource deploy-path="/" source-path="/apps/cat_autopartes/ipad"/>
+        <wb-resource deploy-path="/" source-path="/apps/cat_autopartes/android"/>
+        <wb-resource deploy-path="/" source-path="/apps/cat_autopartes/windows8"/>
+        <property name="context-root" value="Rotomagno"/>
+    </wb-module>
+</project-modules>

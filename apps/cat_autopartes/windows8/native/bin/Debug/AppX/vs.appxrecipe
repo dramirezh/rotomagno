@@ -1,0 +1,1551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>SOLUTIAINTEA447</Machine>
+    <WindowsUser>solutiaintelligence</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>6d7dda54-9b50-4942-8d37-9b4a995a0426</PackageIdentityName>
+    <RegisteredManifestChecksum>331E8C1A1C7770C080BD989D75B9F060BB4CFFDE088286D1BEF8214C343949CE</RegisteredManifestChecksum>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-05-07T21:38:16.000</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\WLWin8Native.winmd">
+      <PackagePath>WLWin8Native.winmd</PackagePath>
+      <Modified>2015-05-07T14:10:55.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+      <Modified>2015-05-07T14:10:55.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\images\logo.png">
+      <PackagePath>images\logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-05-07T14:10:55.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\images\smalllogo.png">
+      <PackagePath>images\smalllogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-05-07T14:10:55.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\images\splashscreen.png">
+      <PackagePath>images\splashscreen.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-05-07T14:10:55.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\images\storelogo.png">
+      <PackagePath>images\storelogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-05-07T14:10:55.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\carCrashPlash.png">
+      <PackagePath>www\default\css\images\carCrashPlash.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\action-black.png">
+      <PackagePath>www\default\css\images\icons-png\action-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\action-white.png">
+      <PackagePath>www\default\css\images\icons-png\action-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\alert-black.png">
+      <PackagePath>www\default\css\images\icons-png\alert-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\alert-red.png">
+      <PackagePath>www\default\css\images\icons-png\alert-red.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\alert-white.png">
+      <PackagePath>www\default\css\images\icons-png\alert-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\arrow-d-black.png">
+      <PackagePath>www\default\css\images\icons-png\arrow-d-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\arrow-d-l-black.png">
+      <PackagePath>www\default\css\images\icons-png\arrow-d-l-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\arrow-d-l-white.png">
+      <PackagePath>www\default\css\images\icons-png\arrow-d-l-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\arrow-d-r-black.png">
+      <PackagePath>www\default\css\images\icons-png\arrow-d-r-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\arrow-d-r-white.png">
+      <PackagePath>www\default\css\images\icons-png\arrow-d-r-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\arrow-d-white.png">
+      <PackagePath>www\default\css\images\icons-png\arrow-d-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\arrow-l-black.png">
+      <PackagePath>www\default\css\images\icons-png\arrow-l-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\arrow-l-white.png">
+      <PackagePath>www\default\css\images\icons-png\arrow-l-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\arrow-r-black.png">
+      <PackagePath>www\default\css\images\icons-png\arrow-r-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\arrow-r-white.png">
+      <PackagePath>www\default\css\images\icons-png\arrow-r-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\arrow-u-black.png">
+      <PackagePath>www\default\css\images\icons-png\arrow-u-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\arrow-u-l-black.png">
+      <PackagePath>www\default\css\images\icons-png\arrow-u-l-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\arrow-u-l-white.png">
+      <PackagePath>www\default\css\images\icons-png\arrow-u-l-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\arrow-u-r-black.png">
+      <PackagePath>www\default\css\images\icons-png\arrow-u-r-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\arrow-u-r-white.png">
+      <PackagePath>www\default\css\images\icons-png\arrow-u-r-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\arrow-u-white.png">
+      <PackagePath>www\default\css\images\icons-png\arrow-u-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\audio-black.png">
+      <PackagePath>www\default\css\images\icons-png\audio-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\audio-white.png">
+      <PackagePath>www\default\css\images\icons-png\audio-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\back-black.png">
+      <PackagePath>www\default\css\images\icons-png\back-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\back-white.png">
+      <PackagePath>www\default\css\images\icons-png\back-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\bars-black.png">
+      <PackagePath>www\default\css\images\icons-png\bars-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\bars-white.png">
+      <PackagePath>www\default\css\images\icons-png\bars-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\bullets-black.png">
+      <PackagePath>www\default\css\images\icons-png\bullets-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\bullets-white.png">
+      <PackagePath>www\default\css\images\icons-png\bullets-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\calendar-black.png">
+      <PackagePath>www\default\css\images\icons-png\calendar-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\calendar-white.png">
+      <PackagePath>www\default\css\images\icons-png\calendar-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\camera-black.png">
+      <PackagePath>www\default\css\images\icons-png\camera-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\camera-white.png">
+      <PackagePath>www\default\css\images\icons-png\camera-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\carat-d-black.png">
+      <PackagePath>www\default\css\images\icons-png\carat-d-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\carat-d-white.png">
+      <PackagePath>www\default\css\images\icons-png\carat-d-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\carat-l-black.png">
+      <PackagePath>www\default\css\images\icons-png\carat-l-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\carat-l-white.png">
+      <PackagePath>www\default\css\images\icons-png\carat-l-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\carat-r-black.png">
+      <PackagePath>www\default\css\images\icons-png\carat-r-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\carat-r-white.png">
+      <PackagePath>www\default\css\images\icons-png\carat-r-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\carat-u-black.png">
+      <PackagePath>www\default\css\images\icons-png\carat-u-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\carat-u-white.png">
+      <PackagePath>www\default\css\images\icons-png\carat-u-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\check-black.png">
+      <PackagePath>www\default\css\images\icons-png\check-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\check-white.png">
+      <PackagePath>www\default\css\images\icons-png\check-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\clock-black.png">
+      <PackagePath>www\default\css\images\icons-png\clock-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\clock-white.png">
+      <PackagePath>www\default\css\images\icons-png\clock-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\cloud-black.png">
+      <PackagePath>www\default\css\images\icons-png\cloud-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\cloud-white.png">
+      <PackagePath>www\default\css\images\icons-png\cloud-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\comment-black.png">
+      <PackagePath>www\default\css\images\icons-png\comment-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\comment-white.png">
+      <PackagePath>www\default\css\images\icons-png\comment-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\delete-black.png">
+      <PackagePath>www\default\css\images\icons-png\delete-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\delete-white.png">
+      <PackagePath>www\default\css\images\icons-png\delete-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\edit-black.png">
+      <PackagePath>www\default\css\images\icons-png\edit-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\edit-white.png">
+      <PackagePath>www\default\css\images\icons-png\edit-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\eye-black.png">
+      <PackagePath>www\default\css\images\icons-png\eye-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\eye-white.png">
+      <PackagePath>www\default\css\images\icons-png\eye-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\forbidden-black.png">
+      <PackagePath>www\default\css\images\icons-png\forbidden-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\forbidden-white.png">
+      <PackagePath>www\default\css\images\icons-png\forbidden-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\forward-black.png">
+      <PackagePath>www\default\css\images\icons-png\forward-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\forward-white.png">
+      <PackagePath>www\default\css\images\icons-png\forward-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\gear-black.png">
+      <PackagePath>www\default\css\images\icons-png\gear-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\gear-white.png">
+      <PackagePath>www\default\css\images\icons-png\gear-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\grid-black.png">
+      <PackagePath>www\default\css\images\icons-png\grid-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\grid-white.png">
+      <PackagePath>www\default\css\images\icons-png\grid-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\heart-black.png">
+      <PackagePath>www\default\css\images\icons-png\heart-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\heart-white.png">
+      <PackagePath>www\default\css\images\icons-png\heart-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\home-black.png">
+      <PackagePath>www\default\css\images\icons-png\home-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\home-white.png">
+      <PackagePath>www\default\css\images\icons-png\home-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\info-black.png">
+      <PackagePath>www\default\css\images\icons-png\info-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\info-white.png">
+      <PackagePath>www\default\css\images\icons-png\info-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\location-black.png">
+      <PackagePath>www\default\css\images\icons-png\location-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\location-white.png">
+      <PackagePath>www\default\css\images\icons-png\location-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\lock-black.png">
+      <PackagePath>www\default\css\images\icons-png\lock-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\lock-white.png">
+      <PackagePath>www\default\css\images\icons-png\lock-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\mail-black.png">
+      <PackagePath>www\default\css\images\icons-png\mail-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\mail-white.png">
+      <PackagePath>www\default\css\images\icons-png\mail-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\minus-black.png">
+      <PackagePath>www\default\css\images\icons-png\minus-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\minus-white.png">
+      <PackagePath>www\default\css\images\icons-png\minus-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\navigation-black.png">
+      <PackagePath>www\default\css\images\icons-png\navigation-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\navigation-white.png">
+      <PackagePath>www\default\css\images\icons-png\navigation-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\phone-black.png">
+      <PackagePath>www\default\css\images\icons-png\phone-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\phone-white.png">
+      <PackagePath>www\default\css\images\icons-png\phone-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\plus-black.png">
+      <PackagePath>www\default\css\images\icons-png\plus-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\plus-white.png">
+      <PackagePath>www\default\css\images\icons-png\plus-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\power-black.png">
+      <PackagePath>www\default\css\images\icons-png\power-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\power-white.png">
+      <PackagePath>www\default\css\images\icons-png\power-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\recycle-black.png">
+      <PackagePath>www\default\css\images\icons-png\recycle-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\recycle-white.png">
+      <PackagePath>www\default\css\images\icons-png\recycle-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\refresh-black.png">
+      <PackagePath>www\default\css\images\icons-png\refresh-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\refresh-white.png">
+      <PackagePath>www\default\css\images\icons-png\refresh-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\search-black.png">
+      <PackagePath>www\default\css\images\icons-png\search-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\search-white.png">
+      <PackagePath>www\default\css\images\icons-png\search-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\shop-black.png">
+      <PackagePath>www\default\css\images\icons-png\shop-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\shop-white.png">
+      <PackagePath>www\default\css\images\icons-png\shop-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\star-black.png">
+      <PackagePath>www\default\css\images\icons-png\star-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\star-white.png">
+      <PackagePath>www\default\css\images\icons-png\star-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\tag-black.png">
+      <PackagePath>www\default\css\images\icons-png\tag-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\tag-white.png">
+      <PackagePath>www\default\css\images\icons-png\tag-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\user-black.png">
+      <PackagePath>www\default\css\images\icons-png\user-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\user-white.png">
+      <PackagePath>www\default\css\images\icons-png\user-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\video-black.png">
+      <PackagePath>www\default\css\images\icons-png\video-black.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-png\video-white.png">
+      <PackagePath>www\default\css\images\icons-png\video-white.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\familias\depo.png">
+      <PackagePath>www\default\images\general\familias\depo.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\familias\polyway.png">
+      <PackagePath>www\default\images\general\familias\polyway.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\familias\tyg.png">
+      <PackagePath>www\default\images\general\familias\tyg.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\listView.png">
+      <PackagePath>www\default\images\general\listView.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\logo.png">
+      <PackagePath>www\default\images\general\logo.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\marcas\audiLogo.png">
+      <PackagePath>www\default\images\general\marcas\audiLogo.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\marcas\chryslerLogo.png">
+      <PackagePath>www\default\images\general\marcas\chryslerLogo.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\marcas\dodgeLogo.png">
+      <PackagePath>www\default\images\general\marcas\dodgeLogo.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\marcas\fiatLogo.png">
+      <PackagePath>www\default\images\general\marcas\fiatLogo.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\marcas\fordLogo.png">
+      <PackagePath>www\default\images\general\marcas\fordLogo.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\marcas\gmcLogo.png">
+      <PackagePath>www\default\images\general\marcas\gmcLogo.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\marcas\hondaLogo.png">
+      <PackagePath>www\default\images\general\marcas\hondaLogo.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\marcas\jeepLogo.png">
+      <PackagePath>www\default\images\general\marcas\jeepLogo.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\marcas\mazdaLogo.png">
+      <PackagePath>www\default\images\general\marcas\mazdaLogo.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\marcas\nissanLogo.png">
+      <PackagePath>www\default\images\general\marcas\nissanLogo.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\marcas\seatLogo.png">
+      <PackagePath>www\default\images\general\marcas\seatLogo.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\marcas\toyotaLogo.png">
+      <PackagePath>www\default\images\general\marcas\toyotaLogo.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\marcas\vwLogo.png">
+      <PackagePath>www\default\images\general\marcas\vwLogo.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\icon.png">
+      <PackagePath>www\default\images\icon.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\thumbnail.png">
+      <PackagePath>www\default\images\thumbnail.png</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\.DS_Store">
+      <PackagePath>www\default\.DS_Store</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\.DS_Store">
+      <PackagePath>www\default\css\.DS_Store</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\familias\.DS_Store">
+      <PackagePath>www\default\images\general\familias\.DS_Store</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\js\.DS_Store">
+      <PackagePath>www\default\js\.DS_Store</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\ajax-loader.gif">
+      <PackagePath>www\default\css\images\ajax-loader.gif</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\familias\hu.gif">
+      <PackagePath>www\default\images\general\familias\hu.gif</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\action-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\action-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\action-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\action-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\alert-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\alert-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\alert-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\alert-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\arrow-d-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\arrow-d-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\arrow-d-l-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\arrow-d-l-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\arrow-d-l-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\arrow-d-l-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\arrow-d-r-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\arrow-d-r-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\arrow-d-r-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\arrow-d-r-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\arrow-d-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\arrow-d-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\arrow-l-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\arrow-l-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\arrow-l-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\arrow-l-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\arrow-r-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\arrow-r-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\arrow-r-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\arrow-r-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\arrow-u-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\arrow-u-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\arrow-u-l-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\arrow-u-l-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\arrow-u-l-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\arrow-u-l-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\arrow-u-r-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\arrow-u-r-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\arrow-u-r-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\arrow-u-r-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\arrow-u-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\arrow-u-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\audio-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\audio-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\audio-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\audio-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\back-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\back-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\back-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\back-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\bars-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\bars-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\bars-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\bars-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\bullets-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\bullets-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\bullets-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\bullets-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\calendar-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\calendar-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\calendar-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\calendar-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\camera-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\camera-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\camera-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\camera-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\carat-d-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\carat-d-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\carat-d-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\carat-d-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\carat-l-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\carat-l-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\carat-l-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\carat-l-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\carat-r-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\carat-r-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\carat-r-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\carat-r-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\carat-u-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\carat-u-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\carat-u-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\carat-u-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\check-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\check-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\check-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\check-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\clock-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\clock-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\clock-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\clock-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\cloud-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\cloud-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\cloud-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\cloud-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\comment-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\comment-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\comment-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\comment-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\delete-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\delete-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\delete-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\delete-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\edit-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\edit-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\edit-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\edit-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\eye-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\eye-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\eye-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\eye-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\forbidden-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\forbidden-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\forbidden-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\forbidden-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\forward-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\forward-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\forward-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\forward-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\gear-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\gear-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\gear-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\gear-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\grid-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\grid-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\grid-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\grid-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\heart-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\heart-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\heart-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\heart-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\home-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\home-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\home-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\home-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\info-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\info-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\info-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\info-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\location-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\location-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\location-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\location-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\lock-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\lock-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\lock-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\lock-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\mail-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\mail-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\mail-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\mail-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\minus-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\minus-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\minus-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\minus-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\navigation-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\navigation-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\navigation-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\navigation-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\phone-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\phone-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\phone-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\phone-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\plus-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\plus-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\plus-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\plus-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\power-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\power-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\power-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\power-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\recycle-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\recycle-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\recycle-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\recycle-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\refresh-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\refresh-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\refresh-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\refresh-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\search-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\search-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\search-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\search-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\shop-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\shop-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\shop-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\shop-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\star-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\star-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\star-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\star-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\tag-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\tag-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\tag-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\tag-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\user-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\user-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\user-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\user-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\video-black.svg">
+      <PackagePath>www\default\css\images\icons-svg\video-black.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\images\icons-svg\video-white.svg">
+      <PackagePath>www\default\css\images\icons-svg\video-white.svg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\jquery.mobile-1.4.5.css">
+      <PackagePath>www\default\css\jquery.mobile-1.4.5.css</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\jquery.mobile.icons.min.css">
+      <PackagePath>www\default\css\jquery.mobile.icons.min.css</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\jquery.mobile.structure-1.4.5.min.css">
+      <PackagePath>www\default\css\jquery.mobile.structure-1.4.5.min.css</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\main.css">
+      <PackagePath>www\default\css\main.css</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\css\styles.css">
+      <PackagePath>www\default\css\styles.css</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\worklight.css">
+      <PackagePath>www\default\worklight\worklight.css</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\filelist">
+      <PackagePath>www\default\filelist</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\autos\compacto\atras.jpg">
+      <PackagePath>www\default\images\general\autos\compacto\atras.jpg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\autos\compacto\frente.jpg">
+      <PackagePath>www\default\images\general\autos\compacto\frente.jpg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\autos\compacto\lado.jpg">
+      <PackagePath>www\default\images\general\autos\compacto\lado.jpg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\autos\pickup\atras.jpg">
+      <PackagePath>www\default\images\general\autos\pickup\atras.jpg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\autos\pickup\frente.jpg">
+      <PackagePath>www\default\images\general\autos\pickup\frente.jpg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\autos\pickup\frenteTotal.jpg">
+      <PackagePath>www\default\images\general\autos\pickup\frenteTotal.jpg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\autos\pickup\lado.jpg">
+      <PackagePath>www\default\images\general\autos\pickup\lado.jpg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\autos\sedan\atras.jpg">
+      <PackagePath>www\default\images\general\autos\sedan\atras.jpg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\autos\sedan\frente.jpg">
+      <PackagePath>www\default\images\general\autos\sedan\frente.jpg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\autos\sedan\lado.jpg">
+      <PackagePath>www\default\images\general\autos\sedan\lado.jpg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\autos\suv\atras.jpg">
+      <PackagePath>www\default\images\general\autos\suv\atras.jpg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\autos\suv\frente.jpg">
+      <PackagePath>www\default\images\general\autos\suv\frente.jpg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\autos\suv\lado.jpg">
+      <PackagePath>www\default\images\general\autos\suv\lado.jpg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\images\general\marcas\chevroletLogo.jpeg">
+      <PackagePath>www\default\images\general\marcas\chevroletLogo.jpeg</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\index.html">
+      <PackagePath>www\default\index.html</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\pages\detalles.html">
+      <PackagePath>www\default\pages\detalles.html</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\pages\familias.html">
+      <PackagePath>www\default\pages\familias.html</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\pages\general\header.html">
+      <PackagePath>www\default\pages\general\header.html</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\pages\general\left_panel.html">
+      <PackagePath>www\default\pages\general\left_panel.html</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\pages\general\popup.html">
+      <PackagePath>www\default\pages\general\popup.html</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\pages\initial.html">
+      <PackagePath>www\default\pages\initial.html</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\pages\MMASelect.html">
+      <PackagePath>www\default\pages\MMASelect.html</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\pages\productos.html">
+      <PackagePath>www\default\pages\productos.html</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\skinLoader.html">
+      <PackagePath>www\skinLoader.html</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\js\controllers\familias.js">
+      <PackagePath>www\default\js\controllers\familias.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\js\controllers\initial.js">
+      <PackagePath>www\default\js\controllers\initial.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\js\controllers\MMASelect.js">
+      <PackagePath>www\default\js\controllers\MMASelect.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\js\controllers\productos.js">
+      <PackagePath>www\default\js\controllers\productos.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\js\Defiant.min.js">
+      <PackagePath>www\default\js\Defiant.min.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\js\doneTyping.js">
+      <PackagePath>www\default\js\doneTyping.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\js\initOptions.js">
+      <PackagePath>www\default\js\initOptions.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\js\jquery-1.11.2.js">
+      <PackagePath>www\default\js\jquery-1.11.2.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\js\jquery.mobile-1.4.5.js">
+      <PackagePath>www\default\js\jquery.mobile-1.4.5.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\js\JSonStore\collections\collections.js">
+      <PackagePath>www\default\js\JSonStore\collections\collections.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\js\JSonStore\jsonStoreHelper.js">
+      <PackagePath>www\default\js\JSonStore\jsonStoreHelper.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\js\layout.js">
+      <PackagePath>www\default\js\layout.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\js\main.js">
+      <PackagePath>www\default\js\main.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\js\messages.js">
+      <PackagePath>www\default\js\messages.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\js\restHelper.js">
+      <PackagePath>www\default\js\restHelper.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\cordova.js">
+      <PackagePath>www\default\worklight\cordova.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\cordova_plugins.js">
+      <PackagePath>www\default\worklight\cordova_plugins.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.battery-status\www\battery.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.battery-status\www\battery.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.camera\src\windows8\CameraProxy.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.camera\src\windows8\CameraProxy.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.camera\www\Camera.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.camera\www\Camera.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.camera\www\CameraConstants.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.camera\www\CameraConstants.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.console\www\console-via-logger.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.console\www\console-via-logger.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.console\www\logger.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.console\www\logger.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.contacts\src\windows8\ContactProxy.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.contacts\src\windows8\ContactProxy.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.contacts\www\Contact.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.contacts\www\Contact.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactAddress.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactAddress.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactError.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactError.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactField.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactField.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactFieldType.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactFieldType.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactFindOptions.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactFindOptions.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactName.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactName.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactOrganization.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.contacts\www\ContactOrganization.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.contacts\www\contacts.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.contacts\www\contacts.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.device\src\windows8\DeviceProxy.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.device\src\windows8\DeviceProxy.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.device\www\device.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.device\www\device.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.device-motion\src\windows8\AccelerometerProxy.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.device-motion\src\windows8\AccelerometerProxy.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.device-motion\www\Acceleration.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.device-motion\www\Acceleration.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.device-motion\www\accelerometer.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.device-motion\www\accelerometer.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.device-orientation\src\windows8\CompassProxy.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.device-orientation\src\windows8\CompassProxy.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.device-orientation\www\compass.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.device-orientation\www\compass.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.device-orientation\www\CompassError.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.device-orientation\www\CompassError.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.device-orientation\www\CompassHeading.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.device-orientation\www\CompassHeading.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.dialogs\src\windows8\NotificationProxy.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.dialogs\src\windows8\NotificationProxy.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.dialogs\www\notification.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.dialogs\www\notification.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\src\windows8\FileProxy.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\src\windows8\FileProxy.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\DirectoryEntry.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\DirectoryEntry.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\DirectoryReader.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\DirectoryReader.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\Entry.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\Entry.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\File.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\File.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\FileEntry.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\FileEntry.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\FileError.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\FileError.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\FileReader.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\FileReader.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\FileSystem.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\FileSystem.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\fileSystemPaths.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\fileSystemPaths.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\fileSystems-roots.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\fileSystems-roots.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\fileSystems.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\fileSystems.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\FileUploadOptions.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\FileUploadOptions.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\FileUploadResult.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\FileUploadResult.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\FileWriter.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\FileWriter.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\Flags.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\Flags.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\LocalFileSystem.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\LocalFileSystem.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\Metadata.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\Metadata.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\ProgressEvent.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\ProgressEvent.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\requestFileSystem.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\requestFileSystem.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file\www\resolveLocalFileSystemURI.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file\www\resolveLocalFileSystemURI.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file-transfer\www\FileTransfer.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file-transfer\www\FileTransfer.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file-transfer\www\FileTransferError.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file-transfer\www\FileTransferError.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.file-transfer\www\windows8\FileTransferProxy.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.file-transfer\www\windows8\FileTransferProxy.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.geolocation\www\Coordinates.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.geolocation\www\Coordinates.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.geolocation\www\geolocation.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.geolocation\www\geolocation.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.geolocation\www\Position.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.geolocation\www\Position.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.geolocation\www\PositionError.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.geolocation\www\PositionError.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.geolocation\www\windows8\GeolocationProxy.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.geolocation\www\windows8\GeolocationProxy.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.globalization\www\globalization.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.globalization\www\globalization.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.globalization\www\GlobalizationError.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.globalization\www\GlobalizationError.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.inappbrowser\www\inappbrowser.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.inappbrowser\www\inappbrowser.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.inappbrowser\www\windows8\InAppBrowserProxy.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.inappbrowser\www\windows8\InAppBrowserProxy.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.media\src\windows8\MediaProxy.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.media\src\windows8\MediaProxy.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.media\www\Media.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.media\www\Media.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.media\www\MediaError.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.media\www\MediaError.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.media-capture\src\windows8\CaptureProxy.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.media-capture\src\windows8\CaptureProxy.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.media-capture\src\windows8\MediaFile.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.media-capture\src\windows8\MediaFile.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.media-capture\www\capture.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.media-capture\www\capture.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.media-capture\www\CaptureAudioOptions.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.media-capture\www\CaptureAudioOptions.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.media-capture\www\CaptureError.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.media-capture\www\CaptureError.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.media-capture\www\CaptureImageOptions.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.media-capture\www\CaptureImageOptions.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.media-capture\www\CaptureVideoOptions.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.media-capture\www\CaptureVideoOptions.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.media-capture\www\ConfigurationData.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.media-capture\www\ConfigurationData.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.media-capture\www\MediaFile.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.media-capture\www\MediaFile.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.media-capture\www\MediaFileData.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.media-capture\www\MediaFileData.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.network-information\src\windows8\NetworkInfoProxy.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.network-information\src\windows8\NetworkInfoProxy.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.network-information\www\Connection.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.network-information\www\Connection.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.network-information\www\network.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.network-information\www\network.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.splashscreen\www\splashscreen.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.splashscreen\www\splashscreen.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.splashscreen\www\windows8\SplashScreenProxy.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.splashscreen\www\windows8\SplashScreenProxy.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.statusbar\www\statusbar.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.statusbar\www\statusbar.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\plugins\org.apache.cordova.vibration\www\vibration.js">
+      <PackagePath>www\default\worklight\plugins\org.apache.cordova.vibration\www\vibration.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\wljq.js">
+      <PackagePath>www\default\worklight\wljq.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\worklight.js">
+      <PackagePath>www\default\worklight\worklight.js</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\messages\de\messages.json">
+      <PackagePath>www\default\worklight\messages\de\messages.json</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\messages\es\messages.json">
+      <PackagePath>www\default\worklight\messages\es\messages.json</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\messages\fr\messages.json">
+      <PackagePath>www\default\worklight\messages\fr\messages.json</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\messages\he\messages.json">
+      <PackagePath>www\default\worklight\messages\he\messages.json</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\messages\it\messages.json">
+      <PackagePath>www\default\worklight\messages\it\messages.json</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\messages\ja\messages.json">
+      <PackagePath>www\default\worklight\messages\ja\messages.json</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\messages\ko\messages.json">
+      <PackagePath>www\default\worklight\messages\ko\messages.json</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\messages\messages.json">
+      <PackagePath>www\default\worklight\messages\messages.json</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\messages\pt-BR\messages.json">
+      <PackagePath>www\default\worklight\messages\pt-BR\messages.json</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\messages\ru\messages.json">
+      <PackagePath>www\default\worklight\messages\ru\messages.json</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\messages\zh\messages.json">
+      <PackagePath>www\default\worklight\messages\zh\messages.json</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\www\default\worklight\messages\zh-TW\messages.json">
+      <PackagePath>www\default\worklight\messages\zh-TW\messages.json</PackagePath>
+      <Modified>2015-05-07T14:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\psf\Home\Documents\Development\workspace\Rotomagno\apps\cat_autopartes\windows8\native\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-05-07T21:38:12.000</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.WinJS.1.0\1.0\">
+      <Name>Microsoft.WinJS.1.0</Name>
+      <Version>1.0.9200.20512</Version>
+      <Architecture>Neutral</Architecture>
+      <FrameworkIdentity>Name=Microsoft.WinJS.1.0, MinVersion=1.0.9200.20512</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.WinJS.1.0\1.0\Microsoft.WinJS.1.0.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

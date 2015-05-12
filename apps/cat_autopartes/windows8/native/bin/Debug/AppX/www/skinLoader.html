@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<style type="text/css">
+			html, body{
+				margin: 0;
+				width: 100%;
+				overflow: hidden;
+			}
+			
+			body {
+				background-image: url(../../SplashScreenImage.jpg);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-color: black;
+			}
+		</style>
+		<script src="default/worklight/cordova.js"></script>
+		<script src="default/js/skinLoader.js"></script>
+		<script>
+			var mainFile = "index.html";
+			var skinName = "default";
+			
+			function loadSkinCallback (exists) {
+				if (exists) {
+					window.location.replace(skinName + "/" + mainFile);
+				} else {
+					debug.error("Cannot find skin " + skinName);
+				}
+			}
+			
+			function loadSkin() {
+				if (typeof window.getSkinName == "function") {
+					skinName = getSkinName();
+				}
+				PhoneGap.exec("IsolatedStorage.exists;" + skinName + ";loadSkinCallback");
+			}
+		</script>
+	</head>
+	<body onload="document.getElementById('content').style.height = screen.height + 'px';loadSkin();" id="content"></body>
+</html>

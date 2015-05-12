@@ -1,0 +1,10 @@
+Language=DE
+Language=ES
+Language=FR
+Language=HE
+Language=IT
+Language=JA
+Language=KO
+Language=PT-BR
+Language=RU
+Language=ZH-TW
