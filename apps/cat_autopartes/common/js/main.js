@@ -2,6 +2,7 @@ var data;
 var lo;
 var swiper;
 function wlCommonInit(){
+	var value;
 	/*
 	 * Use of WL.Client.connect() API before any connectivity to a MobileFirst Server is required. 
 	 * This API should be called only once, before any other WL.Client methods that communicate with the MobileFirst Server.
@@ -125,8 +126,8 @@ function getPages()
 			{"id":"mma", "url":"pages/MMASelect.html",
 				"header":{
 				"url":"pages/general/header.html",
-				"left":"<a href='#' data-rel='back' class='ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-arrow-l'>Tipo</a>",
-				"center":"<h1>Marca - Modelo - Año</h1>",
+				"left":"<a href='#' data-rel='back' class='ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-arrow-l'>Type</a>",
+				"center":"<h1>Brand - Model - Year</h1>",
 				"right":""
 				}
 			},
@@ -134,23 +135,31 @@ function getPages()
 				"header":{
 					"url":"pages/general/header.html",
 					"left":"<a href='#' data-rel='back' class='ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-arrow-l'>Auto</a>",
-					"center":"<h1>Familias</h1>",
+					"center":"<h1>Families</h1>",
 					"right":""
 					}
 			},
 			{"id":"productos", "url":"pages/productos.html",
 				"header":{
 					"url":"pages/general/header.html",
-					"left":"<a href='#' data-rel='back' class='ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-arrow-l'>Familias</a>",
-					"center":"<h1>Productos</h1>",
+					"left":"<a href='#' data-rel='back' class='ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-arrow-l'>Families</a>",
+					"center":"<h1>Products</h1>",
 					"right":""
 					}
 			},
 			{"id":"pge_details", "url":"pages/detalles.html",
 				"header":{
 					"url":"pages/general/header.html",
-					"left":"<a href='#' data-rel='back' class='ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-arrow-l'>Productos</a>",
-					"center":"<h1>Detalles</h1>",
+					"left":"<a href='#' data-rel='back' class='ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-arrow-l'>Products</a>",
+					"center":"<h1>Details</h1>",
+					"right":""
+					}
+			},
+			{"id":"cart", "url":"pages/cart.html",
+				"header":{
+					"url":"pages/general/header.html",
+					"left":"<a href='#' data-rel='back' class='ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-arrow-l'>Back</a>",
+					"center":"<h1>Cart</h1>",
 					"right":""
 					}
 			}
@@ -183,8 +192,20 @@ function setElementEvents(){
 		}
 	});
 	$('#txtSearch').donetyping(function(){
-		search($('#txtSearch').val());	
+		search($('#txtSearch').val());
+		location.href="#productos";
 	});
+	
+	$('#txtSearchini').donetyping(function(){
+		search($('#txtSearchini').val());
+		location.href="#productos";
+		
+	});
+	
+	
+	/*$('#productos').ready(function() {
+		  $('txtSearch').text(value);
+		});*/
 }
 /*function initLanguage(){
 	 var locale = WL.App.getDeviceLocale();

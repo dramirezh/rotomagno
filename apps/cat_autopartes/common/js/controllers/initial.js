@@ -59,6 +59,7 @@ function setFamilias(pTipo){
 	}
 }
 
+
 /*function listView(){
 	var autos = ['#divCompacto','#divSedan','#divSuv','#divPickUp'];
 	

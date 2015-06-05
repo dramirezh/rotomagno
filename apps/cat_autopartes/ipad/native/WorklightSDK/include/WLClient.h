@@ -24,6 +24,16 @@
 
 extern NSString * const WL_DEFAULT_ACCESS_TOKEN_SCOPE;
 
+extern NSString * const WLClientErrorDomain;
+
+enum {
+    WLClientErrorInternalError = 1,
+    WLClientErrorUnresponsiveHost = 2,
+    WLClientErrorRequestTimeout = 3,
+    WLClientErrorServerError = 4,
+    WLClientErrorAuthenticationFailure = 5
+};
+
 @protocol WLDevice;
 
 
@@ -51,6 +61,7 @@ extern NSString * const WL_DEFAULT_ACCESS_TOKEN_SCOPE;
     BOOL isInitialized;
 }
 
+
 extern NSMutableDictionary *piggyBackData;
 
 /**
@@ -72,7 +83,31 @@ extern NSMutableDictionary *piggyBackData;
 
 @property (readwrite, strong) NSMutableDictionary *userPreferenceMap;
 
+/**
+ * This method returns the shared instance of <code>WLClient</code>.
+ * @return <code>WLClient</code>
+ */
 + (WLClient *) sharedInstance;
+
+/**
+ *
+ * Retrieves the shared cookie storage that is used by the framework when communicating with the server.
+ *
+ * @return The cookie storage object
+ *
+ */
+-(NSHTTPCookieStorage*)HTTPCookieStorage;
+
+/**
+ *  This method uses <code>NSURLConnection</code> to execute the provided <code>NSURLRequest</code>.
+ *
+ *  @param request <code>NSURLRequest</code> object
+ *
+ *  @param delegate
+ *  An object that conforms to the <code>NSURLConnectionDataDelegate</code> or <code>NSURLConnectionDelegate</code> protocol.
+ *
+ */
+-(void) sendUrlRequest:(NSURLRequest *)request delegate:(id)delegate;
 
 /**
  * This method uses the connection properties and the application ID from the worklight.plist file to initialize communication with the IBM MobileFirst Platform Server.
@@ -82,12 +117,12 @@ extern NSMutableDictionary *piggyBackData;
  *
  * @par If the server returns a successful response, the <code>onSuccess</code> method is called. If an error occurs, the <code>onFailure</code> method is called.
  *
- * @param delegte
+ * @param delegate
  * A class that conforms to the WLDelegate protocol.
  * @param cookieExtractor
  * Optional, can be nil. Used to share the cookies between the native code and the web code in the app.
  */
--(void) wlConnectWithDelegate:(id <WLDelegate>)delegte cookieExtractor:(WLCookieExtractor *) cookieExtractor;
+-(void) wlConnectWithDelegate:(id <WLDelegate>)delegate cookieExtractor:(WLCookieExtractor *) cookieExtractor;
 
 /**
  * This method uses the connection properties and the application ID from the worklight.plist file to initialize communication with the IBM MobileFirst Platform Server.
@@ -97,9 +132,9 @@ extern NSMutableDictionary *piggyBackData;
  *
  * @par If the server returns a successful response, the <code>onSuccess</code> method is called. If an error occurs, the <code>onFailure</code> method is called.
  *
- * @param delegte A class that conforms to the WLDelegate protocol.
+ * @param delegate A class that conforms to the WLDelegate protocol.
  */
--(void) wlConnectWithDelegate:(id <WLDelegate>)delegte;
+-(void) wlConnectWithDelegate:(id <WLDelegate>)delegate;
 
 /**
  * This method uses the connection properties and the application ID from the worklight.plist file to initialize communication with the IBM MobileFirst Platform Server.
@@ -116,7 +151,7 @@ extern NSMutableDictionary *piggyBackData;
 -(void) wlConnectWithDelegate:(id <WLDelegate>)delegate options:(NSDictionary *)options;
 
 /**
- * Invokes an adapter procedure. This method is asynchronous.
+ * Invokes an adapter procedure. This method is asynchronous. 
  * The response is returned to the callback functions of the provided delegate.
  * If the call succeeds, <code>onSuccess</code> is called. If it fails, <code>onFailure</code> is called.
  * <p>
@@ -128,6 +163,7 @@ extern NSMutableDictionary *piggyBackData;
  * </pre>
  * @param invocationData The invocation data for the procedure call.
  * @param delegate The delegate object that is used for the onSuccess and onFailure callback methods.
+ *
  *
  */
 -(void) invokeProcedure:(WLProcedureInvocationData *)invocationData withDelegate:(id <WLDelegate>)delegate;
@@ -144,6 +180,7 @@ extern NSMutableDictionary *piggyBackData;
  * invocationContext:
  * An object that is returned with WLResponse to the delegate methods. You can use this object to distinguish different invokeProcedure calls.
  */
+
 -(void) invokeProcedure:(WLProcedureInvocationData *)invocationData withDelegate:(id <WLDelegate>)delegate options:(NSDictionary *)options;
 
 
@@ -221,6 +258,8 @@ extern NSMutableDictionary *piggyBackData;
  * This method reports a user activity for auditing or reporting purposes.
  *
  * The activity is stored in the application statistics tables (the GADGET_STAT_N tables).
+ *
+ * @deprecated since V7.0.  Use OCLogger instead.
  *
  * @param activityType A string that identifies the activity.
  */
@@ -382,16 +421,20 @@ extern NSMutableDictionary *piggyBackData;
 
 /**
  Returns the last obtained access token (regardless of scope), or <code>null</code> if no tokens were previosly obtained.
+ 
+ @deprecated in version 7.0, use [WLAuthorizationManager cachedAuthorizationHeader] instead.
  */
-- (NSString*) lastAccessToken;
+- (NSString*) lastAccessToken __attribute__((deprecated ("Use [WLAuthorizationManager cachedAuthorizationHeader] instead")));
 
 /**
  Returns the last obtained access token for a specific scope, or <code>null</code> if no tokens were previously obtained
  for the given scope.
  
  @param scope The scope of the requested token.
+ 
+ @deprecated in version 7.0, use [WLAuthorizationManager cachedAuthorizationHeader] instead.
  */
-- (NSString*) lastAccessTokenForScope:(NSString*)scope;
+- (NSString*) lastAccessTokenForScope:(NSString*)scope __attribute__((deprecated("Use [WLAuthorizationManager cachedAuthorizationHeader] instead")));
 
 /**
  Obtains an oauth 2.0 access token from the IBM MobileFirst Platform server. The token is required in order to send a request
@@ -404,8 +447,11 @@ extern NSMutableDictionary *piggyBackData;
  @param delegate  - WLDelegate. Implements the callback methods onSuccess and onFailure.
  
  @exception NSException raised if scope or delegate are nil. 
+ 
+ @deprecated in version 7.0, use [WLAuthorizationManager obtainAuthorizationHeaderForScope] instead.
  */
-- (void) obtainAccessTokenForScope:(NSString*)scope withDelegate:(id<WLDelegate>)delegate;
+
+- (void) obtainAccessTokenForScope:(NSString*)scope withDelegate:(id<WLDelegate>)delegate __attribute__((deprecated("Use [WLAuthorizationManager obtainAuthorizationHeaderForScope] instead")));
 
 /**
  Obtains an oauth 2.0 access token from the IBM MobileFirst Platform server. The token is required in order to send a request
@@ -416,12 +462,15 @@ extern NSMutableDictionary *piggyBackData;
  or <code>WL.Client.lastAccessTokenForScope</code> in order to get the last obtained token.
  
  @param delegate  - WLDelegate. Implements the callback methods onSuccess and onFailure.
+ 
  @param options A dictionary for which the following key can contain a value:
  "timeout" - NSNumber. time in miliseconds for this invokeProcedure to wait before failing with WLErrorCodeRequestTimeout
  
  @exception NSException raised if scope or delegate are nil. 
+ 
+ @deprecated in version 7.0, use [WLAuthorizationManager obtainAuthorizationHeaderForScope] instead.
  */
-- (void) obtainAccessTokenForScope:(NSString*)scope withDelegate:(id<WLDelegate>)delegate options:(NSDictionary*) options;
+- (void) obtainAccessTokenForScope:(NSString*)scope withDelegate:(id<WLDelegate>)delegate options:(NSDictionary*) options __attribute__((deprecated("Use [WLAuthorizationManager obtainAuthorizationHeaderForScope] instead")));
 
 /**
  Determines whether an access token is requested by the server, and returns the required scope, or
@@ -429,8 +478,10 @@ extern NSMutableDictionary *piggyBackData;
  
  @param status The status code of the response.
  @param authenticationHeader The value of the <code>WWW-Authenticate</code> header of the response.
+ 
+ @deprecated in version 7.0
  */
-- (NSString*) getRequiredAccessTokenScopeFromStatus:(int)status authenticationHeader:(NSString*)authHeader;
+- (NSString*) getRequiredAccessTokenScopeFromStatus:(int)status authenticationHeader:(NSString*)authHeader __attribute__((deprecated));
 
 /**
  * This method logs out of a specific realm. It is an asynchronous function.
@@ -443,5 +494,10 @@ extern NSMutableDictionary *piggyBackData;
  * @param options - in this dictionary - the user puts the key "timeout" (milliseconds)
 **/
 - (void) logout:(NSString *) realmName withDelegate:(id <WLDelegate>)delegate options:(NSDictionary *)options;
+
+/**
+ * Specifies default request time out.
+ */
+@property (readwrite) NSTimeInterval defaultRequestTimeoutInterval;
 
 @end

@@ -85,6 +85,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		92DB4F3A1A67293100AFA6A9 /* WLUserCertAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLUserCertAuth.h; sourceTree = "<group>"; };
+		D4F36DA41A21DDEB0007264C /* WLAuthorizationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAuthorizationManager.h; sourceTree = "<group>"; };
+		ED530F3F1A1E0D8700FCC82C /* WLResourceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLResourceRequest.h; sourceTree = "<group>"; };
 		188F367517D5C74F00C50D85 /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-29.png"; path = "Resources/Icon-29.png"; sourceTree = "<group>"; };
 		188F367617D5C74F00C50D85 /* Icon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-29@2x.png"; path = "Resources/Icon-29@2x.png"; sourceTree = "<group>"; };
 		188F367717D5C74F00C50D85 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40.png"; path = "Resources/Icon-40.png"; sourceTree = "<group>"; };
@@ -404,6 +407,9 @@
 		9C3102AD14E1804D006D8917 /* Worklight-Include */ = {
 			isa = PBXGroup;
 			children = (
+				92DB4F3A1A67293100AFA6A9 /* WLUserCertAuth.h */,
+				D4F36DA41A21DDEB0007264C /* WLAuthorizationManager.h */,
+				ED530F3F1A1E0D8700FCC82C /* WLResourceRequest.h */,
 				E02B5C761924F650000395CD /* OCLoggerMacros.h */,
 				9615686B18224B16007E7B10 /* OCLogger.h */,
 				5E0FF50418266D8200725BDA /* WLCallbackFactory.h */,

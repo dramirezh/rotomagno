@@ -11,7 +11,8 @@ function detallesProducto(pCarac, pDer, pImagen, pIzq, pMarca, pModelo, pProduct
 	$("#lblProveedor").text(pProveedor);
 	$("#lblAnios").text(pAnios);
 	$("#lblUbicacion").text(pUbicacion);
-	
+	$("#cartNameProd").text(pProducto+' '+pModelo+' '+pMarca+' '+pAnios);
+	$("#cartImage").attr("src",pImagen);
 	location.href="#pge_details";
 }
 
@@ -21,3 +22,14 @@ function openImage(pImagen){
 	$('#divPopupImg').html('<img class="popphoto" src="' + url + '" style="width:100%; height:100%; max-height:512px;">');
 	$('#popupImg').popup('open');
 }
+
+
+$('txtSearch').text(value);
+
+
+
+
+
+
+
+

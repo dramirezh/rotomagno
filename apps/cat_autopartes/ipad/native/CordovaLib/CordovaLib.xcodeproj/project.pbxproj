@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48076FC01A5BF818006D67BD /* CDVAvailabilityDeprecated.h in Headers */ = {isa = PBXBuildFile; fileRef = 48076FBF1A5BF818006D67BD /* CDVAvailabilityDeprecated.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48E1AAAA1900E3DA00F99781 /* CDV.h in Headers */ = {isa = PBXBuildFile; fileRef = 48E1AA7D1900E3DA00F99781 /* CDV.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48E1AAAB1900E3DA00F99781 /* CDVAvailability.h in Headers */ = {isa = PBXBuildFile; fileRef = 48E1AA7E1900E3DA00F99781 /* CDVAvailability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48E1AAAC1900E3DA00F99781 /* CDVCommandDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 48E1AA7F1900E3DA00F99781 /* CDVCommandDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -104,6 +105,7 @@
 
 /* Begin PBXFileReference section */
 		30325A0B136B343700982B63 /* VERSION */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
+		48076FBF1A5BF818006D67BD /* CDVAvailabilityDeprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVAvailabilityDeprecated.h; sourceTree = "<group>"; };
 		48E1AA7D1900E3DA00F99781 /* CDV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDV.h; sourceTree = "<group>"; };
 		48E1AA7E1900E3DA00F99781 /* CDVAvailability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVAvailability.h; sourceTree = "<group>"; };
 		48E1AA7F1900E3DA00F99781 /* CDVCommandDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVCommandDelegate.h; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			children = (
 				48E1AA7D1900E3DA00F99781 /* CDV.h */,
 				48E1AA7E1900E3DA00F99781 /* CDVAvailability.h */,
+				48076FBF1A5BF818006D67BD /* CDVAvailabilityDeprecated.h */,
 				48E1AA7F1900E3DA00F99781 /* CDVCommandDelegate.h */,
 				48E1AA801900E3DA00F99781 /* CDVCommandDelegateImpl.h */,
 				48E1AA811900E3DA00F99781 /* CDVCommandDelegateImpl.m */,
@@ -400,6 +403,7 @@
 				48E1AAD31900E3DA00F99781 /* NSMutableArray+QueueAdditions.h in Headers */,
 				48E1AABA1900E3DA00F99781 /* CDVPlugin.h in Headers */,
 				48E1AB1B1900E6F300F99781 /* CDVExif.h in Headers */,
+				48076FC01A5BF818006D67BD /* CDVAvailabilityDeprecated.h in Headers */,
 				48E1AB321900E6F300F99781 /* CDVSplashScreen.h in Headers */,
 				48E1AABC1900E3DA00F99781 /* CDVPluginResult.h in Headers */,
 				48E1AB1E1900E6F300F99781 /* CDVFileTransfer.h in Headers */,

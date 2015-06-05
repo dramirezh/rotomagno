@@ -27,8 +27,8 @@
    "APP_VERSION": "1.0",
    "ENVIRONMENT": "android",
    "LOGIN_DISPLAY_TYPE": "embedded",
-   "WORKLIGHT_NATIVE_VERSION": "3651297487",
-   "WORKLIGHT_PLATFORM_VERSION": "6.3.0.0",
+   "WORKLIGHT_NATIVE_VERSION": "3004445378",
+   "WORKLIGHT_PLATFORM_VERSION": "7.0.0.0",
    "WORKLIGHT_ROOT_URL": "\/apps\/services\/api\/cat_autopartes\/android\/"
 };
 </script>
@@ -54,5 +54,26 @@
 			<script src="js/controllers/MMASelect.js"></script>
 			<script src="js/controllers/familias.js"></script>
 			<script src="js/controllers/productos.js"></script>
+			<script src="js/simpleCart.js"></script>
+			<script>
+									    		simpleCart({
+    cartColumns: [
+{ view: function(item, column){
+      return"<img src='"+item.get('thumb')+"'   width='100' height='100'>";
+   },
+  attr: 'image' },
+        { attr: "name" , label: "" } ,
+        { attr: "quantity" , label: "" } ,
+        { view: "remove" , text: "Remove" , label: false }
+    ]
+});
+			</script>
+			<script>     		simpleCart({
+    			checkout: {
+    				type: "PayPal";
+    				email: "girlswithglasses.slur@hotmail.com";
+    			}
+    		});
+    		</script>
     </body>
 </html>

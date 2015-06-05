@@ -20,10 +20,10 @@
  * @ingroup main
  *
  * This class contains the result of a procedure invocation. IBM MobileFirst Platform passes this class as an argument to the
- * delegate methods of WLClient invokeProcedure methods.
+ * delegate methods of <code>WLClient</code> <code>invokeProcedure</code> methods.
  */
 @interface WLResponse : NSObject {
-	int status;
+	NSInteger status;
 	WLProcedureInvocationResult *invocationResult;
 	NSObject *invocationContext;
 	NSString *responseText;
@@ -35,23 +35,41 @@
 @property (nonatomic) int status;
 
 /**
- * The response data from the server.
+ * Response data from the server.
  */
 @property (nonatomic, strong) WLProcedureInvocationResult *invocationResult;
 
 /**
- * The invocation context object passed when calling invokeProcedure.
+ * Invocation context object passed when calling <code>invokeProcedure</code>.
  */
 @property (nonatomic, strong) NSObject *invocationContext;
 
 /**
- * The original response text from the server.
+ * Original response text from the server.
  */
 @property (nonatomic, strong) NSString *responseText;
 
+/**
+ *  Retrieves the headers from the response.
+ */
+@property (nonatomic, strong) NSDictionary* headers;
 
 /**
- * This method returns the value NSDictionary in case the response is a JSON response, otherwise it returns the value nil. NSDictionary represents the root of the JSON object.
+ * Original response data from the server.
+ */
+@property (readonly) NSData* responseData;
+
+/**
+ * Returns the value <code>NSDictionary</code> in case the response is a JSON response, otherwise it returns the value nil.
+ */
+@property (readonly) NSDictionary * responseJSON;
+
+/**
+ * Returns the value <code>NSDictionary</code> in case the response is a JSON response, otherwise it returns the value nil. 
+ *
+ * @param NSDictionary Root of the JSON object
+ *
+ * @deprecated This method is deprecated. Use the {@link responseJson} property instead.
  *
  **/
 -(NSDictionary *)getResponseJson;

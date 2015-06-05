@@ -11,6 +11,8 @@
  IBM MobileFirst Platform Security Utilities.
  @since IBM Worklight V6.2.0
  */
+
+extern NSString * const WLClientErrorDomain;
 @interface WLSecurityUtils : NSObject
 
 /**

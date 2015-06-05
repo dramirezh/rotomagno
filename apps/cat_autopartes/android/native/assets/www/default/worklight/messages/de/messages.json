@@ -40,7 +40,7 @@
 "downloadAppWebResourcesSkinIsNotValid" : "Die App-Ressourcen können nicht heruntergeladen werden. Die Oberfläche {0} ist nicht vorhanden. Stellen Sie sicher, dass getSkinName() eine gültige Oberfläche ergibt.",
 "downloadAppWebResourcesAppVersionNotExist" : "Anwendung '{0}' {1} für {2} nicht gefunden",
 "deviceAuthenticationFail" : "Konnektivitätsfehler",
-"saveCertificateFailure" : "Das Zertifikat kann nicht in der Schlüsselkette gespeichert werden.",
+"saveCertificateFailure" : "Das Zertifikat kann nicht gespeichert werden.",
 "downloadAppWebResourcesConnectionToServerUnavailable" : "Es ist keine Verbindung zum Server verfügbar. Die Anwendungsressourcen können nicht heruntergeladen werden.",
 "expandWindow" : "Anwendung zur Benutzung einblenden",
 "exit" : "Beenden",
@@ -52,7 +52,7 @@
 "invalidUsernamePassword" : "Ungültiger Benutzername oder ungültiges Kennwort",
 "keepAliveInBackgroundText" : "Anwendung wird im Hintergrund weiter ausgeführt",
 "loading" : "Ladevorgang",
-"login" : "Anmelden",
+"login" : "Anmeldung",
 "minimize" : "Symbolgröße",
 "missingFeatureException" : "{1} konnte nicht aufgerufen werden, weil {0} in der Anwendung fehlt. Fügen Sie {0} zum Anwendungsdeskriptor hinzu. Erstellen und implementieren Sie dann die Anwendung neu.",
 "name" : "Name:",
@@ -70,7 +70,7 @@
 "serverError" : "Fehler beim Prozeduraufruf",
 "tryAgain" : "Erneut versuchen",
 "userInstanceAccessViolationException" : "Sie versuchen, sich bei einer nicht für Sie registrierten Anwendung anzumelden.",
-"unexpectedError" : "Der Server konnte die Anforderung von der Anwendung nicht verarbeiten. Versuchen Sie es später erneut.",
+"unexpectedError" : "Der Server konnte die Anfrage von der Anwendung nicht verarbeiten. Versuchen Sie es später erneut.",
 "unresponsiveHost" : "Der Service ist zurzeit nicht verfügbar.",
 "update" : "Aktualisieren",
 "upgrade" : "Upgrade",
@@ -78,6 +78,8 @@
 "wlclientInitFailure" : "Fehler",
 "wlSettings" : "Einstellungen der Plattform IBM MobileFirst",
 "userEnrollmentUnsupportedOS" : "Fehler bei der Authentifizierung des Benutzerzertifikats. Nicht unterstützte Clientplattform.",
-"failureCallingMethod" : "Fehler beim Aufrufen von {0}"
+"failureCallingMethod" : "Fehler beim Aufrufen von {0}",
+"challengeHandlingCanceled" : "Die Abfrage-Handler-Operation wurde abgebrochen. ",
+"unsupportedEnvironment" : "Nicht unterstützte Umgebung"
 }
 

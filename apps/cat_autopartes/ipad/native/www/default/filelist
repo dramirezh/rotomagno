@@ -208,6 +208,7 @@
 /css/styles.css
 /css/swiper.min.css
 /filelist
+/images/cclogos.gif
 /images/general/autos/compacto/atras.jpg
 /images/general/autos/compacto/frente.jpg
 /images/general/autos/compacto/inicio.png
@@ -248,6 +249,7 @@
 /images/general/marcas/toyotaLogo.png
 /images/general/marcas/vwLogo.png
 /images/icon.png
+/images/PP_Logo.png
 /images/thumbnail.png
 /index.html
 /js/controllers/familias.js
@@ -265,10 +267,12 @@
 /js/main.js
 /js/messages.js
 /js/restHelper.js
+/js/simpleCart.js
 /js/swiper.jquery.min.js
 /js/swiper.min.js
 /pages/detalles.html
 /pages/familias.html
+/pages/general/Cart.html
 /pages/general/header.html
 /pages/general/left_panel.html
 /pages/general/popup.html

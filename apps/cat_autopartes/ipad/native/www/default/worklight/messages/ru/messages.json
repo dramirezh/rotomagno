@@ -40,7 +40,7 @@
 "downloadAppWebResourcesSkinIsNotValid" : "Невозможно загрузить ресурсы приложения. оболочка {0} не существует. Убедитесь, что getSkinName() преобразуется в правильную оболочку.",
 "downloadAppWebResourcesAppVersionNotExist" : "Не найдено приложение '{0}' {1} для {2}",
 "deviceAuthenticationFail" : "Ошибка соединения",
-"saveCertificateFailure" : "Не удалось сохранить сертификат в цепочке ключей",
+"saveCertificateFailure" : "Не удалось сохранить сертификат",
 "downloadAppWebResourcesConnectionToServerUnavailable" : "Соединение с сервером недоступно. Невозможно загрузить ресурсы приложения.",
 "expandWindow" : "Разверните приложение для работы с ним",
 "exit" : "Выход",
@@ -78,6 +78,8 @@
 "wlclientInitFailure" : "Ошибка",
 "wlSettings" : "Параметры платформы IBM MobileFirst",
 "userEnrollmentUnsupportedOS" : "Ошибка сертификата пользователя: неподдерживаемая платформа клиента.",
-"failureCallingMethod" : "Ошибка вызова {0}"
+"failureCallingMethod" : "Ошибка вызова {0}",
+"challengeHandlingCanceled" : "Операция обработчика вызовов была отменена.",
+"unsupportedEnvironment" : "Неподдерживаемая среда"
 }
 

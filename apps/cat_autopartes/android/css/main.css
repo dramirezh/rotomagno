@@ -1,3 +1,6 @@
 
 /* this CSS file extends the application CSS file found under common\css */
 
+.ui-popup-container {
+    -webkit-transform:translateZ(0)
+}

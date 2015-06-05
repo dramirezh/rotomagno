@@ -40,7 +40,7 @@
 "downloadAppWebResourcesSkinIsNotValid" : "Cannot download app resources. skin: {0} does not exist. Please make sure getSkinName() resolves to a valid skin.",
 "downloadAppWebResourcesAppVersionNotExist" : "Cannot find application '{0}' {1} for {2}",
 "deviceAuthenticationFail" : "Connectivity Error",
-"saveCertificateFailure" : "Unable to save certificate to key chain",
+"saveCertificateFailure" : "Unable to save certificate",
 "downloadAppWebResourcesConnectionToServerUnavailable" : "A connection to the server is not available. Cannot download application resources.",
 "expandWindow" : "Expand application to use it",
 "exit" : "Exit",
@@ -78,5 +78,7 @@
 "wlclientInitFailure" : "Error",
 "wlSettings" : "IBM MobileFirst Platform Settings",
 "userEnrollmentUnsupportedOS" : "User certificate authentication failure: unsupported client platform.",
-"failureCallingMethod" : "Failure calling {0}"
+"failureCallingMethod" : "Failure calling {0}",
+"challengeHandlingCanceled" : "Challenge handler operation was cancelled.",
+"unsupportedEnvironment" : "Unsupported environment"
 }

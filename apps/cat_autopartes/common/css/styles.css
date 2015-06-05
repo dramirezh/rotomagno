@@ -75,3 +75,7 @@ body {
 	}
 
 }
+/*en android los popup salen detras de todos los elementos ya creados. Esta linea es para evitar la anomalia en android 4.0*/
+.ui-popup-container {
+    -webkit-transform:translateZ(0)
+}

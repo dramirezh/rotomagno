@@ -80,7 +80,10 @@ module.exports = [
     },
     {
         "file": "plugins/org.apache.cordova.contacts/www/ContactFieldType.js",
-        "id": "org.apache.cordova.contacts.ContactFieldType"
+        "id": "org.apache.cordova.contacts.ContactFieldType",
+        "merges": [
+                   ""
+         ]
     },
     {
         "file": "plugins/org.apache.cordova.contacts/www/ContactFindOptions.js",
@@ -436,7 +439,8 @@ module.exports = [
         "file": "plugins/org.apache.cordova.vibration/www/vibration.js",
         "id": "org.apache.cordova.vibration.notification",
         "merges": [
-            "navigator.notification"
+            "navigator.notification",
+            "navigator"
         ]
     }
 ]

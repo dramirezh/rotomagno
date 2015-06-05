@@ -1,11 +1,12 @@
 /*
  *  Licensed Materials - Property of IBM
- *  5725-I43 (C) Copyright IBM Corp. 2011, 2013. All Rights Reserved.
+ *  5725-I43 (C) Copyright IBM Corp. 2011, 2015. All Rights Reserved.
  *  US Government Users Restricted Rights - Use, duplication or
  *  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
  */
 
 #import <Foundation/Foundation.h>
+#import "WLDelegate.h"
 
 typedef enum {
     OCLogger_TRACE = 600,
@@ -153,6 +154,14 @@ typedef enum {
 +(void) send;
 
 /**
+ This method is the same as send, with the addition of a delegate that is notified when the send request succeeds or fails.
+ @param userSendLogsDelegate WLDelegate that handles the result of the send request with the onSuccess and onFailure methods.
+ @see send
+ @since IBM MobileFirst Platform V7.0.0
+ */
++(void) sendWithDelegate:(id<WLDelegate>)userSendLogsDelegate;
+
+/**
  This method sends the log file when the log buffer exists, the log is not empty, and an uncaught exception occurred.
  @since IBM Worklight V6.2.0
  */
@@ -235,5 +244,16 @@ typedef enum {
  @since IBM Worklight V6.2.0
  */
 +(BOOL) isUnCaughtExceptionDetected;
+
+/**
+ Logs a message at a specific OCLogType log level with string replacement using arguments passed.
+ This method also attaches a dictionary of user information to the log message that is available when logs are persisted and sent to the server.
+ @param level OCLogType log level used
+ @param message String Message logged
+ @param arguments va_list Arguments used for string replacements in the message parameter
+ @param userInfo NSDictionary Additional data appended to the log message
+ @since IBM Worklight V6.4.0
+ */
+-(void) logWithLevel:(OCLogType)level message:(NSString*) message args:(va_list) arguments userInfo:(NSDictionary*) userInfo;
 
 @end

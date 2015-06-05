@@ -22,7 +22,8 @@ typedef enum {
     WLErrorCodeRequestTimeout,
     WLErrorCodeProcedureError,
 	WLErrorCodeApplicationVersionDenied,
-	WLErrorCodeApplicationVersionNotify
+	WLErrorCodeApplicationVersionNotify,
+    WLErrorCodeSubmitFailure
 } WLErrorCode;
 
 /**

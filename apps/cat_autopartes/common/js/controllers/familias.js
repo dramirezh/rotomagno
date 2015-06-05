@@ -15,6 +15,7 @@ function selectFamilia(pFamilia){
 			if(value.id == '#divHu') width = "20%"; else width = "40%";
 			$('#divFamiliaImage').html('<img src="' + value.image + '" width="' + width  + '" />');
 			$('#lblFamilia').text(value.mercado);
+			
 		}
 	});
 	

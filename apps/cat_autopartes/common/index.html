@@ -24,6 +24,7 @@
     		<script src="js/layout.js"></script>
     		<script src="js/jquery-1.11.2.js"></script>
 			<script src="js/jquery.mobile-1.4.5.js"></script>
+			
 			<script src="js/doneTyping.js"></script>
 			<script src="js/JSonStore/jsonStoreHelper.js"></script>
 			<script src="js/Defiant.min.js"></script>
@@ -32,6 +33,29 @@
 			<script src="js/controllers/MMASelect.js"></script>
 			<script src="js/controllers/familias.js"></script>
 			<script src="js/controllers/productos.js"></script>
+			<script src="js/simpleCart.js"></script>
+			<script>
+									    		simpleCart({
+    cartColumns: [
+{ view: function(item, column){
+      return"<img src='"+item.get('thumb')+"'   width='100' height='100'>";
+   },
+  attr: 'image' },
+        { attr: "name" , label: "" } ,
+        { attr: "quantity" , label: "" } ,
+        { view: "remove" , text: "Remove" , label: false }
+    ]
+});
+			</script>
 			
+			<script>     		simpleCart({
+    			checkout: {
+    				type: "PayPal";
+    				email: "girlswithglasses.slur@hotmail.com";
+    			}
+    		});
+    		
+
+    		</script>
     	</body>
 </html>

@@ -83,6 +83,4 @@ cordova.define("org.apache.cordova.device.DeviceProxy", function(require, export
 	};
 
 	require("cordova/exec/proxy").add("Device", module.exports);
-
-
 });

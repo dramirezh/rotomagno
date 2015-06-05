@@ -40,7 +40,7 @@
 "downloadAppWebResourcesSkinIsNotValid" : "애플리케이션 자원을 다운로드할 수 없습니다. {0} 스킨이 존재하지 않습니다. getSkinName()이 올바른 스킨에 해석되는지 확인하십시오.",
 "downloadAppWebResourcesAppVersionNotExist" : "{2}용 '{0}' {1} 애플리케이션을 찾을 수 없습니다. ",
 "deviceAuthenticationFail" : "연결성 오류",
-"saveCertificateFailure" : "키 체인에 인증서를 저장할 수 없습니다.",
+"saveCertificateFailure" : "인증서를 저장할 수 없습니다.",
 "downloadAppWebResourcesConnectionToServerUnavailable" : "서버에 연결할 수 없습니다. 애플리케이션 자원을 다운로드할 수 없습니다.",
 "expandWindow" : "사용할 애플리케이션 펼치기",
 "exit" : "종료",
@@ -78,6 +78,8 @@
 "wlclientInitFailure" : "오류",
 "wlSettings" : "IBM MobileFirst Platform 설정",
 "userEnrollmentUnsupportedOS" : "사용자 인증 실패: 지원되지 않는 클라이언트 플랫폼",
-"failureCallingMethod" : "{0} 호출 실패"
+"failureCallingMethod" : "{0} 호출 실패",
+"challengeHandlingCanceled" : "인증 확인 핸들러 조작이 취소되었습니다.",
+"unsupportedEnvironment" : "지원되지 않는 환경"
 }
 

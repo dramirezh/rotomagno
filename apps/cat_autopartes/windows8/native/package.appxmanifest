@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="6d7dda54-9b50-4942-8d37-9b4a995a0426" Version="1.0.0.0" Publisher="CN=application's author" />
+  <Identity Name="6d7dda54-9b50-4942-8d37-9b4a995a0426" Publisher="CN=application's author" Version="1.0.0.0"/>
   <Properties>
     <DisplayName>cat_autopartes</DisplayName>
     <PublisherDisplayName>application's author</PublisherDisplayName>
@@ -11,18 +11,18 @@
     <OSMaxVersionTested>6.2.0</OSMaxVersionTested>
   </Prerequisites>
   <Resources>
-    <Resource Language="x-generate" />
+    <Resource Language="x-generate"/>
   </Resources>
   <Applications>
     <Application Id="App" StartPage="www\default\index.html">
-      <VisualElements DisplayName="cat_autopartes" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="cat_autopartes" ForegroundText="light" BackgroundColor="#003f69">
-        <DefaultTile ShowName="allLogos" />
-        <SplashScreen Image="images\splashscreen.png" />
+      <VisualElements BackgroundColor="#003f69" Description="cat_autopartes" DisplayName="cat_autopartes" ForegroundText="light" Logo="images\logo.png" SmallLogo="images\smalllogo.png" ToastCapable="true">
+        <DefaultTile ShowName="allLogos"/>
+        <SplashScreen Image="images\splashscreen.png"/>
       </VisualElements>
     </Application>
   </Applications>
   <Capabilities>
-  	<Capability Name="privateNetworkClientServer" />
-    <Capability Name="internetClient" />
+  	<Capability Name="privateNetworkClientServer"/>
+    <Capability Name="internetClient"/>
   </Capabilities>
 </Package>

@@ -19,8 +19,10 @@
  * @ingroup main
  * 
  * This class holds all data necessary for invoking a procedure, including:
- * 1) The name of the adapter and procedure to invoke
- * 2) Parameters required by the procedure
+ * <ul>
+ * <li>The name of the adapter and procedure to invoke
+ * <li>Parameters required by the procedure
+ * </ul>
  */
 @interface WLProcedureInvocationData : NSObject {
 	@private NSString *adapter;
@@ -33,12 +35,12 @@
 
 /** Sets the procedure parameters
 * <p>
-* Example: 
-* <code>
+* Example <br>
+* <pre>
 * WLProcedureInvocationData  *data = [WLProcedureInvocationData ......];
 * NSArray *myParams = [NSArray arrayWithObjects:param1, param2, param3, nil];
 * [data setParameters:myParams];
-* </code>
+* </pre>
 */
 // The Array should contain Objects that can be parsed via JSON. NSString and NSNumber work best.
 // For Boolean values, use [NSNumber numberWithBool:]
@@ -50,24 +52,26 @@
 
 // Initializes with the adapter name and the procedure name.
 /**
- * This method initializes with the adapter name and the procedure name.
+ * Initializes with the adapter name and the procedure name.
  *
- * @param adapter The name of the adapter.
- * @param procedureName The name of the adapter procedure.
+ * @param adapter Adapter name
+ * @param procedureName Adapter procedure name
  **/
 -(id)initWithAdapterName:(NSString *)adapter procedureName:(NSString *)procedure;
 
 /**
- * This method initializes with the adapter name and the procedure name.
+ * Initializes with the adapter name and the procedure name.
  *
- * @param theAdapter The name of the adapter.
- * @param theProcedure The name of the adapter procedure.
- * @param compressResponse Specifies whether or not the response from the server must be compressed.
+ * @param theAdapter Adapter name
+ * @param theProcedure Adapter procedure name
+ * @param compressResponse Specifies whether or not the response from the server must be compressed
  **/
 -(id)initWithAdapterName:(NSString *)theAdapter procedureName:(NSString *)theProcedure compressResponse:(BOOL)isCompressResponse;
 
 /**
- * This method specifies whether or not the responses from the server must be compressed. The default value is false.
+ * Specifies whether or not the responses from the server must be compressed. 
+ *
+ * The default value is false.
  *
  * @param isCompressResponse Specifies whether or not the response from the server must be compressed.
  **/

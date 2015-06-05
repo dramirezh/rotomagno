@@ -1010,297 +1010,295 @@ WLJSX.Object.extend(Function.prototype, (function() {
  */
 
 /*
-* Licensed Materials - Property of IBM
-* 5725-I43 (C) Copyright IBM Corp. 2006, 2013. All Rights Reserved.
-* US Government Users Restricted Rights - Use, duplication or
-* disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-*/
+ * Licensed Materials - Property of IBM
+ * 5725-I43 (C) Copyright IBM Corp. 2006, 2013. All Rights Reserved.
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
 
 window.WLJSX.Ajax = {
-	getTransport: function() {
-		var tr = null; 
-		try {
-			tr = new XMLHttpRequest();
+  getTransport: function() {
+    var tr = null;
+    try {
+      tr = new XMLHttpRequest();
 			if (tr == null) tr = new ActiveXObject('Msxml2.XMLHTTP');
 			if (tr == null) tr = new ActiveXObject('Microsoft.XMLHTTP');
-		} catch (e){}
-		
-		return tr;
-	}
+    } catch (e) {}
+
+    return tr;
+  }
 };
 
 window.WLJSX.Ajax.Request = WLJSX.Class.create({
-	_complete: false,
+  _complete: false,
 
-	initialize: function(url, options) {
-		this.options = {
-				method:       'post',
-				asynchronous: true,
-				contentType:  'application/x-www-form-urlencoded',
-				encoding:     'UTF-8',
-				parameters:   '',
-				evalJSON:     true,
-				evalJS:       true
-			};
-		WLJSX.Object.extend(this.options, options || { });
+  initialize: function(url, options) {
+    this.options = {
+      method: 'post',
+      asynchronous: true,
+      contentType: 'application/x-www-form-urlencoded',
+      encoding: 'UTF-8',
+      parameters: '',
+      evalJSON: true,
+      evalJS: true
+    };
+    WLJSX.Object.extend(this.options, options || {});
 
-		this.options.method = this.options.method.toLowerCase();
-		this.transport = window.WLJSX.Ajax.getTransport();
-		
-		if (WL.EnvProfile.isEnabled(WL.EPField.SUPPORT_WL_NATIVE_XHR)){
-			this.transport.timeout = options.timeout || 60 * 1000;
-		}
-		
-		this.request(url);
-	},
+    this.options.method = this.options.method.toLowerCase();
+    this.transport = window.WLJSX.Ajax.getTransport();
 
-	request: function(url) {
-		this.url = url;
-		this.method = this.options.method;
-		var params = WLJSX.Object.isString(this.options.parameters) ?
-				this.options.parameters : WLJSX.Object.toQueryString(this.options.parameters);
+    if (WL.EnvProfile.isEnabled(WL.EPField.SUPPORT_WL_NATIVE_XHR)) {
+      this.transport.timeout = options.timeout || 60 * 1000;
+    }
 
-		if (this.method !== 'get' && this.method !== 'post') {
+    this.request(url);
+  },
+
+  request: function(url) {
+    this.url = url;
+    this.method = this.options.method;
+    var params = WLJSX.Object.isString(this.options.parameters) ?
+      this.options.parameters : WLJSX.Object.toQueryString(this.options.parameters);
+
+    if (this.method !== 'get' && this.method !== 'post') {
 			params += (params ? '&' : '') + "_method=" + this.method;
-			this.method = 'post';
-		}
+      this.method = 'post';
+    }
 
-		if (params && this.method === 'get') {
-			
-			this.url += ((this.url.indexOf('?') > -1) ? '&' : '?') + params;
-		}
+    if (params && this.method === 'get') {
 
-		if(!this.options.skipQueryParam){
-			this.parameters = WLJSX.String.toQueryParams(params);
-		}
+      this.url += ((this.url.indexOf('?') > -1) ? '&' : '?') + params;
+    }
 
-		try {
-			var response = new window.WLJSX.Ajax.Response(this);
+    if (!this.options.skipQueryParam) {
+      this.parameters = WLJSX.String.toQueryParams(params);
+    }
+
+    try {
+      var response = new window.WLJSX.Ajax.Response(this);
 			if (this.options.onCreate) this.options.onCreate(response);
 
-			this.transport.open(this.method.toUpperCase(), this.url, this.options.asynchronous);
+      this.transport.open(this.method.toUpperCase(), this.url, this.options.asynchronous);
 
 			if (this.options.asynchronous) this.respondToReadyState.bind(this).defer(1);
 
-			this.transport.onreadystatechange = this.onStateChange.bind(this);
-			this.setRequestHeaders();
-			
-			WL.Analytics._logOutboundRequest(this.url, this.trackingId);
+      this.transport.onreadystatechange = this.onStateChange.bind(this);
+      this.setRequestHeaders();
 
-			this.body = this.method == 'post' ? (this.options.postBody || params) : null;
-			this.transport.send(this.body);
+      WL.Analytics._logOutboundRequest(this.url, this.trackingId);
 
-		      /* Force Firefox to handle ready state 4 for synchronous requests */
+      this.body = this.method == 'post' ? (this.options.postBody || params) : null;
+      this.transport.send(this.body);
+
+      /* Force Firefox to handle ready state 4 for synchronous requests */
 			if (!this.options.asynchronous && this.transport.overrideMimeType)
-				this.onStateChange();
-
-		}
+        this.onStateChange();
+      }
 		catch (e) {
-			this.dispatchException(e);
-		}
-	},
+      this.dispatchException(e);
+    }
+  },
 
-	onStateChange: function() {
-		var readyState = this.transport.readyState;
+  onStateChange: function() {
+    var readyState = this.transport.readyState;
 		if (readyState > 1 && !((readyState == 4) && this._complete))
-			this.respondToReadyState(this.transport.readyState);
-	},
-	
-	setRequestHeaders: function() {	
-		var headers = {
-			'X-Requested-With': 'XMLHttpRequest',
-			'Accept': 'text/javascript, text/html, application/xml, text/xml, */*',
-			'Accept-Language' : WL.App.getDeviceLocale()
-		};
-		
-		this.trackingId = WL.Analytics._getTrackingId();
+      this.respondToReadyState(this.transport.readyState);
+  },
+
+  setRequestHeaders: function() {
+    var headers = {
+      'X-Requested-With': 'XMLHttpRequest',
+      'Accept': 'text/javascript, text/html, application/xml, text/xml, */*',
+      'Accept-Language': WL.App.getDeviceLocale()
+    };
+
+    this.trackingId = WL.Analytics._getTrackingId();
 		if(this.trackingId != null){
 			headers['x-wl-analytics-tracking-id'] = this.trackingId
-		}
-		
-		if (this.method == 'post') {
-			headers['Content-type'] = this.options.contentType + (this.options.encoding ? '; charset=' + this.options.encoding : '');
+    }
 
-		      /* Force "Connection: close" for older Mozilla browsers to work
-		       * around a bug where XMLHttpRequest sends an incorrect
-		       * Content-length header. See Mozilla Bugzilla #246651.
-		       */
+    if (this.method == 'post') {
+      headers['Content-type'] = this.options.contentType + (this.options.encoding ? '; charset=' + this.options.encoding : '');
+
+      /* Force "Connection: close" for older Mozilla browsers to work
+       * around a bug where XMLHttpRequest sends an incorrect
+       * Content-length header. See Mozilla Bugzilla #246651.
+       */
 			if (this.transport.overrideMimeType && (navigator.userAgent.match(/Gecko\/(\d{4})/) || [0,2005])[1] < 2005)
-		            headers['Connection'] = 'close';
-		}
+        headers['Connection'] = 'close';
+      }
 
-		if (typeof this.options.requestHeaders == 'object') {
-			var extras = this.options.requestHeaders;
+    if (typeof this.options.requestHeaders == 'object') {
+      var extras = this.options.requestHeaders;
 
 			if (WLJSX.Object.isFunction(extras.push))
 				for (var i = 0, length = extras.length; i < length; i += 2)
-					headers[extras[i]] = extras[i+1];
+          headers[extras[i]] = extras[i + 1];
 			else
 				for (key in extras){
-					var value = extras[key];
+          var value = extras[key];
 					headers[key] = (value == null || typeof(value) == 'undefined') ? "" : value;
-				}
-		}
+        }
+      }
 
 		for (var name in headers)
-			this.transport.setRequestHeader(name, headers[name]);
-	},
+      this.transport.setRequestHeader(name, headers[name]);
+  },
 
-	success: function() {
-		var status = this.getStatus();
+  success: function() {
+    var status = this.getStatus();
 		if (status == 0 && this.isSameOrigin() == false) {
-			return false;
-		}
-		return !status || (status >= 200 && status < 300) || status == 304;
-	},
+      return false;
+    }
+    return !status || (status >= 200 && status < 300) || status == 304;
+  },
 
-	getStatus: function() {
-		try {
+  getStatus: function() {
+    try {
 			if (this.transport.status === 1223) return 204;
-			return this.transport.status || 0;
+      return this.transport.status || 0;
 		} catch (e) { return 0; }
-	},
+  },
 
-	respondToReadyState: function(readyState) {
-		var state = window.WLJSX.Ajax.Request.Events[readyState], 
-			response = new window.WLJSX.Ajax.Response(this);
+  respondToReadyState: function(readyState) {
+    var state = window.WLJSX.Ajax.Request.Events[readyState],
+      response = new window.WLJSX.Ajax.Response(this);
 
-		if (state == 'Complete') {
-			try {
-				this._complete = true;
+    if (state == 'Complete') {
+      try {
+        this._complete = true;
 				(this.options['on' + response.status]
 				|| this.options['on' + (this.success() ? 'Success' : 'Failure')]
 				|| WLJSX.emptyFunction)(response, response.headerJSON);
-			} catch (e) {
-				this.dispatchException(e);
-			}
+      } catch (e) {
+        this.dispatchException(e);
+      }
 
-			var contentType = response.getHeader('Content-type');
+      var contentType = response.getHeader('Content-type');
 			if (this.options.evalJS == 'force'
 				|| (	this.options.evalJS && 
-						this.isSameOrigin() && 
-						contentType && 
+          this.isSameOrigin() &&
+          contentType &&
 						contentType.match(/^\s*(text|application)\/(x-)?(java|ecma)script(;.*)?\s*$/i)))
-				this.evalResponse();
-		}
+        this.evalResponse();
+      }
 
-		try {
-			(this.options['on' + state] || WLJSX.emptyFunction)(response, response.headerJSON);
-		} catch (e) {
-			this.dispatchException(e);
-		}
+    try {
+      (this.options['on' + state] || WLJSX.emptyFunction)(response, response.headerJSON);
+    } catch (e) {
+      this.dispatchException(e);
+    }
 
-		if (state == 'Complete') {
-			this.transport.onreadystatechange = WLJSX.emptyFunction;
-		}
-	},
+    if (state == 'Complete') {
+      this.transport.onreadystatechange = WLJSX.emptyFunction;
+    }
+  },
 
-	isSameOrigin: function() {
-		var m = this.url.match(/^\s*https?:\/\/[^\/]*/);
-		var url = location.protocol + '//' + document.domain;
+  isSameOrigin: function() {
+    var m = this.url.match(/^\s*https?:\/\/[^\/]*/);
+    var url = location.protocol + '//' + document.domain;
 		if (location.port) url += ':' + location.port;
-		return (!m || (m[0] == url));
-	},
+    return (!m || (m[0] == url));
+  },
 
-	getHeader: function(name) {
-		try {
-			return this.transport.getResponseHeader(name) || null;
+  getHeader: function(name) {
+    try {
+      return this.transport.getResponseHeader(name) || null;
 		} catch (e) { return null; }
-	},
+  },
 
-	evalResponse: function() {
-		try {
-			return eval(WLJSX.String.unfilterJSON(this.transport.responseText || ''));
-		} catch (e) {
-			this.dispatchException(e);
-		}
-	},
+  evalResponse: function() {
+    try {
+      return eval(WLJSX.String.unfilterJSON(this.transport.responseText || ''));
+    } catch (e) {
+      this.dispatchException(e);
+    }
+  },
 
-	dispatchException: function(exception) {
-		(this.options.onException || WLJSX.emptyFunction)(this, exception);
-	}
+  dispatchException: function(exception) {
+    (this.options.onException || WLJSX.emptyFunction)(this, exception);
+  }
 });
 
 window.WLJSX.Ajax.Request.Events = ['Uninitialized', 'Loading', 'Loaded', 'Interactive', 'Complete'];
 
 window.WLJSX.Ajax.Response = WLJSX.Class.create({
-	initialize: function(request){
-		this.request = request;
-		var transport  = this.transport  = request.transport,
-			readyState = this.readyState = transport.readyState;
+  initialize: function(request) {
+    this.request = request;
+    var transport = this.transport = request.transport,
+      readyState = this.readyState = transport.readyState;
 
-		if ((readyState > 2 && !WLJSX.detectBrowser().isIE) || readyState == 4) {
-			this.status       = this.getStatus();
-			this.statusText   = this.getStatusText();
-			this.responseText = WLJSX.String.interpret(transport.responseText);
-			this.headerJSON   = this._getHeaderJSON();
-		}
+    if ((readyState > 2 && !WLJSX.detectBrowser().isIE) || readyState == 4) {
+      this.status = this.getStatus();
+      this.statusText = this.getStatusText();
+      this.responseText = WLJSX.String.interpret(transport.responseText);
+      this.headerJSON = this._getHeaderJSON();
+    }
 
-		if (readyState == 4) {
-			var xml = transport.responseXML;
-			this.responseXML  = WLJSX.Object.isUndefined(xml) ? null : xml;
-			this.responseJSON = this._getResponseJSON();
-			
-			WL.Analytics._logInboundResponse(request, this);
-		}
-	},
+    if (readyState == 4) {
+      var xml = transport.responseXML;
+      this.responseXML = WLJSX.Object.isUndefined(xml) ? null : xml;
+      this.responseJSON = this._getResponseJSON();
 
-	status:      0,
+      WL.Analytics._logInboundResponse(request, this);
+    }
+  },
 
-	statusText: '',
+  status: 0,
 
-	getStatus: window.WLJSX.Ajax.Request.prototype.getStatus,
+  statusText: '',
 
-	getStatusText: function() {
-		try {
-			return this.transport.statusText || '';
+  getStatus: window.WLJSX.Ajax.Request.prototype.getStatus,
+
+  getStatusText: function() {
+    try {
+      return this.transport.statusText || '';
 		} catch (e) { return '' }
-	},
+  },
 
-	getHeader: window.WLJSX.Ajax.Request.prototype.getHeader,
+  getHeader: window.WLJSX.Ajax.Request.prototype.getHeader,
 
-	getAllHeaders: function() {
-		try {
-			return this.getAllResponseHeaders();
+  getAllHeaders: function() {
+    try {
+      return this.getAllResponseHeaders();
 		} catch (e) { return null }
-	},
+  },
 
-	getResponseHeader: function(name) {
-		return this.transport.getResponseHeader(name);
-	},
+  getResponseHeader: function(name) {
+    return this.transport.getResponseHeader(name);
+  },
 
-	getAllResponseHeaders: function() {
-		return this.transport.getAllResponseHeaders();
-	},
+  getAllResponseHeaders: function() {
+    return this.transport.getAllResponseHeaders();
+  },
 
-	_getHeaderJSON: function() {
-		var json = this.getHeader('X-JSON');
+  _getHeaderJSON: function() {
+    var json = this.getHeader('X-JSON');
 		if (!json) return null;
-		json = decodeURIComponent(escape(json));
-		try {
+    json = decodeURIComponent(escape(json));
+    try {
 			return Sting.wl.evalJSON(json, this.request.options.sanitizeJSON || !this.request.isSameOrigin());
-		} catch (e) {
-			this.request.dispatchException(e);
-		}
-	},
+    } catch (e) {
+      this.request.dispatchException(e);
+    }
+  },
 
-	_getResponseJSON: function() {
-		//Assume JSON is returned regardless, and only throw an exception
-		//if we expected JSON and JSON was not returned
-        var options = this.request.options;
-        try {
-            return WLJSX.String.evalJSON(this.responseText, (options.sanitizeJSON || !this.request.isSameOrigin()));
-        } catch (e) {
+  _getResponseJSON: function() {
+    //Assume JSON is returned regardless, and only throw an exception
+    //if we expected JSON and JSON was not returned
+    var options = this.request.options;
+    try {
+      return WLJSX.String.evalJSON(this.responseText, (options.sanitizeJSON || !this.request.isSameOrigin()));
+    } catch (e) {
             if (    !options.evalJSON 
                     || (options.evalJSON != 'force' && (this.getHeader('Content-type') || '').indexOf('application/json') < 0) 
                     || WLJSX.String.isBlank(this.responseText))
-                return null;
+        return null;
             else
-                this.request.dispatchException(e);
-        }
+        this.request.dispatchException(e);
+      }
     }
 });
-
 
 /**
  * ================================================================= 
@@ -1676,66 +1674,7 @@ __WLUtils = function() {
     };
 
     this.wlCheckServerReachability = function() {
-        var isCheckDone = false;
-        // iOS's isReachable does not check a server's availability. Rather, it
-        // merely checks is a socket can be opened.
-        if (typeof navigator.network != "undefined" && navigator.connection.type.toLowerCase() == 'none') {
-            WL.Utils.dispatchWLEvent(__WL.InternalEvents.REACHABILITY_TEST_FAILURE);
-            isCheckDone = true;
-            return;
-        }
-
-        var networkType = navigator.connection.type; 
-        var reachTimeout = 6000; 
-        //WL.Logger.debug("Network type is " + networkType) ;
-        if (networkType == Connection.CELL_2G || networkType == Connection.UNKNOWN || 
-        		networkType == Connection.CELL ){
-        	reachTimeout = 30000; 
-        }
-        //WL.Logger.debug("Reach timeout is " + reachTimeout) ;
-
-        if(WL.EnvProfile.isEnabled(WL.EPField.SUPPORT_WL_SERVER_CHANGE)){
-        	var reachabilityUrl = WL.Client.getAppProperty(WL.AppProp.APP_SERVICES_RELATIVE_URL) + "reach";
-        	
-        	new WLJSX.Ajax.Request(reachabilityUrl, {
-        		method : 'get',
-        		timeout : reachTimeout,
-        		onSuccess : function() {
-        			clearTimeout(timerVar);
-        			isCheckDone = true;
-        			WL.Utils.dispatchWLEvent(__WL.InternalEvents.REACHABILITY_TEST_SUCCESS);
-        		},
-        		onFailure : function(){
-        			clearTimeout(timerVar);
-        			isCheckDone = true;
-        			WL.Utils.dispatchWLEvent(__WL.InternalEvents.REACHABILITY_TEST_FAILURE);
-        		}
-        	});
-        	var timerVar = setTimeout(function() {
-        		if (!isCheckDone) {
-        			WL.Utils.dispatchWLEvent(__WL.InternalEvents.REACHABILITY_TEST_FAILURE);
-        		}
-        	}, reachTimeout);
-        } else {
-        	var reachabilityUrl = WL.Client.getAppProperty(WL.AppProp.APP_SERVICES_URL) + "reach";
-        	var xhr = new XMLHttpRequest();
-        	xhr.open("GET", reachabilityUrl, true);
-        	xhr.onreadystatechange = function() {
-        		if (xhr.readyState == 4 && xhr.status == 200) {
-        			clearTimeout(xhrTimeout);
-        			WL.Utils.dispatchWLEvent(__WL.InternalEvents.REACHABILITY_TEST_SUCCESS);
-        		}
-        	};
-        	
-        	xhr.send("");
-        	
-        	var xhrTimeout = setTimeout(function() {
-        		if (!isCheckDone) {
-        			xhr.abort();
-        			WL.Utils.dispatchWLEvent(__WL.InternalEvents.REACHABILITY_TEST_FAILURE);
-        		}
-        	}, reachTimeout);
-        }
+    	WL.Utils.dispatchWLEvent(__WL.InternalEvents.REACHABILITY_TEST_SUCCESS);        
     };
 
     /**
@@ -1768,7 +1707,9 @@ __WLUtils = function() {
         } else {
         	url = WL.StaticAppProps.WORKLIGHT_BASE_URL + "/dev/appdata?appId=" + appId + "&appVer=" + appVersion + "&appEnv=" + WL.Client.getEnvironment();
         }
-        new WLJSX.Ajax.Request(url, {
+        
+        var requestOptions = {
+        	requestHeaders : {},
         	postBody : "",
             onSuccess : function(response) {
                 // evaluating skinLoader.js content (which defines the
@@ -1825,7 +1766,18 @@ __WLUtils = function() {
                     }
                 }
             }
-        });
+        };
+        
+        if (WL.EnvProfile.isEnabled(WL.EPField.SUPPORT_OAUTH) && typeof(WLAuthorizationManager) !== 'undefined') {	    
+		    WLAuthorizationManager.__addHeadersToWLRequest(requestOptions.requestHeaders)
+			.always(__sendRequest);
+		} else {
+			__sendRequest();
+		}
+        
+        function __sendRequest() {
+        	new WLJSX.Ajax.Request(url, requestOptions);
+        }
     };
 
     /**
@@ -2461,7 +2413,9 @@ var __WLErrorCode = {
     UNSUPPORTED_VERSION : "UNSUPPORTED_VERSION",
     UNSUPPORTED_BROWSER : "UNSUPPORTED_BROWSER",
     DISABLED_COOKIES : "DISABLED_COOKIES",
-    CONNECTION_IN_PROGRESS : "CONNECTION_IN_PROGRESS"
+    CONNECTION_IN_PROGRESS : "CONNECTION_IN_PROGRESS",
+    AUTHORIZATION_FAILURE : "AUTHORIZATION_FAILURE",
+    CHALLENGE_HANDLING_CANCELED : "CHALLENGE_HANDLING_CANCELED"
 };
 __WL.prototype.ErrorCode = __WLErrorCode;
 WL.ErrorCode = __WLErrorCode;
@@ -2501,7 +2455,8 @@ WL.EPField = {
 	    SERVER_ADDRESS_CONFIGURABLE : "SERVER_ADDRESS_CONFIGURABLE",
 	    SUPPORT_WL_USER_PREF : "SUPPORT_WL_USER_PREF",	    
 	    SUPPORT_WL_NATIVE_XHR : "SUPPORT_WL_NATIVE_XHR",
-	    SUPPORT_WL_SERVER_CHANGE :"SUPPORT_WL_SERVER_CHANGE"
+	    SUPPORT_WL_SERVER_CHANGE :"SUPPORT_WL_SERVER_CHANGE",
+	    SUPPORT_OAUTH : "SUPPORT_OAUTH"
 	};
 
 	WL.EnvProfileField = WL.EPField;
@@ -2543,6 +2498,7 @@ WL.EPField = {
 
 	WL.previewProfileData = WLJSX.Object.clone(WL.WebProfileData);
 	WL.previewProfileData[WL.EPField.WEB_BROWSER_ONLY] = true;
+	WL.previewProfileData[WL.EPField.SUPPORT_OAUTH] = true;
 
 	WL.embeddedProfileData = WLJSX.Object.clone(WL.WebProfileData);
 	WL.embeddedProfileData[WL.EPField.WEB_BROWSER_ONLY] = true;
@@ -2569,6 +2525,7 @@ WL.EPField = {
 	WL.iosDeviceProfileData[WL.EPField.SUPPORT_WL_USER_PREF] = true;
 	WL.iosDeviceProfileData[WL.EPField.SUPPORT_WL_NATIVE_XHR] = true;
 	WL.iosDeviceProfileData[WL.EPField.SUPPORT_WL_SERVER_CHANGE] = true;
+	WL.iosDeviceProfileData[WL.EPField.SUPPORT_OAUTH] = true;
 	
 
 	WL.iphoneProfileData = WLJSX.Object.clone(WL.iosDeviceProfileData);
@@ -2592,6 +2549,7 @@ WL.EPField = {
 	WL.androidProfileData[WL.EPField.SUPPORT_WL_USER_PREF] = true;
 	WL.androidProfileData[WL.EPField.SUPPORT_WL_NATIVE_XHR] = true;
 	WL.androidProfileData[WL.EPField.SUPPORT_WL_SERVER_CHANGE] = true;
+	WL.androidProfileData[WL.EPField.SUPPORT_OAUTH] = true;
 
 	WL.blackberryProfileData = WLJSX.Object.clone(WL.MobileProfileData);
 	WL.blackberryProfileData[WL.EPField.MOBILE] = true;
@@ -2615,6 +2573,13 @@ WL.EPField = {
 	WL.windowsphone8ProfileData[WL.EPField.SUPPORT_WL_NATIVE_XHR] = true;
 	WL.windowsphone8ProfileData[WL.EPField.SUPPORT_WL_SERVER_CHANGE] = true;
 	WL.windowsphone8ProfileData[WL.EPField.SERVER_ADDRESS_CONFIGURABLE] = true;
+	WL.windowsphone8ProfileData[WL.EPField.SUPPORT_OAUTH] = true;
+	
+	WL.windows8ProfileData = WLJSX.Object.clone(WL.DesktopProfileData);
+	WL.windows8ProfileData[WL.EPField.SUPPORT_CHALLENGE] = true;
+	WL.windows8ProfileData[WL.EPField.SUPPORT_PUSH] = true;
+	WL.windows8ProfileData[WL.EPField.SUPPORT_WL_NATIVE_XHR] = true;
+	WL.windows8ProfileData[WL.EPField.SUPPORT_OAUTH] = true;
 
 
 /**
@@ -2727,29 +2692,9 @@ __WLSimpleDialog = function() {
             for ( var i = 0; i < buttons.length; i++) {
             	buttonsArray[i] = buttons[i].text;
             }
-            
-            // decide whether the dialog in android should be a modal one 
-            // this funciton contains framework logic that should be refactored out of simpleDialog.show()!!!!
-            function isShowModalDialogInAndroid()
-            {
-            	if (WL.StaticAppProps.ENVIRONMENT != WL.Env.ANDROID) {
-
-            		// this hack is for Android only ...
-            		return false;
-            	}
-            	
-            	// modal dialog in direct update 
-                var isAndroidDirectUpdateModal = (title == WL.ClientMessages.directUpdateNotificationTitle);
-                // if there is a single button which isn't close in remote disable, we should have a modal dialog
-                var isAndroidRemoteDisableModal = (!WL.Client.isShowCloseButtonOnRemoteDisable() && buttons.length == 1 && buttons[0].text.indexOf(WL.ClientMessages.close) == -1);
-
-                var isModal =  (isAndroidDirectUpdateModal || isAndroidRemoteDisableModal);
-                
-                return isModal;
-            }
-            
+                 
             // Check if we should use a modal dialog in Android
-            var isAndroidModalDialog = isShowModalDialogInAndroid();
+            var isAndroidModalDialog = isShowModalDialogInAndroid(title, buttons);
             
             // Use a custom plugin for Android modal Dialogue
             if (isAndroidModalDialog) {
@@ -2806,6 +2751,26 @@ __WLSimpleDialog = function() {
             }
         }
     };
+    
+    // decide whether the dialog in android should be a modal one 
+    // this funciton contains framework logic that should be refactored out of simpleDialog.show()!!!!
+    function isShowModalDialogInAndroid(title, buttons)
+    {
+    	if (WL.StaticAppProps.ENVIRONMENT != WL.Env.ANDROID) {
+
+    		// this hack is for Android only ...
+    		return false;
+    	}
+    	
+    	// modal dialog in direct update 
+        var isAndroidDirectUpdateModal = (title == WL.ClientMessages.directUpdateNotificationTitle);
+        // if there is a single button which isn't close in remote disable, we should have a modal dialog
+        var isAndroidRemoteDisableModal = (!WL.Client.isShowCloseButtonOnRemoteDisable() && buttons.length == 1 && buttons[0].text.indexOf(WL.ClientMessages.close) == -1);
+
+        var isModal =  (isAndroidDirectUpdateModal || isAndroidRemoteDisableModal);
+        
+        return isModal;
+    }
 };
 __WL.prototype.SimpleDialog = new __WLSimpleDialog;
 WL.SimpleDialog = new __WLSimpleDialog;
@@ -3167,14 +3132,74 @@ WLJSX.Ajax.Request.prototype.isSameOrigin = function() {
 
 
 WL.Response = WLJSX.Class.create({
-  invocationContext: null,
-  status: -1,
-  initialize: function(transport, invocationContext) {
-    if (transport !== null && typeof transport.status != "undefined") {
-      this.status = (transport.status || 200);
-    }
-    this.invocationContext = invocationContext;
-  }
+  	invocationContext: null,
+  	status: -1,
+  	errorCode: null,
+  	errorMsg: null,
+	responseText : '',
+	responseJSON : '',
+  	initialize: function(transport, invocationContext) {
+    	if (transport !== null && typeof transport.status != "undefined") {
+    		this.status = (transport.status || 200);
+			this.responseHeaders = {};
+			
+			try {
+				this.responseText = WLJSX.String.interpret(transport.responseText);
+			} catch (e) {
+				
+			}
+			
+  	      	try {
+  	        	this.responseJSON = WLJSX.String.evalJSON(transport.responseText, true);
+  	      	} catch (e) {
+  	          
+  	      	}
+			
+			if (typeof(transport.responseJSON) !== 'undefined' && transport.responseJSON !== null) {
+      			this.errorCode = transport.responseJSON.errorCode;
+      			this.errorMsg = transport.responseJSON.errorMsg;
+			}
+			
+			if (typeof (transport.getAllResponseHeaders) === 'function') {
+				var responseHeadersString = transport.getAllResponseHeaders();
+				if (responseHeadersString !== null && typeof(responseHeadersString) !== 'undefined') {
+					var delimiter = responseHeadersString.indexOf("\r") > -1 ? "\r\n" : "\n";
+					var allHeaders = responseHeadersString.split(delimiter);
+		
+					for (var i = 0; i < allHeaders.length; i++) {
+						var pair = allHeaders[i];
+						var index = pair.indexOf(": ");
+						if (index > 0) {
+							var key = pair.substring(0, index);
+							var value = pair.substring(index + 2);
+							this.responseHeaders[key] = value; 
+						}
+					}
+				}
+			}
+    	}
+    	this.invocationContext = invocationContext;
+  	},
+	
+	getHeaderNames: function() {
+		var headerNames = [];
+		for (var headerName in this.responseHeaders){
+			headerNames.push(headerName);
+		}
+		return headerNames;
+	},
+
+	getAllHeaders: function() {
+		return this.responseHeaders;
+	},
+
+	getHeader: function(name) {
+		if (name === null || typeof(name) === 'undefined'){
+			return null;
+		}			
+		
+		return this.responseHeaders[name];
+	}
 });
 
 WL.FailResponse = WLJSX.Class.create({
@@ -3184,12 +3209,13 @@ WL.FailResponse = WLJSX.Class.create({
   errorMsg: null,
   initialize: function(transport, invocationContext) {
     if (transport !== null && typeof transport.status != "undefined") {
-      this.status = (transport.status || 200);
+      	this.status = (transport.status || 200);
+	  	if (transport.responseJSON !== null && typeof(transport.responseJSON) !== 'undefined') {
+      		this.errorCode = transport.responseJSON.errorCode;
+      		this.errorMsg = transport.responseJSON.errorMsg;
+		}
     }
     this.invocationContext = invocationContext;
-
-    this.errorCode = transport.responseJSON.errorCode;
-    this.errorMsg = transport.responseJSON.errorMsg;
   }
 });
 
@@ -3328,15 +3354,7 @@ window.WLJSX.Ajax.WLRequest = WLJSX.Class.create({
 
     // add headers from WL.Client.globalHeaders in case the Single (native) HTTP Client is disabled;
     // otherwise the headers will be added in native code
-    if (!WL.EnvProfile.isEnabled(WL.EPField.SUPPORT_WL_NATIVE_XHR) || WL.Client.__state().enableFIPS) {
-      if ((typeof WL.Client.__globalHeaders != "undefined") && (WL.Client.__globalHeaders != null)) {
-        for (var headerName in WL.Client.__globalHeaders) {
-          if (Object.prototype.hasOwnProperty.call(WL.Client.__globalHeaders, headerName)) {
-            requestHeaders[headerName] = WL.Client.__globalHeaders[headerName];
-          }
-        }
-      }
-    }
+    this.__addGlobalHeaders(requestHeaders);
 
     var optionalHeaders = this.options.optionalHeaders;
     if (typeof optionalHeaders != 'undefined' && optionalHeaders != null) {
@@ -3394,12 +3412,51 @@ window.WLJSX.Ajax.WLRequest = WLJSX.Class.create({
     if (this.options.timeout > 0) {
       this.timeoutTimer = window.setTimeout(this.handleTimeout.bind(this), this.options.timeout);
     }
-
-    if (shouldPostAnswers) {
-      authenticateNewUrl = WL.Utils.createAPIRequestURL('authenticate');
-      new WLJSX.Ajax.Request(authenticateNewUrl, postAnswersOptions);
+    
+    var thisRequest = this;
+    var isAuthRequest = this.options.isAuthorizationRequest || false;
+    if (WL.EnvProfile.isEnabled(WL.EPField.SUPPORT_OAUTH) && typeof(WLAuthorizationManager) !== 'undefined' && !isAuthRequest) {
+	    
+        if (WL.Client.getEnvironment() === WL.Environment.WINDOWS8 && this.url.indexOf('/v1/clients/instance') > -1) {
+        	__sendRequest(shouldPostAnswers);
+        } else {
+	        WLAuthorizationManager.__addHeadersToWLRequest(this.options.requestHeaders)
+	        .then(
+		    	function() {
+		    		// the above call to __addHeadersToWLRequest could trigger addition of global headers
+		    		// so do another round, but it will happen only in web environment without native xhr
+		    		thisRequest.__addGlobalHeaders(thisRequest.options.requestHeaders);
+            		__sendRequest(shouldPostAnswers);
+	            },
+		    	function(error) {
+	            	thisRequest.onWlFailure(error);
+		    	}
+			);
+        }
     } else {
-      new WLJSX.Ajax.Request(this.url, this.options);
+    	__sendRequest(shouldPostAnswers);		
+    }
+    /*jshint latedef: false */
+    function __sendRequest(shouldPostAnswers) {
+    	if (shouldPostAnswers) {
+          var authenticateNewUrl = WL.Utils.createAPIRequestURL('authenticate');
+		     new WLJSX.Ajax.Request(authenticateNewUrl, postAnswersOptions);
+		} else {
+		     new WLJSX.Ajax.Request(thisRequest.url, thisRequest.options);
+		}
+    }
+    
+  },
+  
+  __addGlobalHeaders: function(requestHeaders) {
+    if (!WL.EnvProfile.isEnabled(WL.EPField.SUPPORT_WL_NATIVE_XHR) || WL.Client.__state().enableFIPS) {
+      if ((typeof WL.Client.__globalHeaders != "undefined") && (WL.Client.__globalHeaders != null)) {
+        for (var headerName in WL.Client.__globalHeaders) {
+          if (Object.prototype.hasOwnProperty.call(WL.Client.__globalHeaders, headerName)) {
+            requestHeaders[headerName] = WL.Client.__globalHeaders[headerName];
+          }
+        }
+      }
     }
   },
 
@@ -3413,12 +3470,32 @@ window.WLJSX.Ajax.WLRequest = WLJSX.Class.create({
     if (!containsChallenges) {
       // Handle notification subscription for push (if needed)
       if (transport.responseJSON && transport.responseJSON.notificationSubscriptionState && WL.Client.Push.__isDeviceSupportPush()) {
-        handleSubscriptions(transport.responseJSON.notificationSubscriptionState);
+    	  var notificationSubscriptionState = transport.responseJSON.notificationSubscriptionState;
+	  	  WL.Client.Push.__clearSubscribedEventSources();
+		  WL.Client.Push.__clearSubscribedTags();
+	
+		  var deviceToken = notificationSubscriptionState.token;
+		  if (!notificationSubscriptionState.eventSources || notificationSubscriptionState.eventSources.length <= 0) {
+		    WL.Logger.debug("Send new server notification token id.");
+		  } else {
+		    var eventSources = notificationSubscriptionState.eventSources;
+		    WL.Client.Push.__updateSubscribedEventSources(eventSources);
+		  }
+	
+		  if (notificationSubscriptionState.tags && notificationSubscriptionState.tags.length > 0) {
+		    var tags = notificationSubscriptionState.tags;
+		    WL.Client.Push.__updateSubscribedTags(tags);
+		  }
+	
+		  WL.Client.Push.__updateToken(notificationSubscriptionState);
       }
 
       // Handle notification subscription for sms push (if needed)
       if (transport.responseJSON && transport.responseJSON.smsNotificationSubscriptionState && WL.Client.Push.isPushSMSSupported()) {
-        handleSMSSubscriptions(transport.responseJSON.smsNotificationSubscriptionState);
+    	  var notificationSubscriptionState = transport.responseJSON.smsNotificationSubscriptionState;
+	  	  WL.Client.Push.__clearSubscribedSMSEventSources();
+		  var eventSources = notificationSubscriptionState.eventSources;
+		  WL.Client.Push.__updateSubscribedSMSEventSources(eventSources);
       }
     }
 
@@ -3458,7 +3535,7 @@ window.WLJSX.Ajax.WLRequest = WLJSX.Class.create({
     if (transport.getAllHeaders() !== null) {
       // Handle Cookies:
       var headers = transport.getAllHeaders().split("\n");
-      WL.CookieManager.handleResponseHeaders(headers);
+      WL.CookieManager.handleResponseHeaders(headers);   
     }
 
     WL.Logger.debug("response [" + this.url + "] success: " + transport.responseText);
@@ -3505,8 +3582,11 @@ window.WLJSX.Ajax.WLRequest = WLJSX.Class.create({
     this.cancelTimeout();
     if (!WL.EnvProfile.isEnabled(WL.EPField.SUPPORT_COOKIES)) {
       if (transport && transport.getAllHeaders && transport.getAllHeaders() !== null) {
-        var headers = transport.getAllHeaders().split("\n");
-        WL.CookieManager.handleResponseHeaders(headers);
+    	  var allHeaders = transport.getAllHeaders();
+    	  if (WL_.isString(allHeaders)) {
+  	        var headers = allHeaders.split("\n");
+  	        WL.CookieManager.handleResponseHeaders(headers);
+      	  }
       }
     }
     var containsChallenges = WL.Client.checkResponseForChallenges(this, transport);
@@ -3519,8 +3599,11 @@ window.WLJSX.Ajax.WLRequest = WLJSX.Class.create({
     // sometimes onFailure is called with a dummy transport object
     // for example when an authentication timeout occurs.
     if (transport && transport.getAllHeaders && transport.getAllHeaders() !== null) {
-      var headers = transport.getAllHeaders().split("\n");
-      WL.CookieManager.handleResponseHeaders(headers);
+    	var allHeaders = transport.getAllHeaders();
+    	if (WL_.isString(allHeaders)) {
+	        var headers = allHeaders.split("\n");
+	        WL.CookieManager.handleResponseHeaders(headers);
+    	}
     }
 
     if (transport.responseJSON === null) {
@@ -3572,6 +3655,11 @@ window.WLJSX.Ajax.WLRequest = WLJSX.Class.create({
       return;
     }
     this.cancelTimeout();
+    
+    if (typeof(this.options.onAuthException) === 'function') {
+      this.options.onAuthException(request, ex);
+    }
+    
     WL.Logger.error("[" + this.url + "] exception.", ex);
     // Workaround for prototype's known behavior of swallowing
     // exceptions.
@@ -3786,32 +3874,8 @@ WLJSX.Ajax.WLRequest.options = {
   isAuthResponse: null
 };
 
-function handleSubscriptions(notificationSubscriptionState) {
-  WL.Client.Push.__clearSubscribedEventSources();
-  WL.Client.Push.__clearSubscribedTags();
 
-  var deviceToken = notificationSubscriptionState.token;
-  if (!notificationSubscriptionState.eventSources || notificationSubscriptionState.eventSources.length <= 0) {
-    WL.Logger.debug("Send new server notification token id.");
-  } else {
-    var eventSources = notificationSubscriptionState.eventSources;
-    WL.Client.Push.__updateSubscribedEventSources(eventSources);
-  }
 
-  if (notificationSubscriptionState.tags && notificationSubscriptionState.tags.length > 0) {
-    var tags = notificationSubscriptionState.tags;
-    WL.Client.Push.__updateSubscribedTags(tags);
-  }
-
-  WL.Client.Push.__updateToken(notificationSubscriptionState);
-  
-}
-
-function handleSMSSubscriptions(notificationSubscriptionState) {
-  WL.Client.Push.__clearSubscribedSMSEventSources();
-  var eventSources = notificationSubscriptionState.eventSources;
-  WL.Client.Push.__updateSubscribedSMSEventSources(eventSources);
-}
 
 /**
  * ================================================================= 
@@ -4506,7 +4570,11 @@ __WLDiagnosticDialog = function() {
     this.showDialog = function(title, messageText, allowReload, allowDetails, response, customErrorMsg) {
     	
     	var dateTime=new Date();
-    	navigator.globalization.dateToString(dateTime,function (date){dateTime=date.value;},function(){});
+    	if (typeof(navigator.globalization) !== 'undefined') {
+    		navigator.globalization.dateToString(dateTime,function (date){dateTime=date.value;},function(){});
+		} else {
+			dateTime = dateTime.toString();
+		}
     	
         var buttons = [];
         if (allowReload) {
@@ -4766,7 +4834,7 @@ WL.Logger = (function (jQuery) {
       blacklist : [],  // @deprecated since version 6.2; use filters instead
       filters : udf,
       filtersFromServer: udf,
-      level : [],
+      level : 'trace',
       levelFromServer : udf,
       metadata : {},
       capture : udf,
@@ -5598,10 +5666,10 @@ WL.WebLogger = (function(jQuery) {
     			});
 
     			console.log('Client logs successfully sent to the server');
-    			dfd.resolve();
+    			dfd.resolve('OK');
     			
-    		}).fail(function(){
-    			dfd.reject();
+    		}).fail(function(data){
+    			dfd.reject(data);
     		});
 
     	} else {
@@ -5621,8 +5689,8 @@ WL.WebLogger = (function(jQuery) {
 		  onSuccess : function(data) {
 			  dfd.resolve(data);
 		  },
-		  onFailure : function(){
-			  dfd.reject();
+		  onFailure : function(xhr){
+			  dfd.reject(xhr.responseText);
 		  }
 	  });
 
@@ -5841,7 +5909,7 @@ var WL = WL || {};
 Everything delegates to WL.Logger, but we keep the WL.Analytics API to make it clear
 to callers the difference in purpose of WL.Logger (debug) vs. WL.Analytics (analytics!).
  */
-WL.Analytics = (function (jQuery) {
+WL.Analytics = (function (jQuery, global) {
 
 	'use strict';
 
@@ -5852,7 +5920,7 @@ WL.Analytics = (function (jQuery) {
 
 	//Constants
 	_PKG_NAME = 'wl.analytics',
-	
+
 	// Private variables
 	pendingTrackingIDs = {},
 
@@ -5896,7 +5964,7 @@ WL.Analytics = (function (jQuery) {
 		if(typeof name === 'undefined'){
 			name = "";
 		}
-			
+
 		if (typeof msg === 'object') {
 			WL.Logger.metadata(msg).ctx({pkg: _PKG_NAME}).analytics(name || '');
 		} else {
@@ -5950,7 +6018,7 @@ WL.Analytics = (function (jQuery) {
 		// returns a promise
 		return WL.Logger._sendAnalytics();
 	},
-	
+
 	/**
     	Get tracking id for sending requests
 	 */
@@ -5958,7 +6026,7 @@ WL.Analytics = (function (jQuery) {
 		if(__checkNativeEnvironment()){
 			return null;
 		}
-		
+
 		function s4() {
 			return Math.floor((1 + Math.random()) * 0x10000)
 			.toString(16)
@@ -5971,33 +6039,35 @@ WL.Analytics = (function (jQuery) {
   __setTrackingId = function (id) {
     pendingTrackingIDs[id] = 1;
   },
-	
+
 	/**
 		Log outbound network request
 	 */
 	__logOutboundRequest = function (path, trackingId) {
-		
+
 		if(!__checkNativeEnvironment()){
 			try{
 				pendingTrackingIDs[trackingId] = 1;
-				
+
 				var startTime = new Date().getTime();
-				
+
+				var url = __getFullURL(global, path);
+
 				var metadata = {
-					'$path': path,
+					'$path': url, //$path for legacy reasons
 					'$category' : "network",
 					'$trackingid' : trackingId,
 					'$type' : "request",
 					'$time' : startTime
 				}
-				
+
 				WL.Logger.metadata(metadata).analytics('logOutboundRequest');
 			}catch(e){
 				// Do nothing
 			}
 		}
 	},
-	
+
 	/**
 	Log inbound network response
 	 */
@@ -6005,18 +6075,18 @@ WL.Analytics = (function (jQuery) {
 		if(!__checkNativeEnvironment()){
 			try{
 				var trackingId = request.trackingId;
-				
+
 				if(pendingTrackingIDs.hasOwnProperty(trackingId)){
 					delete pendingTrackingIDs[trackingId];
-		
+
 					var endTime = new Date().getTime();
-					
+
 					var numBytes = 0;
 					var responseText = response.responseJSON;
 					if(responseText){
 						numBytes = JSON.stringify(responseText).length;
 					}
-		
+
 					// TODO BYTES
 					var metadata = {
 						'$category' : 'network',
@@ -6025,7 +6095,7 @@ WL.Analytics = (function (jQuery) {
 						'$time' : endTime,
 						'$bytes': numBytes
 					}
-		
+
 					WL.Logger.metadata(metadata).analytics('logInboundResponse');
 				}
 			}catch(e){
@@ -6033,7 +6103,39 @@ WL.Analytics = (function (jQuery) {
 			}
 		}
 	},
-	
+
+	__getFullURL = function (global, path) {
+
+		if (typeof path === 'string' &&
+			path.indexOf('http') === -1 &&
+			global &&
+			typeof global.location === 'object' &&
+			typeof global.location.protocol === 'string' &&
+			typeof global.location.hostname === 'string' &&
+			typeof global.location.port === 'string' &&
+			global.location.protocol.indexOf('file') === -1
+		) {
+			//Path does not contain 'http',
+			//meaning a full url was NOT passed.
+
+			path = [
+				global.location.protocol,
+				'//',
+				global.location.hostname,
+				':',
+				global.location.port,
+				path
+			].join('');
+
+			if (path.indexOf('?') !== -1) {
+				path = path.split('?')[0];
+			}
+
+		}
+
+		return path;
+	},
+
 	__checkNativeEnvironment = function () {
 		var env = WL.StaticAppProps.ENVIRONMENT;
 
@@ -6050,16 +6152,17 @@ WL.Analytics = (function (jQuery) {
 		log: _log,
 		state: _state,
 		send: _send,
-		
+
 		_logOutboundRequest: __logOutboundRequest,
 		_logInboundResponse: __logInboundResponse,
 		_getTrackingId: __getTrackingId,
 
-    // for unit test only:
-    _setTrackingId: __setTrackingId
+    	// for unit test only:
+    	_setTrackingId: __setTrackingId,
+    	_getFullURL: __getFullURL
 	};
 
-}(WLJQ)); //WL.Analytics
+}(WLJQ, window)); //WL.Analytics
 
 
 /**
@@ -6975,7 +7078,7 @@ __WLClient = function() {
 		isInitialized = true;
 
 		//add onpause event - flushing the content of events buffer to the server before going ot background
-		if (WL.EnvProfile.isEnabled(WL.EPField.USES_CORDOVA)) {
+		if (WL.EnvProfile.isEnabled(WL.EPField.USES_CORDOVA) && WL.StaticAppProps.ENVIRONMENT!=WL.Environment.BLACKBERRY10) {
 			document.addEventListener("pause", WL.Client.flushBufferFromAsync, false);
 			
 			// stop heart beat on pause
@@ -7132,8 +7235,10 @@ __WLClient = function() {
 
 		new WLJSX.Ajax.WLRequest(REQ_PATH_HEART_BEAT, {
 			onSuccess : function() {
+				WL.Logger.debug("Heartbeat sent successfully");
 			},
 			onFailure : function() {
+				WL.Logger.debug("Failed to send heartbeat");
 			},
 			timeout : getAppProp(WL.AppProp.WLCLIENT_TIMEOUT_IN_MILLIS)
 		});
@@ -7477,7 +7582,38 @@ __WLClient = function() {
         	WL.EnvProfile.disable(WL.EPField.SUPPORT_WL_NATIVE_XHR);
         } else if (WL.EnvProfile.isEnabled(WL.EPField.SUPPORT_WL_NATIVE_XHR)){
         	window.WLJSX.Ajax.getTransport = function() {
-        		return new WLNativeXHR();
+                var xhr = new WLNativeXHR();
+                if (WL.Client.getEnvironment() == WL.Env.WINDOWS8) {
+	           	    xhr.__send = function (callback, params) {
+	           	        var headers = params.headers;
+	           	        headers["User-Agent"] = navigator.userAgent;
+	           	        if (!headers["Accept"]) {
+	           	            headers["Accept"] = "*/*";
+	           	        }
+	           	        if (!headers["Accept-Language"]) {
+	           	            headers["Accept-Language"] = WL.App.getDeviceLocale();
+	           	        }
+	           	        if (!headers["Accept-Encoding"]) {
+	           	            headers["Accept-Encoding"] = "gzip, deflate";
+	           	        }
+	
+	           	        if (!headers["Content-Type"]) {
+	           	            headers["Content-Type"] = "application/x-www-form-urlencoded; charset=UTF-8";
+	           	        }
+	
+	           	        WLWin8Native.WLNativeXHRSender.getInstance().send(JSON.stringify(params)).done(
+	                           function completed(result) {
+	                               if (result.isSuccess) {
+	                                   var resultJSON = JSON.parse(result.value);
+	                                   callback(JSON.parse(resultJSON));
+	                               } else { 
+	                                   WL.Logger.error("Failed to send native request (reason: " + JSON.parse(result.value) + ")");
+	                               }
+	                           });
+	
+	           	    }
+                }
+           	    return xhr;
         	}
 		}
 
@@ -8869,6 +9005,103 @@ __WLClient = function() {
     	
 		return this.__globalHeaders;
 	};
+	/**
+	 * Retrieves cookies from the native HTTP client.
+	 * This function is asynchronous and returns promise.
+	 * The array of cookies will be passed as a parameter to "resolve" callback:
+	 * WL.Client.getCookies().then(function(cookies){...})
+	 * Note that HttpOnly and Secure cookies are not returned.
+	 * @returns promise object
+	 */
+	this.getCookies = function() {
+		var dfd = WLJQ.Deferred();
+		var env = WL.Client.getEnvironment();
+		
+		switch (env) {
+			case WL.Env.ANDROID:
+			case WL.Env.IPHONE:
+		    case WL.Env.IPAD:
+		    case WL.Env.WINDOWS_PHONE_8:	
+		    	cordova.exec(
+		    		function(cookies) {
+		    			dfd.resolve(cookies);
+		    		},
+		    		dfd.reject,
+		    		"WLApp", "getCookies", []
+		    	);
+		        break;
+
+		    case WL.Env.WINDOWS8:
+		    	//Win8 specific getCookies will be called
+		    default:
+		    	dfd.resolve([]);
+		}
+		
+		return dfd.promise();
+	};
+	/**
+	 * Adds a cookie to the native HTTP client.
+	 * This function is asynchronous and returns promise.
+	 * Example: WL.Client.setCookie(myCookie).then(successFlow);
+	 * @param cookie JSON object with required cookie properties: name, value, domain, path, expires
+	 * @returns promise object
+	 */
+	this.setCookie = function(cookie) {
+		var dfd = WLJQ.Deferred();
+		var env = WL.Client.getEnvironment();
+		
+		switch (env) {
+			case WL.Env.ANDROID:
+			case WL.Env.IPHONE:
+		    case WL.Env.IPAD:
+		    case WL.Env.WINDOWS_PHONE_8:	
+		    	cordova.exec(
+		    		dfd.resolve,
+		    		dfd.reject,
+		    		"WLApp", "setCookie", [cookie]
+		    	);
+		        break;
+		        
+		    case WL.Env.WINDOWS8:	
+		    	//Win8 specific setCookie will be called
+		    default:
+		    	dfd.resolve([]);
+		}
+		
+		return dfd.promise();
+	};
+	
+	/**
+	 * Deletes a cookie from the native HTTP client cookie storage.
+	 * This function is asynchronous and returns deferred object.
+	 * Example: WL.Client.deleteCookie(myCookie).then(successFlow);
+	 * @param name Specifies cookie name.
+	 * @returns promise object
+	 */
+	this.deleteCookie = function(name) {
+		var dfd = WLJQ.Deferred();
+		var env = WL.Client.getEnvironment();
+		
+		switch (env) {
+			case WL.Env.ANDROID:
+			case WL.Env.IPHONE:
+		    case WL.Env.IPAD:
+		    case WL.Env.WINDOWS_PHONE_8:	
+		    	cordova.exec(
+		    		dfd.resolve,
+		    		dfd.reject,
+		    		"WLApp", "deleteCookie", [name]
+		    	);
+		        break;
+
+		    case WL.Env.WINDOWS8:	
+		    	//Win8 specific deleteCookie will be called
+		    default:
+		    	dfd.resolve();
+		}
+		
+		return dfd.promise();
+	};
 	
 	function isWl403HandleChallenge(response) {
 		var env = WL.Client.getEnvironment();
@@ -9027,7 +9260,7 @@ __WLClient = function() {
 	 * check is a IBM MobileFirst Platform 403 response
 	 */
 	this.isWl403 = function(response) {
-		if (response.status == 403) {
+		if (response.status == 403 || response.status == 222) {
 			if (( typeof response.responseJSON !== "undefined") && (response.responseJSON != null) && response.responseJSON["WL-Authentication-Failure"]) {
 				return true;
 			}
@@ -9137,8 +9370,25 @@ __WLClient = function() {
 				WL.Logger.error(err);
 			}
 			isConnecting=false;
+			// store active request before calling to clearWaitingList, because of later call on onFailure
+			var request = this.activeRequest;
 			this.activeRequest = null;
 			this.clearWaitingList();
+			if (request !== null && typeof(request.options) !== 'undefined' && 
+				typeof(request.options.onAuthRequestFailure) !== 'undefined') {
+				if (typeof(err) === 'undefined' || err === null) {
+					var transport = {
+						status : 0,
+						responseJSON : {
+        					errorCode: WL.ErrorCode.CHALLENGE_HANDLING_CANCELED,
+        					errorMsg: WL.ClientMessages.challengeHandlingCanceled
+        				}
+					};
+        			
+        			err = new WL.Response(transport, null);
+				}
+				request.options.onAuthRequestFailure(err);
+			}
 		};
 
 		this.moveToWaitingList = function(wlRequest) {
@@ -9248,20 +9498,26 @@ __WLClient = function() {
 			function deviceIDFailureCallback(error) {
 				throw new RuntimeException(error);
 			}
-
-			if (WL.Client.getEnvironment() === WL.Environment.WINDOWS_PHONE_8) {
+			
+			if (WL.Client.getEnvironment() === WL.Environment.WINDOWS8) {  
+            	//Device uuid changes and system generates different uuid's for different apps. 
+        		//For device SSO to work it should be same across apps and adapterid remains same for a device.
+            	deviceID = WL.Device.getHardwareIdentifier();
+            	assembleDeviceAuthData();
+            } else if (WL.Client.getEnvironment() === WL.Environment.WINDOWS_PHONE_8) {
         		WL.Device.__getPublisherHostID(deviceIDSuccessCallback, deviceIDFailureCallback);
 			} else {			
 				if ( typeof (WL.DeviceAuth.__getDeviceUUID) !== 'undefined') {
 					WL.DeviceAuth.__getDeviceUUID(deviceIDSuccessCallback, deviceIDFailureCallback);
-				} else {					
-					if(WL.Client.getEnvironment() === WL.Environment.BLACKBERRY10){ 
-						deviceID= device.uuid;
-					}else if (WL.Client.getEnvironment() === WL.Environment.WINDOWS8) {  
+				} else {
+					if (WL.Client.getEnvironment() === WL.Environment.WINDOWS8) {  
 		            	//Device uuid changes and system generates different uuid's for different apps. 
 		        		//For device SSO to work it should be same across apps and adapterid remains same for a device.
 		            	deviceID = WL.Device.getHardwareIdentifier();
 		            }
+					if(WL.Client.getEnvironment() === WL.Environment.BLACKBERRY10){ 
+						deviceID= device.uuid;
+					}
 					assembleDeviceAuthData();
 				}
 			}
@@ -9562,8 +9818,19 @@ __WLClient = function() {
 				finalUrl = WL.Utils.createAPIRequestURL(reqURL);
 			}
 
-			var ajaxRequest = new WLJSX.Ajax.Request(finalUrl, reqOptions);
+			var ajaxRequest = null;
+			
+			if (WL.EnvProfile.isEnabled(WL.EPField.SUPPORT_OAUTH) && typeof(WLAuthorizationManager) !== 'undefined') {	    
+			    WLAuthorizationManager.__addHeadersToWLRequest(reqOptions.requestHeaders)
+				.then(__sendRequest);
+			} else {
+				__sendRequest();
+			}
 
+			function __sendRequest() {
+				ajaxRequest = new WLJSX.Ajax.Request(finalUrl, reqOptions);
+			}
+			
 			function setTimer(timeout) {
 				if (timer !== null) {
 					window.clearTimeout(timer);
@@ -9573,7 +9840,9 @@ __WLClient = function() {
 
 			function onTimeout() {
 				timer = null;
-				ajaxRequest.transport.abort();
+				if (ajaxRequest !== null) {
+					ajaxRequest.transport.abort();
+				}
 
 				var transport = {};
 				transport.responseJSON = {
@@ -9699,6 +9968,7 @@ __WLClient = function() {
 	 * Gets the status code and WWW-Authenticate header of a failure response from a resource server
 	 * and determines whether an access token was requested. returns the scope if a token is required
 	 * or null if the response is not access-token related.
+	 * @deprecated since version 7.0
 	 */
 	this.getRequiredAccessTokenScope = function(status, headerValue) {
 		if (status != 401 && status != 403){
@@ -9721,6 +9991,7 @@ __WLClient = function() {
 	 * to send a request to an external server protected by IBM MobileFirst Platform Resource Server Filter.
 	 * If the client is not already authenticated in all the realms defined by the scope, 
 	 * calling this method will trigger an authentication sequence for the missing realms. 
+	 * @deprecated since version 7.0
 	 **/
 	this.obtainAccessToken = function(scope, onSuccess, onFailure){
 		var tokenScope = scope || WL_DEFAULT_ACCESS_TOKEN_SCOPE;
@@ -9774,6 +10045,7 @@ __WLClient = function() {
 	/**
 	 * Gets the last obtained access token for the requested scope.
 	 * If no scope is given, gets the last obtained token.
+	 * @deprecated since version 7.0
 	 */
 	this.getLastAccessToken = function(scope){
 		if (!scope){
@@ -10064,8 +10336,8 @@ wl_remoteDisableChallengeHandler.handleFailure = function(err) {
  */
 
 /*Wrapped by closure compiler to prevent namespace
-                  pollution*/
-                  (function(){/*
+									pollution*/
+									(function(){/*
 
  Licensed Materials - Property of IBM
  5725-I43 (C) Copyright IBM Corp. 2006, 2013. All Rights Reserved.
@@ -10725,6 +10997,568 @@ WL.FIPSHttp = (function (_) {
 	
 	return stub;
 }(WL_));
+
+/**
+ * ================================================================= 
+ * Source file taken from :: wlresourcerequest.js
+ * ================================================================= 
+ */
+
+/*
+* Licensed Materials - Property of IBM
+* 5725-I43 (C) Copyright IBM Corp. 2006, 2013. All Rights Reserved.
+* US Government Users Restricted Rights - Use, duplication or
+* disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+*/
+
+function WLResourceRequest(_url, _method, _timeout) {
+    var url = (_url === null || typeof(_url) === 'undefined') ? logAndThrowError('Request URL must be specified.', 'WLResourceRequest') : _url.trim();
+    var method = (typeof(_method) === 'undefined' || !isValidRequestMethod(_method)) ? logAndThrowError('Request method is invalid or not specified.', 'WLResourceRequest') : _method;
+    var timeout = _timeout;
+    var queryParameters = {};
+    var headers = {};
+
+    /**
+     * Returns request URL. The URL must have been passed to constructor.
+     */
+    this.getUrl = function() {
+        return url;
+    };
+    
+    /**
+     * Returns current request method. A valid request method must have been passed to constructor.
+     */
+    this.getMethod = function() {
+        return method;
+    };
+    
+    /**
+     * Returns query parameters as a JSON object with key-value pairs.
+     */
+	this.getQueryParameters = function() {
+		return queryParameters;
+	};
+	
+	/**
+	 * Sets query parameters.
+	 * @param {parameters} A JSON object with key-value pairs.
+	 */
+	this.setQueryParameters = function(parameters){
+		if (typeof(parameters) === 'undefined' || parameters === null) {
+			queryParameters = {};
+		} else {
+			queryParameters = parameters;
+		}
+	}; 
+	
+	/**
+	 * Sets a new query parameter. If a parameter with the same name already exists, it will be replaced.
+	 * @param {name} Parameter name
+	 * @param {value} Parameter value. Should be string, number or boolean.
+	 */
+	this.setQueryParameter = function(name, value){
+		if (typeof(name) !== 'undefined' && name !== null && typeof(value) !== 'undefined' && value !== null) {
+			queryParameters[name] = value;
+		}
+	}; 
+	
+	// receives string, returns array of header values (even if only 1). if name==undefined returns all headers
+	/**
+	 * Returns array of header values.
+	 * @param {name} Header name. If header name is specified, this function returns an array of header values 
+	 * stored with this header, or undefined, if specified header name is not found. If <i>name</i> is null, or undefined,
+	 * this function returns all headers.
+	 */
+	this.getHeaders = function(name) {
+		if (name === null || typeof(name) === 'undefined') {
+			return headers;
+		}
+		
+		var headerValue = headers[name];
+		
+		if (typeof(headerValue) === 'undefined') {
+			// try case insensitive search
+			headerValue = __getFirstHeaderByNameNoCase(name).value;
+		}
+		
+		if (headerValue !== null) {
+			if (WL_.isArray(headerValue)) {
+				return headerValue;
+			} else {
+				return [headerValue];
+			}
+		}
+		
+	}; 
+	
+	/**
+	 * Returns array of header names. It can be empty if no headers has been added.
+	 */
+	this.getHeaderNames = function() {
+		var headerNames = [];
+		for (var headerName in headers){
+			headerNames.push(headerName);
+		}
+		return headerNames; 
+	}; 
+	
+	// receives string, returns string. if multiple headers with same name - return first one
+	/**
+	 * Returns a first header value stored with the specified header name. The value is returned as a string. 
+	 * Can be undefined if a header with specified name does not exist.
+	 * @param {name} Header name.
+	 */
+	this.getHeader = function(name) {
+		if (name === null || typeof(name) === 'undefined') {
+			logAndThrowError('Header name should be defined.', 'WLResourceRequest.getHeader');
+		}
+		
+		var headerValue = headers[name];
+		if (typeof(headerValue) === 'undefined') {
+			// try case insensitive search
+			headerValue = __getFirstHeaderByNameNoCase(name).value;
+		}
+		
+		if (WL_.isArray(headerValue)) {
+			return headerValue[0];
+		}
+		return headerValue;
+	}; 
+	
+	//receives JSON object similar to what getHeaders returns
+	/**
+	 * Sets request headers. The existing headers are replaced. 
+	 * @param {requestHeaders} JSON object with request headers. Each header value should be either string, or array of strings. This function will
+	 * throw error if one of specified header values is not valid.
+	 */
+	this.setHeaders = function(requestHeaders) {
+		if (requestHeaders === null || typeof(requestHeaders) === 'undefined') {
+			headers = {};
+			return;
+		}
+		
+		// verify that each key contains array of values or simple object
+		for (var headerName in requestHeaders) {
+			headerValue = requestHeaders[headerName];
+			
+			if (WL_.isArray(headerValue)) {
+				if (headerValue.length > 0 && !isArrayOfSimpleTypes(headerValue)) {
+					// complex type detected within array of values - throw error
+					logAndThrowError('Header value should be a simple type.', 'WLResourceRequest.setHeaders');
+				}
+			} else if (!isSimpleType(headerValue)) {
+				logAndThrowError('Header value should be a simple type.', 'WLResourceRequest.setHeaders');
+			}
+		}
+		
+		headers = {};	
+		for (var key in requestHeaders) {
+			headerValue = requestHeaders[key];
+			if (WL_.isArray(headerValue)) {
+				for (var item in headerValue) {
+					this.addHeader(key, headerValue[item]);
+				}
+			} else {
+				this.addHeader(key, headerValue);
+			}
+		}
+	}; 
+	
+	/**
+	 * Sets a new header or replaces an existing header with the same name.
+	 * @param {name} Header name
+	 * @param {value} Header value. The value must be of simple type (string, boolean or value).
+	 */
+	this.setHeader = function(name, value) {
+		if (!isSimpleType(value)) {
+			// complex type detected instead of string - throw error
+			logAndThrowError('Header value should be a simple type.', 'WLResourceRequest.setHeader'); 
+		}
+		
+		for (var headerName in headers) {
+			if (headerName.toLowerCase() === name.toLowerCase()) {
+				delete headers[headerName];
+			}
+		}
+		
+		headers[name] = value;
+	}; 
+	
+	/**
+	 * Adds a new header. If a header with the same name already exists, the header value will be added to the existing header. The name is 
+	 * case insensitive.
+	 * @param {name} Header name
+	 * @param {value} Header value. The value must be of simple type (string, number or boolean).
+	 */
+	this.addHeader = function(name, value) {
+		if (typeof(value) === 'undefined' || value === null) {
+			logAndThrowError('Header value should not be null or undefined.', 'WLResourceRequest.addHeader');
+		}
+		if (!isSimpleType(value)) {
+			// complex type detected instead of string - throw error 
+			logAndThrowError('Header value should be a simple type.', 'WLResourceRequest.addHeader');
+		}
+		
+		var header = __getFirstHeaderByNameNoCase(name);
+		var existingHeaderName = header.name;
+		var existingHeaderValue = header.value;
+		if (existingHeaderValue === null) {
+			headers[name] = value;
+		} else {
+			if (WL_.isArray(existingHeaderValue)) {
+				for (var idx in existingHeaderValue) {
+					if (existingHeaderValue[idx].toString() === value.toString()) {
+						return;
+					}
+				}
+				existingHeaderValue.push(value);
+			} else {
+				var array = [];
+				array.push(existingHeaderValue);
+				array.push(value);
+				headers[existingHeaderName] = array;
+			}
+		}
+	}; 
+	
+	function __getFirstHeaderByNameNoCase(name) {
+		for (var headerName in headers) {
+			if (headerName.toLowerCase() === name.toLowerCase()) {
+				return {name : headerName, value : headers[headerName]};
+			}
+		}
+		
+		return {name : null, value : null};
+	}
+
+	/**
+	 * Returns request time out in milliseconds. 
+	 */
+	this.getTimeout = function() {
+		return timeout;
+	}; 
+	
+	/**
+	 * Sets request timeout. If timeout is not specified, then a default timeout will be used.
+	 * @param {requestTimeout} Request timeout in milliseconds.
+	 */
+	this.setTimeout = function(requestTimeout) {
+		timeout = requestTimeout;
+	}; 
+	
+	/**
+	 * Sends the request to a server.
+	 * @param {content} Body content. It can be of simple type (like string), or object.
+	 * @returns Returns promise. Sample usage: <br>
+	 * var request = WLResourceRequest(url, method, timeout);<br>
+	 * request.send(content).then(<br>
+	 * 	function(response) {// success flow}, <br>
+	 * 	function(error) {// fail flow} <br>
+	 * );
+	 */
+    this.send = function(content) {
+		var contentString = "";
+		if (typeof(content) !== 'undefined' && content !== null) {
+			contentString = isSimpleType(content) ? content.toString() : JSON.stringify(content);
+		}
+		return sendRequestAsync(contentString, 0);
+    };
+	
+    /**
+	 * Sends the request to a server.
+	 * @param {json} Body content as JSON object or string as a form data. The content type will be set to 'application/x-www-form-urlencoded'.
+	 * @returns Returns promise. Sample usage: <br>
+	 * var request = WLResourceRequest(url, method, timeout);<br>
+	 * request.send(json).then(<br>
+	 * 	function(response) {// success flow}, <br>
+	 * 	function(error) {// fail flow} <br>
+	 * );
+	 */
+    this.sendFormParameters = function(json) {
+		var contentString = encodeFormParameters(json);
+		this.addHeader('Content-Type', 'application/x-www-form-urlencoded');
+		
+		return sendRequestAsync(contentString, 0);
+	};
+	
+	function encodeFormParameters(json) {
+		if (json === null || typeof(json) === 'undefined') {
+			return '';
+		}
+		
+		if (isSimpleType(json)) {
+			var params = json.split('&');
+			var result = '';
+			for(var i = 0; i < params.length; i++) {
+				var kv = params[i].split('=');
+				if (kv.length === 0) {
+					continue;
+				}
+				
+				if (kv.length === 1) {
+					result += encodeURIComponent(kv[0]);
+				} else {
+					result += encodeURIComponent(kv[0]) + '=' + encodeURIComponent(kv[1]);
+				}
+				
+				if (i < params.length - 1) {
+					result += '&';
+				}
+			}
+			return result;
+		} else {
+			var result = '';
+			for (var key in json) {
+				var value = json[key];
+				if (!isSimpleType(value)) {
+					logAndThrowError('Form value must be a simple type.', 'WLResourceRequest.sendFormParameters');
+				}
+				
+				result += encodeURIComponent(key) + '=' + encodeURIComponent(value);
+				result += '&';
+			}
+			
+			if (result.length > 0 && result[result.length - 1] === '&') {
+				result = result.substring(0, result.length - 1);
+			}
+			
+			return result;
+		}
+	}
+	
+	function sendRequestAsync(contentString, authCounter) {
+        var dfd = WLJQ.Deferred();
+        
+        buildRequestUrl()
+        .then(
+            function(serverUrl) {
+                __send(serverUrl, contentString, authCounter).then(
+                    function(response) {
+                        dfd.resolve(response);
+                    },
+                    function(error) {
+                        dfd.reject(error);
+                    }
+                );
+            },
+            function(error) {
+            	dfd.reject(error);
+            }
+        );
+        
+        return dfd.promise();
+    }
+	
+	var maxRequestAttempts = 4;
+	function __send(serverUrl, contentString, authCounter) {		
+		var dfd = WLJQ.Deferred();
+		
+		if (!WL.EnvProfile.isEnabled(WL.EPField.SUPPORT_OAUTH)) {
+			var transport = {
+				status : 0,
+    			responseJSON : {
+    				errorCode: WL.ErrorCode.API_INVOCATION_FAILURE,
+    				errorMsg: WL.ClientMessages.unsupportedEnvironment
+    			}
+			};
+			var failResponse = new WL.Response(transport, null);
+			dfd.reject(failResponse);
+			return dfd;
+		}
+		
+		// create WLNativeXHR or XMLHttpRequest
+		var xhr = window.WLJSX.Ajax.getTransport();
+ 
+		var queryString = buildQueryString();
+		var finalUrl = queryString === null ? serverUrl : serverUrl + "?" + queryString;
+		
+        xhr.open(method, finalUrl, true);
+		
+		if (typeof(timeout) !== 'undefined') {
+			xhr.timeout = timeout;
+		}
+		
+		addRequestHeaders(xhr);
+		
+		xhr.onreadystatechange = function(e) {
+            if (this.readyState == 4) {
+            	if (this.status === 200) {
+            		dfd.resolve(new WL.Response(this, null));
+            	} else {
+            		var transport = this;
+            		if (this.status === 0) {
+            			var errorCode = this.wlFailureStatus !== 'undefined' ? this.wlFailureStatus : WL.ErrorCode.UNEXPECTED_ERROR;
+            			// handle errors - timeout, unresponsive host and unexpected error
+            			transport.status = 0;
+            			transport.responseJSON = {
+            					errorCode: errorCode,
+            					errorMsg: this.statusText//WL.Utils.formatString(WL.ClientMessages.handleTimeOut, finalUrl)
+            			};
+            		}
+            
+            		var failResponse = new WL.Response(transport, null);
+            
+            		// WL.Response sets status to 200 if transport.status is 0 - set it back to 0.
+            		if (this.status === 0) {
+            			failResponse.status = 0;
+            		}
+            		
+            		if (typeof(WLAuthorizationManager) !== 'undefined' && WLAuthorizationManager.__isOAuthError(transport) && authCounter < maxRequestAttempts) {
+                        var scope = WLAuthorizationManager.__getScopeFromResponse(transport);
+                        // if we got here, the cached auth header was missing or was not good;
+                        // obtain the header again and retry the request
+            			WLAuthorizationManager.obtainAuthorizationHeader(scope).then (
+                            function(authHeader) {
+                            	// The auth header was received successfully, increment number of attempts and continue
+                        		// The request should be constructed again, therefore this call is recursive
+                            	sendRequestAsync(contentString, ++authCounter)
+                            	.then(
+                                    function(response){
+                                        dfd.resolve(response);
+                                    },
+                                    function(error) {
+                                        dfd.reject(error);
+                                    }
+                        		);
+                            },
+                            function(error) {
+                            	// unable to retrieve the authorization header, fail the request; the failure will be propagated up the chain
+                                dfd.reject(error);
+                            }
+                        );
+            		} else {
+            			// it's not OAuth error or number of attempts is exceeded; fail the request with last error, which will be propagated up 
+            			dfd.reject(failResponse);
+            		}
+            	}
+            }
+        };
+        
+        // this is the first try  with cached authorization header, which may be null
+        if (typeof(WLAuthorizationManager) !== 'undefined') {
+	        WLAuthorizationManager.__addHeadersToResourceRequest(xhr)
+	        .always(
+	        	// send the request disregard the ability to obtain the client id and auth header
+	        	sendRequest	
+	        );
+        } else {
+        	sendRequest();
+        }
+        
+	    function sendRequest() {
+	    	xhr.send(method === 'GET' ? null : contentString, true);
+	    }
+        
+		return dfd.promise();
+	}
+	
+	function buildRequestUrl() {
+        var dfd = WLJQ.Deferred();
+        if (url.indexOf('http:') >= 0 || url.indexOf('https:') >= 0) {
+            dfd.resolve(url);
+        } else {       	
+            WL.App.getServerUrl(
+                function(serverUrl) {      
+        			if (WL.Client.getEnvironment() === WL.Environment.WINDOWS8) { 
+    					var index = serverUrl.indexOf("/apps/services");
+    					if(index > -1) {
+    						serverUrl = serverUrl.substr(0, index);
+    					}
+    				}
+                    dfd.resolve(__buildUrl(serverUrl));
+                },
+                function(error) {
+                	dfd.reject(error);
+                }
+            );    	
+        }
+        
+        function __buildUrl(serverUrl) {
+        	if (serverUrl[serverUrl.length - 1] !== '/' && url[0] !== '/') {
+        		serverUrl += '/';
+        	} else if (serverUrl[serverUrl.length - 1] === '/' && url[0] === '/') {
+        		serverUrl = serverUrl.substring(0, serverUrl.length - 1);
+        	}
+
+            return serverUrl + url;
+        }
+        
+        return dfd.promise();
+    }
+	
+	function addRequestHeaders(xhr) {
+		for (var headerName in headers) {
+			var headerValue = headers[headerName];
+			if (isSimpleType(headerValue)) {
+				xhr.setRequestHeader(headerName, headerValue.toString());
+			} else {
+				var commaSeparatedHeader = headerValue[0];
+				for (var i = 1; i < headerValue.length; i++) {
+					commaSeparatedHeader += ", " + headerValue[i];
+				}
+				xhr.setRequestHeader(headerName, commaSeparatedHeader);
+			}
+		}
+	}
+	
+	function buildQueryString() {
+		if (queryParameters === null || typeof(queryParameters) === 'undefined' || WLJQ.isEmptyObject(queryParameters)) {
+			return null;
+		}
+		
+		var queryString = '';
+		for (var paramKey in queryParameters) {
+			if (queryString.length > 0) {
+				queryString += "&";
+			}
+            var value = queryParameters[paramKey];
+            var paramValue = isSimpleType(value) ? value : JSON.stringify(value);
+			queryString += paramKey + "=" + encodeURIComponent(paramValue);
+		}
+		
+		return queryString;
+	}
+	
+	function isSimpleType(value) {
+		return (WL_.isString(value) || WL_.isNumber(value) || WL_.isBoolean(value));
+	}
+	
+	function isArrayOfSimpleTypes(object) {
+		for (var i = 0; i < object.length; i++) {
+			if (!isSimpleType(object[i])) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	function logAndThrowError(msg, callerName) {
+		if (WL.Logger) {
+		    if (callerName) {
+		    	msg = "Invalid invocation of method " + callerName + "; " + msg;
+		    }
+		    WL.Logger.error(msg);
+		}
+		
+		throw new Error(msg);
+	}
+	
+	function isValidRequestMethod(method) {
+		return (method === WLResourceRequest.GET || method === WLResourceRequest.POST || method === WLResourceRequest.PUT ||
+				method === WLResourceRequest.DELETE || method === WLResourceRequest.HEAD || method === WLResourceRequest.OPTIONS || 
+				method === WLResourceRequest.TRACE);
+	}
+}
+
+WLResourceRequest.GET = "GET";
+WLResourceRequest.POST = "POST";
+WLResourceRequest.PUT = "PUT";
+WLResourceRequest.DELETE = "DELETE";
+WLResourceRequest.HEAD = "HEAD";
+WLResourceRequest.OPTIONS = "OPTIONS";
+WLResourceRequest.TRACE = "TRACE";
+WLResourceRequest.CONNECT = "CONNECT";
+
 
 /**
  * ================================================================= 
@@ -15227,7 +16061,7 @@ WL.Device.extendedGeolocation = new __ExtendedGeolocation();
  * ================================================================= 
  */
 
-﻿﻿﻿﻿﻿/**
+/**
  * @license
  * Licensed Materials - Property of IBM
  * 5725-I43 (C) Copyright IBM Corp. 2006, 2013. All Rights Reserved.
@@ -15238,6 +16072,7 @@ WL.Device.extendedGeolocation = new __ExtendedGeolocation();
 /* Copyright (C) Worklight Ltd. 2006-2012.  All rights reserved. */
 
 var APP_SERVICES_POSTFIX = "/apps/services/";
+var PREFS_TOKEN_UPDATED_AFTER_REINSTALL = "TokenUpdatedAfterReinstall";
 
 /**
  * @class Push Notification API.
@@ -15503,9 +16338,13 @@ __WLPush = function() {
         var requestOptions = {
             onSuccess : function(transport) {
                 subscribedTags[tagName] = false;
-                if (extendedOptions.onSuccess) {
-                    extendedOptions.onSuccess(new WL.Response(transport, extendedOptions.invocationContext));
-                }
+            	if (transport.responseJSON && !transport.responseJSON.isSuccessful) {
+            		extendedOptions.onFailure(new WL.Response(transport, extendedOptions.invocationContext));
+            	} else {	              
+	                if (extendedOptions.onSuccess) {
+	                    extendedOptions.onSuccess(new WL.Response(transport, extendedOptions.invocationContext));
+	                }
+            	}
             },
             onFailure : function (transport) {
             	extendedOptions.onFailure(new WL.FailResponse(transport, extendedOptions.invocationContext));
@@ -15534,9 +16373,13 @@ __WLPush = function() {
             onSuccess : function(transport) {
             	removeOldSubscribedAliases(alias);
                 subscribedEventSources[alias] = false;
-                if (extendedOptions.onSuccess) {
-                    extendedOptions.onSuccess(new WL.Response(transport, extendedOptions.invocationContext));
-                }
+            	if (transport.responseJSON && !transport.responseJSON.isSuccessful) {
+            		extendedOptions.onFailure(new WL.Response(transport, extendedOptions.invocationContext));
+            	} else {	              
+	                if (extendedOptions.onSuccess) {
+	                    extendedOptions.onSuccess(new WL.Response(transport, extendedOptions.invocationContext));
+	                }
+            	}
             },
             onFailure : function (transport) {
             	extendedOptions.onFailure(new WL.FailResponse(transport, extendedOptions.invocationContext));
@@ -15833,12 +16676,40 @@ __WLPush = function() {
         return true;
     };
     
+    function checkTokenUpdatedAfterReinstall(deviceToken) {
+	    var prefDoesntExist = function() {
+            var requestOptions = {
+                onSuccess : function() {
+                	WL.Logger.debug("Updated APNS token on MobileFirst server after app reinstall.");
+                	setTokenUpdatedAfterReinstall();
+                },
+                onFailure : function() {
+                    WL.Logger.error("Failed to update APNS token on MobileFirst server after app reinstall.");
+                }
+            };
+            requestOptions.requestHeaders = {};
+            requestOptions.parameters = {};
+            requestOptions.parameters.updateToken = deviceToken;
+            new WLJSX.Ajax.WLRequest("notifications", requestOptions);
+        };
+        cordova.exec(function() {}, prefDoesntExist, "WLApp", "readUserPref", [ PREFS_TOKEN_UPDATED_AFTER_REINSTALL ]);
+    }
+    
+    function setTokenUpdatedAfterReinstall() {
+        cordova.exec(null, null, "WLApp", "writeUserPref", [{
+            'key' : PREFS_TOKEN_UPDATED_AFTER_REINSTALL,
+            'value' : true
+        }]);
+        WL.Logger.debug("Created a user-preference to note the update of APNS token to MobileFirst server.");
+   }
+    
     this.__updateTokenCallback = function(deviceToken) {
         if (serverToken != deviceToken) {
             WL.Logger.debug("Push notification device token has changed, updating server notification token id.");
             var requestOptions = {
                 onSuccess : function() {
                     isTokeUpdatedOnServer = true;
+                    setTokenUpdatedAfterReinstall();
                     WL.Utils.dispatchWLEvent("readytosubscribe");
                     WL.Client.Push.onReadyToSubscribe();
                     if (WL.Client.Push.__hasPendings()) {
@@ -15856,6 +16727,7 @@ __WLPush = function() {
             requestOptions.parameters.updateToken = deviceToken;
             new WLJSX.Ajax.WLRequest("notifications", requestOptions);
         } else {
+        	checkTokenUpdatedAfterReinstall(deviceToken);
             isTokeUpdatedOnServer = true;
             WL.Utils.dispatchWLEvent("readytosubscribe");
             WL.Client.Push.onReadyToSubscribe();
@@ -16293,6 +17165,9 @@ WL.App.resetServerContext = function() {
 	
 	//reset piggybacker
 	WL.Client.resetEventTransmitter();
+
+	//remove cached sessionID
+	WLAuthorizationManager.__cachedWlSessionId = null;
 };
 
 //Takes: key, options OR key, successCallback, failCallback
@@ -16699,6 +17574,7 @@ WL.App.hideSplashScreen = function() {
 		this.response 				= "";
 		this.responseText 			= "";
 		this.readyState				= 0;
+		this.wlFailureStatus		= "";
 		this.getResponseHeader 		= function(headerName){};
 		this.getAllResponseHeaders 	= function(){};
 		
@@ -16707,7 +17583,8 @@ WL.App.hideSplashScreen = function() {
 				url 				: null,
 				method				: null, 
 				async				: true,
-				headers				: {}
+				headers				: {},
+				isResourceRequest	: false
 		};
 		
 		var responseHeaders = {};
@@ -16728,25 +17605,39 @@ WL.App.hideSplashScreen = function() {
 			requestOptions.headers[headerName] = headerValue;
 		};
 		
-		this.send = function(body){
+		this.send = function(body, isResourceRequest){
 			logger.trace("send");
 			requestOptions.body = body || "";
 			requestOptions.timeout = this.timeout;
-			requestOptions.RequestMethod = body == null ? 'get' : 'post';
+			
+			if (requestOptions.method == null && typeof(method) === 'undefined') {
+				requestOptions.method = body == null ? 'get' : 'post';
+			}
+			
+			if (typeof(isResourceRequest) !== 'undefined') {
+				requestOptions.isResourceRequest = isResourceRequest;
+			}
 			
 			var callback = (function(context){
 				return function(responseData){
 					logger.trace("callback", responseData);
 					context.status = responseData.status;
+					context.statusText = responseData.statusText;
 					context.response = responseData.responseText;
 					context.responseText = responseData.responseText;
 					context.readyState = 4; // conforms to XHR protocol; state 4 means that the request has finished
 					responseHeaders = responseData.headers;
+					context.wlFailureStatus = responseData.wlFailureStatus;
 					context.onreadystatechange();
 				};
 			}(this));
-			cordova.exec(callback, callback, "WLNativeXHRPlugin", "send", [requestOptions]);
+			
+			this.__send(callback, requestOptions);
 		};
+		
+		this.__send = function (callback, requestOptions) {
+		    cordova.exec(callback, callback, "WLNativeXHRPlugin", "send", [requestOptions]);
+		}    
 		
 		this.getResponseHeader = function(headerName){
 			//case insensitive search
@@ -16772,6 +17663,829 @@ WL.App.hideSplashScreen = function() {
 	window.WLNativeXHR = WLNativeXHR;
 	
 }(window));
+
+
+/**
+ * ================================================================= 
+ * Source file taken from :: wlauthorizationmanager.js
+ * ================================================================= 
+ */
+
+/*
+* Licensed Materials - Property of IBM
+* 5725-I43 (C) Copyright IBM Corp. 2006, 2013. All Rights Reserved.
+* US Government Users Restricted Rights - Use, duplication or
+* disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+*/
+
+window.WLAuthorizationManager = (function() {
+	
+	var WL_AUTHORIZATION_HEADER = 'Authorization';
+	var WL_X_SESSION_ID_HEADER = 'X-WL-Session';
+	var WL_X_CLIENT_ID_HEADER = 'X-WL-ClientId';
+
+	var PARAM_RESPONSE_TYPE_KEY = 'response_type';
+	var PARAM_CLIENT_ID_KEY = 'client_id';
+	var PARAM_REDIRECT_URI_KEY = 'redirect_uri';
+	var PARAM_CODE_VALUE = 'code';
+	var PARAM_REDIRECT_URI_VALUE = 'http://mfpredirecturi';
+	var PARAM_SCOPE_KEY = 'scope';
+	
+	var UNAUTHORIZED_CLIENT_ERROR = 'unauthorized_client';
+	var UNKNOWN_CLIENT_ERROR_DESCRIPTION = 'Unknown client';
+	var WL_OAUTH_PREVENT_REDIRECT = 'wl-oauth-prevent-redirect';
+
+	var OAUTH_AUTHORIZATION_PATH = 'authorization';
+	var AUTHORIZATION_MANAGER_PLUGIN_NAME = 'WLAuthorizationManagerPlugin';
+
+	var __cachedWlSessionId;
+
+	var getCachedAuthorizationHeader = function() {
+        var dfd = WLJQ.Deferred();		
+		cordova.exec(
+			function(data) {
+				dfd.resolve(data);
+			}, 
+			function(error) {
+				WL.Logger.debug('getCachedAuthorizationHeader failed: ' + JSON.stringify(error));
+      			dfd.reject(new WL.Response(error, null));
+			},
+			AUTHORIZATION_MANAGER_PLUGIN_NAME, 'getCachedAuthorizationHeader', []
+		);
+		
+		return dfd.promise();
+    };
+    
+    var isAuthorizationRequired = function(responseStatus, responseAuthenticationHeader) {
+    	if (responseAuthenticationHeader === null || typeof(responseAuthenticationHeader) === 'undefined') {
+            return false;
+        }
+    	
+    	return ((responseStatus === 401 || responseStatus === 403) && responseAuthenticationHeader.indexOf('Bearer') >= 0 &&
+    			responseAuthenticationHeader.indexOf('realm=\"imfAuthentication\"') >= 0);
+    };
+    
+    var getAuthorizationScope = function(responseAuthenticationHeader) {
+    	if (responseAuthenticationHeader !== null && typeof(responseAuthenticationHeader) !== 'undefined') {
+            var headerParts = responseAuthenticationHeader.split(',');
+            for (var i = 0; i < headerParts.length; i++) {
+                var headerElement = headerParts[i];
+                if (headerElement.indexOf('scope=') >= 0) {
+                	var scope = headerElement.split('=')[1].replace(/\"/g, '');
+                    return scope;
+                }
+            }
+        }
+        
+    	return null;
+    };
+    
+    var setAuthorizationPersistencePolicy = function(authorizationPersistencePolicy) {
+    	var dfd = WLJQ.Deferred();
+    	
+    	cordova.exec(
+    		dfd.resolve,
+    		function(error) {
+    			WL.Logger.error('WLAuthorizationManager.setAuthorizationPersistencePolicy failed with error: ' + error);
+    			dfd.reject(error);
+    		},
+    		AUTHORIZATION_MANAGER_PLUGIN_NAME, 'setAuthorizationPersistencePolicy', [authorizationPersistencePolicy]
+    	);
+    	
+    	return dfd.promise();
+    }
+	
+    var obtainAuthHeaderCallbacks = [];
+	var EMPTY_SCOPE = 'imf_empty_scope';
+	/**
+	 * Obtains authorization header for specified scope. 
+	 * @param scope Specifies the scope to obtain an authorization header for. Can be null or undefined.
+	 * @returns A promise object that should be used to receive the authorization header asynchronously. The header is send as a string
+	 * Example:
+	 * WLAuthorizationManager.obtainAuthorizationHeader(scope)
+	 * .then (
+	 * 		function(header) {
+	 * 			// success flow with the header
+	 *  	},
+	 *  	function(error) {
+	 *  		// failure flow
+	 *  	}
+	 * };
+	 */
+	var obtainAuthorizationHeader = function(scope) {
+		var dfd = WLJQ.Deferred();
+		if (typeof(scope) === 'undefined' || scope === null) {
+			scope = EMPTY_SCOPE;
+		}
+		
+		// obtainAuthHeaderCallbacks is an array of this kind objects; "clientId" will be updated in case of "unknown client" error
+		// the "scope" identifies the current "deferred" object
+		var callbackObj = {
+			clientId : null,	
+			scope : scope, 
+			deferred : dfd
+		};
+		
+		obtainAuthHeaderCallbacks.push(callbackObj);
+		
+		// if there is more than one object in the array, put incoming requests to queue
+		if (obtainAuthHeaderCallbacks.length > 1) {
+			return dfd.promise();
+		} 
+		
+		// getClientId returns cached client id from the native
+		try {
+			WLAuthorizationManager.__getClientId()
+			.then(
+				function(clientId) {
+					if (typeof(clientId) !== 'undefined' && clientId !== null) {
+						// client id was cached, now invoke the authorization request
+						__invokeAuthRequestWithScopeAndClientId(clientId, scope);
+					} else {
+						// there was no cached client id, register the client first
+						WLAuthorizationManager.__getClientInstanceId()
+						.then(
+							function(clientId) {
+								__invokeAuthRequestWithScopeAndClientId(clientId, scope);
+							},
+							function(error) {
+								// in case of error call all callbacks for specified scope with returned error
+								processObtainAuthHeaderCallbacks(clientId, scope, error, false);
+							}
+						);
+					}
+				},
+				function(error) {
+					// in case of error call all callbacks for specified scope with returned error
+					processObtainAuthHeaderCallbacks(null, scope, error, false);
+				}
+			);
+		} catch(e) {
+			processObtainAuthHeaderCallbacks(null, scope, JSON.stringify(e), false);
+		}
+		
+		return dfd.promise();
+	}; 
+	
+	// this flag tells whether we have handled the invalid client error to prevent infinite loop
+	var invalidClientReceived = false;
+	function __invokeAuthRequestWithScopeAndClientId(clientId, scope) {
+		// in case of unknown client error do not process the callbacks; call the registration part instead
+		var shouldProcessCallbacksOnError = true;
+		
+		// invoke authorization request with specified clientId and scope
+		invokeAuthorizationRequestWithScope(clientId, scope)
+		.then(
+			function(response) {
+				// authorization request succeeded, notify the callbacks in queue
+				processObtainAuthHeaderCallbacks(clientId, scope, response, true);
+			},
+			function(error) {
+				// authorization request failed
+				if (isUnknownClientError(error) && !invalidClientReceived) {
+					// request failed with unknown client
+					invalidClientReceived = true; // set a flag that prevents infinite loop
+					shouldProcessCallbacksOnError = false; // do not process callbacks, because request will be sent again
+					
+					// call the native to delete the old authentication data
+					WLAuthorizationManager.__deleteAuthData()
+					.then(
+						function() {
+							// register the client again
+							WLAuthorizationManager.__getClientInstanceId()
+							.then(
+								function(newClientId) {
+									// the registration returns the new client id.
+									// update all callbacks in queue with the new client id
+									updateClientIds(newClientId);
+									// resend the request
+									__invokeAuthRequestWithScopeAndClientId(newClientId, scope);
+								}, 
+								function(error) {
+									rejectAllCallbacks(error);
+								}
+							); 
+						}, 
+						function(error) {
+							// unable to delete the old auth data, reject all callbacks and do not re-send the request
+							rejectAllCallbacks(error);
+						}
+					); 
+				}
+				// notify the callers about error if it is not the 'unknown client' error thrown on the first time
+				if (shouldProcessCallbacksOnError) {
+					processObtainAuthHeaderCallbacks(clientId, scope, error, false);
+				}
+			}
+		);
+	}
+	
+	function isUnknownClientError(error) {
+		if (typeof(error) !== 'undefined' && error !== null && typeof(error.status) !== undefined &&
+			error.status === 400 && typeof(error.responseJSON) !== 'undefined' && error.responseJSON !== null && 
+			error.responseJSON.error === UNAUTHORIZED_CLIENT_ERROR && error.responseJSON.error_description == UNKNOWN_CLIENT_ERROR_DESCRIPTION) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	function processObtainAuthHeaderCallbacks(clientId, scope, response, isSuccess) {	
+		var indexesToRemove = [];
+		var objectsToNotify = [];
+		
+		// loop over callbacks in queue and notify those with specified scope; store appropriate indexes for later removal
+		for (var i = 0; i < obtainAuthHeaderCallbacks.length; i++) {
+			var callbackObj = obtainAuthHeaderCallbacks[i];
+			// if next object's scope is contained in resolved scope, the caller can be notified and the scope should be removed from the queue
+			if (scope === EMPTY_SCOPE && callbackObj.scope === EMPTY_SCOPE || scope.indexOf(callbackObj.scope) > -1) {				
+				objectsToNotify.push(callbackObj);
+				indexesToRemove.push(i);
+			}
+		}
+		
+		// remove processed callbacks
+		for (var j = indexesToRemove.length - 1; j >= 0; j--) {
+			obtainAuthHeaderCallbacks.splice(indexesToRemove[j], 1);
+		}
+		
+		// notify objects. This must be done after splice, because it could be that the code being notified
+		// is supposed to send other requests requiring authorization. It means that the callback array
+		// must be cleared before notifications are sent.
+		for (var k = 0; k < objectsToNotify.length; k++) {
+			isSuccess ? objectsToNotify[k].deferred.resolve(response) : objectsToNotify[k].deferred.reject(response);
+		}
+		
+		// if there is at least one object in the queue, send auth request for its scope
+		if (obtainAuthHeaderCallbacks.length > 0) {
+			var realClientId = obtainAuthHeaderCallbacks[0].clientId !== null ? obtainAuthHeaderCallbacks[0].clientId : clientId;
+			__invokeAuthRequestWithScopeAndClientId(realClientId, obtainAuthHeaderCallbacks[0].scope);
+		}
+	}
+	
+	function rejectAllCallbacks(error) {
+		var objectsToNotify = obtainAuthHeaderCallbacks.slice();
+		obtainAuthHeaderCallbacks = [];
+		// this method is called upon unrecoverable error; reject all and clear the queue
+		for (var n = 0; n < objectsToNotify.length; n++) {
+			objectsToNotify[n].deferred.reject(error);
+		}
+	}
+	
+	function updateClientIds(newClientId) {
+		// update all callback objects with the new client id; called after processing of "unknown client', when the new
+		// client id has been received
+		for (var i = 0; i < obtainAuthHeaderCallbacks.length; i++) {
+			obtainAuthHeaderCallbacks[i].clientId = newClientId;
+		}
+	} 
+	
+	/**
+	 * Adds cached authorization header to request. This function is asynchronous, therefore you should
+	 * use the returned promise for completion flow.
+	 * @param request A request object. This object should expose 'setRequestHeader' function.
+	 * @returns promise object. Sample usage:
+	 * var xhr = new XMLHttpRequest();
+	 * WLAuthorizationManager.addCachedAuthorizationHeader(xhr)
+	 * .always(
+	 * 		function(response) {
+	 * 			// success or failure flow
+	 * 		}
+	 * );
+	 */ 
+  var addCachedAuthorizationHeader = function(request) {
+		var dfd = WLJQ.Deferred();
+		
+		if (typeof(request.setRequestHeader) === 'function') {
+			WLAuthorizationManager.getCachedAuthorizationHeader().then(
+				function(authHeader) {
+					try {
+						request.setRequestHeader(WL_AUTHORIZATION_HEADER, authHeader);
+						dfd.resolve(authHeader);
+					} catch (e) {
+						dfd.reject(e);
+					}
+				},
+				function(error) {
+					WL.Logger.error('getCachedAuthorizationHeader failed with error: ' + JSON.stringify(error));
+					dfd.reject(new WL.Response({
+						status: 404,
+						responseJSON: {errorCode: WL.ErrorCode.UNEXPECTED_ERROR, errorMsg: invalidRequestObjectError}
+					}));
+				}
+			);
+		} else {
+			WL.Logger.error(invalidRequestObjectError);
+			dfd.reject(new WL.Response({
+				status: 404,
+				responseJSON: {errorCode: WL.ErrorCode.UNEXPECTED_ERROR, errorMsg: invalidRequestObjectError}
+			}));
+		}
+		
+		return dfd.promise();
+	};
+	
+	var invalidRequestObjectError = 'Invalid request object. The request object must implement \'setRequestHeader\' function.';
+	var __addHeadersToResourceRequest = function(request) {
+		var dfd = WLJQ.Deferred();
+		
+		if (typeof(request.setRequestHeader) !== 'function') {
+			WL.Logger.error(invalidRequestObjectError);
+			dfd.reject(invalidRequestObjectError);
+			return dfd.promise();
+		}
+		
+		WLAuthorizationManager.getCachedAuthorizationHeader()
+        .always(
+			function(authHeader) {
+                if (authHeader !== null && typeof(authHeader) !== 'undefined' && WL_.isString(authHeader)) {
+                	request.setRequestHeader(WL_AUTHORIZATION_HEADER, authHeader);
+                }
+                dfd.resolve();
+			}
+		);
+		
+		return dfd.promise();
+	};
+	
+	
+	var clientInstanceIdCallbacks = [];
+	
+ 	 var __getClientInstanceId = function() {
+		var dfd = WLJQ.Deferred();
+		
+		// put all incoming calls to queue
+		clientInstanceIdCallbacks.push(dfd);
+		
+		if (clientInstanceIdCallbacks.length > 1) {
+			return dfd;
+		}
+		
+		WLAuthorizationManager.__getClientInstanceIdHeader()
+		.then(
+			function(data) { 
+				// notify about success
+				processClientInstanceCallbacks(data, true);
+			},
+			function(error) {
+				// notify about failure
+				WLAuthorizationManager.__deleteAuthData()
+				.always(
+					function() {
+						WLAuthorizationManager.__getClientInstanceIdHeader()
+						.then(
+							function(data) {
+								processClientInstanceCallbacks(data, true);
+							},
+							function(error) {
+								processClientInstanceCallbacks(error, false);
+							}
+						);
+					}
+				);
+			}
+		);
+		
+		return dfd.promise();
+	};
+	
+	var __getClientInstanceIdHeader = function() {
+		var dfd = WLJQ.Deferred();		
+		cordova.exec(
+			function(data) { 
+				dfd.resolve(data);
+			}, 
+			function(error) {
+				dfd.reject(new WL.Response(error, null));
+			},
+			AUTHORIZATION_MANAGER_PLUGIN_NAME, 'getClientInstanceIdHeader', []
+		);
+		return dfd.promise();
+	};
+	
+	function processClientInstanceCallbacks(response, isSuccess) {
+		var objectsToNotify = clientInstanceIdCallbacks.slice();
+		clientInstanceIdCallbacks = [];
+		
+		for (var i = 0; i < objectsToNotify.length; i++) {
+			isSuccess ? objectsToNotify[i].resolve(response) : objectsToNotify[i].reject(response);
+		}
+		
+	}
+
+	/**
+	 * Obtains user identity. The identity is returned via deferred callback.
+	 * @returns Promise object. The methods calls either success or failure callbacks and passes the user identity as string or error.
+	 * Sample usage:<br>
+	 * WLAuthorizationManager.getUserIdentity()
+	 * .then(
+	 * 		function(data) {
+	 * 			// success flow with user identity
+	 * 		},
+	 * 		function(error) {
+	 * 			// failure flow with error
+	 * 		}
+	 * );
+	 */
+  	var getUserIdentity = function() {
+		var dfd = WLJQ.Deferred();	
+		cordova.exec(
+				function(data) { 
+					dfd.resolve(data);
+				}, 
+				function(error) {
+					dfd.reject(error);
+				},
+				AUTHORIZATION_MANAGER_PLUGIN_NAME, 'getUserIdentity', []
+			);
+		return dfd.promise();
+	};
+	
+	/**
+	 * Obtains device identity. The identity is returned via deferred callback.
+	 * @returns Promise object. The methods calls either success or failure callbacks and passes the device identity as string or error.
+	 * Sample usage:<br>
+	 * WLAuthorizationManager.getDeviceIdentity()
+	 * .then(
+	 * 		function(data) {
+	 * 			// success flow with device identity
+	 * 		},
+	 * 		function(error) {
+	 * 			// failure flow with error
+	 * 		}
+	 * );
+	 */
+  	var getDeviceIdentity = function() {
+		var dfd = WLJQ.Deferred();
+		cordova.exec(
+				function(data) { 
+					dfd.resolve(data);
+				}, 
+				function(error) {
+					dfd.reject(error);
+				},
+				AUTHORIZATION_MANAGER_PLUGIN_NAME, 'getDeviceIdentity', []
+		);
+		return dfd.promise();
+	};
+	
+	/**
+	 * Obtains application identity. The identity is returned via deferred callback.
+	 * @returns Promise object. The methods calls either success or failure callbacks and passes the application identity as string or error.
+	 * Sample usage:<br>
+	 * WLAuthorizationManager.getAppIdentity()
+	 * .then(
+	 * 		function(data) {
+	 * 			// success flow with application identity
+	 * 		},
+	 * 		function(error) {
+	 * 			// failure flow with error
+	 * 		}
+	 * );
+	 */
+  	var getAppIdentity = function() {
+		var dfd = WLJQ.Deferred();
+		cordova.exec(
+				function(data) { 
+					dfd.resolve(data);
+				}, 
+				function(error) {
+					dfd.reject(error);
+				},
+				AUTHORIZATION_MANAGER_PLUGIN_NAME, 'getAppIdentity', []
+		);
+		return dfd.promise();
+	};
+	
+  	var __addHeadersToWLRequest = function(requestHeaders) {
+		var dfd = WLJQ.Deferred();
+		WLAuthorizationManager.__getClientInstanceId().then(
+			function(clientId) {
+				WLAuthorizationManager.__getWlSessionId().then(
+					function(sessionId) {
+						requestHeaders[WL_X_CLIENT_ID_HEADER] = clientId;
+						requestHeaders[WL_X_SESSION_ID_HEADER] = sessionId;
+						dfd.resolve();
+					},
+					function(error) {
+						WL.Logger.debug('getWlSessionId failed with error: ' + error);
+						dfd.reject(error);
+					}
+				);
+			},
+			function(error) {
+				WL.Logger.debug('Client registration failed with error: ' + JSON.stringify(error));
+				if (WL_.isString(error)) {
+					var transport = {
+						status : 500,
+		    			responseJSON : {
+		    				errorCode: WL.ErrorCode.API_INVOCATION_FAILURE,
+		    				errorMsg: error
+		    			},
+		    			getHeader: function() {return null;}
+					};  	
+			    	dfd.reject(transport);
+				} else {
+					dfd.reject(error);
+				}
+			}
+		);
+		
+		return dfd.promise();
+	};
+	
+	// send a request using WL.Request to authorization end point with specified clientId and scope
+	function invokeAuthorizationRequestWithScope(clientId, scope) {
+		var dfd = WLJQ.Deferred();
+		var request = null;
+		
+		if (scope === EMPTY_SCOPE) {
+			scope = null;
+		}
+		
+		var requestOptions = {
+			method: 'GET',
+			parameters: {},
+			onSuccess: function(response) {
+				// the OAuth redirect response is coming to onSuccess in order to prevent WL.Request from handling error case
+				if (response.statusText === WL_OAUTH_PREVENT_REDIRECT || response.status === 222) {
+                	// if it's redirect from OAuth we need to get grant code from response and send a request to the token end point (via native)
+					WLAuthorizationManager.__processRedirectResult(request, response).then(
+                        function(response) {
+                        	// the redirect result was processed successfully, including the request token end point, so we can return the 
+                        	// authorization header to the caller
+                            dfd.resolve(response);
+                        },
+                        function(error) {
+                        	// report an error
+                        	WL.Logger.debug('Process redirect failed with error: ' + JSON.stringify(error));
+                            dfd.reject(error);
+                        }
+                    );
+				} else {
+					// the authorization request succeeded without redirect, just return the response to caller
+                    dfd.resolve(response);
+                }
+			},
+			onFailure: function(response) {
+				if (typeof(response) !== 'undefined' && response !== null) {
+					WL.Logger.debug('Authorization request failed with response: ' + response.responseText);
+				}
+				
+				if (response.statusText === WL_OAUTH_PREVENT_REDIRECT) {
+					// Should not be getting here 
+					dfd.resolve(response.wlFailureStatus);
+				} else {			
+					dfd.reject(new WL.Response(response));
+                }
+			},
+			onAuthRequestFailure: function(response) {
+				dfd.reject(response);
+			},			
+			onAuthException: function(response, ex) {			    
+	        	var transport = {
+					status: 500,
+	    			responseJSON : {
+	    				errorCode: WL.ErrorCode.API_INVOCATION_FAILURE,
+	    				errorMsg: ex.message
+	    			}
+				};
+	    		var failResponse = new WL.Response(transport, null);
+	        	dfd.reject(failResponse);
+			},
+
+			optionalHeaders : {}
+		};
+		
+		requestOptions.parameters[PARAM_RESPONSE_TYPE_KEY] = PARAM_CODE_VALUE;
+		requestOptions.parameters[PARAM_CLIENT_ID_KEY] = clientId;
+		requestOptions.parameters[PARAM_REDIRECT_URI_KEY] = PARAM_REDIRECT_URI_VALUE;
+		
+		if (scope !== null && typeof(scope) !== 'undefined' && scope.length > 0) {
+			requestOptions.parameters[PARAM_SCOPE_KEY] = scope;
+		}
+		
+		WLAuthorizationManager.__getWlServerUrl().then(
+			function(serverUrl) {	
+				WLAuthorizationManager.__getWlSessionId().then(
+					function(wlSessionId) {
+						requestOptions.optionalHeaders[WL_X_SESSION_ID_HEADER] = wlSessionId;
+						
+	    				if (serverUrl[serverUrl.length - 1] !== '/') {
+	    					serverUrl += '/';
+	    				}
+						request = new WLJSX.Ajax.WLRequest(serverUrl + 'authorization/v1/' + OAUTH_AUTHORIZATION_PATH, requestOptions);
+					}
+				);
+			}, 
+			function(error) {
+				WL.Logger.debug('getWlServerUrl failed with error: ' + JSON.stringify(error));
+				dfd.reject(error);
+			}
+		);
+		
+		
+		return dfd.promise();
+	}
+	
+	var __processRedirectResult = function(request, response) {
+		var dfd = WLJQ.Deferred();
+		var wlResult = WLAuthorizationManager.__getParameterByName(response.transport.wlFailureStatus, 'wl_result');
+        var jsonResult = JSON.parse(wlResult);
+        response.responseJSON = jsonResult;
+        
+        // process all challenges from the response
+        WL.Client.checkResponseForChallenges(request, response, true);
+        
+        var grantCode = WLAuthorizationManager.__getParameterByName(response.transport.wlFailureStatus, 'code');
+        if (grantCode !== null) {
+        	// send request to token end point
+        	WLAuthorizationManager.__invokeTokenRequestWithGrantCode(grantCode).then(
+                function(token) {
+                    dfd.resolve(token);
+                },
+                function(error) {
+                	WL.Logger.debug('Token request failed with error: ' + JSON.stringify(error));
+                    dfd.reject(new WL.Response(error, null));
+                }
+            );
+        } else {
+        	var errorDescription = WLAuthorizationManager.__getParameterByName(response.transport.wlFailureStatus, 'error_description');
+        	
+        	if (errorDescription === null) {
+        		errorDescription = WL.ClientMessages.authFailure;
+        	}
+        	
+        	WL.Logger.debug('Grant code is null. The error is: ' + errorDescription);
+        	
+        	var transport = {
+				status : 0,
+    			responseJSON : {
+    				errorCode: WL.ErrorCode.AUTHORIZATION_FAILURE,
+    				errorMsg: errorDescription
+    			}
+			};
+    		var failResponse = new WL.Response(transport, null);
+        	dfd.reject(failResponse);
+        }
+
+        return dfd.promise();
+	};
+	
+	var __invokeTokenRequestWithGrantCode = function(grantCode) {
+		var dfd = WLJQ.Deferred();
+		cordova.exec(
+			function(data) {
+				dfd.resolve(data);
+			}, 
+			function(error) {
+				dfd.reject(new WL.Response(error, null));
+			},
+			AUTHORIZATION_MANAGER_PLUGIN_NAME, 'invokeTokenRequestWithGrantCode', [grantCode]
+		);		
+		return dfd.promise();
+	};
+	
+	var __getClientId = function() {
+		var dfd = WLJQ.Deferred();
+		cordova.exec(
+			function(data) { 
+				dfd.resolve(data);
+			}, 
+			function(error) {
+				dfd.reject(error);
+			},
+			AUTHORIZATION_MANAGER_PLUGIN_NAME, 'getClientId', []
+		);		
+		return dfd.promise();
+ 	};
+	
+	var __getWlSessionId = function() {
+		var dfd = WLJQ.Deferred();
+		if (WLAuthorizationManager.__cachedWlSessionId !== null && typeof(WLAuthorizationManager.__cachedWlSessionId) !== 'undefined') {
+			dfd.resolve(WLAuthorizationManager.__cachedWlSessionId);
+		} else {
+			cordova.exec(
+				function(data) { 
+					WLAuthorizationManager.__cachedWlSessionId = data;
+					dfd.resolve(data);
+				}, 
+				function(error) {
+					dfd.reject(error);
+				},
+				AUTHORIZATION_MANAGER_PLUGIN_NAME, 'getWlSessionId', []
+			);
+		}
+		
+		return dfd.promise();
+	};
+	
+	var __deleteAuthData = function() {
+		var dfd = WLJQ.Deferred();
+		cordova.exec(
+			function() { 
+				WLAuthorizationManager.__cachedWlSessionId = null;
+				dfd.resolve();
+			}, 
+			function(error) {
+				dfd.reject(error);
+			},
+			AUTHORIZATION_MANAGER_PLUGIN_NAME, 'deleteAllAuthData', []
+		);	
+		return dfd.promise();
+	};
+	
+	var __getWlServerUrl = function() {
+		var dfd = WLJQ.Deferred();
+		WL.App.getServerUrl(
+			function(url) {
+				if (url.length > 0 && url[url.length - 1] !== '/') {
+					url += '/';
+				}
+				dfd.resolve(url);
+			},
+			function(error) {
+				dfd.reject(error);
+			}
+		);
+		return dfd.promise();
+	};
+	
+  	var __getParameterByName = function(url, name) {
+        var parts = url.split('?');
+        if (parts.length < 2) {
+            return null;
+        }
+        
+        // there should be exactly two elements in the finalParts array. If we have more than two elements in the 'parts' array, 
+        // then the redirect url contains some other '?'
+        var finalParts = [parts[0]];
+        parts.splice(0, 1);
+        // join extra parts back and push them to the second element of 'finalParts'
+        finalParts.push(parts.join('?'));
+        
+        var results = finalParts[1].split('&');
+        for (var i = 0; i < results.length; i++) {
+            var pair = results[i].split('=');
+            if (pair[0] === name) {
+            	return decodeURIComponent(pair[1].replace(/\+/g, ' '));
+            }
+        }
+        return null;
+  	};
+	
+  	var __isOAuthError = function(transport) {
+        if (transport === null || typeof(transport) === 'undefined') {
+            return false;
+        }
+        
+        return WLAuthorizationManager.isAuthorizationRequired(transport.status, transport.getResponseHeader('WWW-Authenticate'));
+    };
+    
+    var __getScopeFromResponse = function(transport) {
+    	if (typeof(transport) === 'undefined' || transport === null) {
+    		return null;
+    	}
+    	
+        return WLAuthorizationManager.getAuthorizationScope(transport.getResponseHeader('WWW-Authenticate'));
+    };
+	
+    return {
+    	isAuthorizationRequired : isAuthorizationRequired,
+    	getAuthorizationScope : getAuthorizationScope,
+        getCachedAuthorizationHeader : getCachedAuthorizationHeader,
+        obtainAuthorizationHeader : obtainAuthorizationHeader,
+        addCachedAuthorizationHeader : addCachedAuthorizationHeader,   
+        getUserIdentity : getUserIdentity,
+        getDeviceIdentity : getDeviceIdentity,
+        getAppIdentity : getAppIdentity,
+        setAuthorizationPersistencePolicy : setAuthorizationPersistencePolicy,
+        __addHeadersToWLRequest : __addHeadersToWLRequest,
+        __isOAuthError : __isOAuthError,
+        __getScopeFromResponse : __getScopeFromResponse,
+        __addHeadersToResourceRequest : __addHeadersToResourceRequest,
+        __getClientId : __getClientId,
+        __getClientInstanceId : __getClientInstanceId,
+        __getClientInstanceIdHeader : __getClientInstanceIdHeader,
+        __invokeTokenRequestWithGrantCode : __invokeTokenRequestWithGrantCode,
+        __getWlSessionId : __getWlSessionId,
+        __deleteAuthData : __deleteAuthData,
+        __getWlServerUrl: __getWlServerUrl,
+        __processRedirectResult : __processRedirectResult,
+        __getParameterByName : __getParameterByName,
+		WL_AUTHORIZATION_HEADER : WL_AUTHORIZATION_HEADER,
+		WL_X_SESSION_ID_HEADER : WL_X_SESSION_ID_HEADER,
+		WL_X_CLIENT_ID_HEADER : WL_X_CLIENT_ID_HEADER,
+		__cachedWlSessionId : __cachedWlSessionId
+    };
+
+}());
+
+WLAuthorizationManager.AuthorizationPersistencePolicy = {
+	NEVER : "NEVER",
+	ALWAYS: "ALWAYS",
+	BIOMETRICS: "BIOMETRICS" 
+};
 
 
 /**

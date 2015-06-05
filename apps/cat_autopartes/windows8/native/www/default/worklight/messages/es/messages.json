@@ -40,7 +40,7 @@
 "downloadAppWebResourcesSkinIsNotValid" : "No se pueden descargar los recursos de la aplicación. El skin: {0} no existe. Asegúrese de que getSkinName() se resuelve en un skin válido.",
 "downloadAppWebResourcesAppVersionNotExist" : "No se puede encontrar la aplicación '{0}' {1} para {2}",
 "deviceAuthenticationFail" : "Error de conectividad",
-"saveCertificateFailure" : "No se ha podido guardar el certificado en la cadena clave",
+"saveCertificateFailure" : "No se ha podido guardar el certificado",
 "downloadAppWebResourcesConnectionToServerUnavailable" : "No está disponible una conexión al servidor. No se pueden descargar los recursos de la aplicación.",
 "expandWindow" : "Expanda la aplicación para utilizarla",
 "exit" : "Salir",
@@ -78,6 +78,8 @@
 "wlclientInitFailure" : "Error",
 "wlSettings" : "Configuración de IBM MobileFirst Platform",
 "userEnrollmentUnsupportedOS" : "Error de autenticación de certificado de usuario: plataforma de cliente no soportada.",
-"failureCallingMethod" : "Error de llamada {0}"
+"failureCallingMethod" : "Error de llamada {0}",
+"challengeHandlingCanceled" : "Se ha cancelado la operación del manejador de desafíos.",
+"unsupportedEnvironment" : "Entorno no soportado"
 }
 

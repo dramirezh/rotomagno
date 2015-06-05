@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <div data-role="page" id="{id}" class="ui-page-header-fixed ui-page-footer-fixed">
 	<div role="main" class="ui-content">
 		<div class="banner">
@@ -25,7 +31,21 @@
 							<span>Proveedor:</span> <br/><label id="lblProveedor">Proveedor</label>
 							<span>Izq:</span> <br/><label id="lblIzq">Izq</label>
 							<br/><label id="lblCaracteristicas">Caracteristicas especiales del producto que se especifiquen</label>
-							</p>
+											<div class="simpleCart_shelfItem">
+					<h2 class="item_name" id="cartNameProd" hidden>ProdName</h2>
+					<img id="cartImage" alt="image" hidden  src="" class="item_thumb"/>
+			
+					<p>Cantidad : <br><input type="text" value="1" class="item_Quantity">
+						
+						<span class="item_price">$10.00</span><br>
+						
+						<a class="item_add" href="javascript:;">Add to Cart</a><br>
+						<span class="simpleCart_quantity"></span> Productos - <span class="simpleCart_total"></span><br>
+						<a href="#shoppingCart" data-rel="popup">Ver el carrito</a>
+
+					</p>
+				</div>
+							
 						</div>
 					</div>
 				</div>
@@ -37,5 +57,14 @@
 		<div id="divPopupImg" style="width: 100%; height: 100%;">
 			
 		</div>
+	</div>
+	<div data-role="popup" style="z-index:100;min-width:300px;align:center;" id="shoppingCart" style="width:300, height:300" class="ui-content">
+	<div class="simpleCart_items"></div>
+	<a href="javascript:;" class="simpleCart_checkout" ><img src="images/PP_Logo.png"></a><br>
+	<a href="#"><img src="images/cclogos.gif"></a>
+	<span class="simpleCart_quantity"></span> Productos - <span class="simpleCart_total"></span><br>
+	<a href="javascript:;" class="simpleCart_empty" >Empty Cart</a>
+	
+	      <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
 	</div>
 </div>

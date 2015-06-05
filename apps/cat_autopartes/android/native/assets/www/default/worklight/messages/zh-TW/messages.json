@@ -40,7 +40,7 @@
 "downloadAppWebResourcesSkinIsNotValid" : "無法下載應用程式資源。外觀：{0} 不存在。請確定 getSkinName() 可解析為有效的外觀。",
 "downloadAppWebResourcesAppVersionNotExist" : "找不到 {2} 適用的應用程式 '{0}' {1}",
 "deviceAuthenticationFail" : "連線功能錯誤",
-"saveCertificateFailure" : "無法將憑證儲存至金鑰鏈",
+"saveCertificateFailure" : "無法儲存憑證",
 "downloadAppWebResourcesConnectionToServerUnavailable" : "目前無法連線至伺服器。無法下載應用程式資源。",
 "expandWindow" : "展開應用程式加以使用",
 "exit" : "結束",
@@ -70,7 +70,7 @@
 "serverError" : "程序呼叫錯誤。",
 "tryAgain" : "重試",
 "userInstanceAccessViolationException" : "嘗試登入不是為您登錄的應用程式。",
-"unexpectedError" : "伺服器無法處理應用程式的要求。請於稍後重試。",
+"unexpectedError" : "伺服器無法處理應用程式的要求。請稍後再試一次。",
 "unresponsiveHost" : "服務目前無法使用。",
 "update" : "更新",
 "upgrade" : "升級",
@@ -78,5 +78,8 @@
 "wlclientInitFailure" : "錯誤",
 "wlSettings" : "IBM MobileFirst Platform 設定",
 "userEnrollmentUnsupportedOS" : "使用者憑證鑑別失敗：不受支援的用戶端平台。",
-"failureCallingMethod" : "呼叫 {0} 時失敗"
+"failureCallingMethod" : "呼叫 {0} 失敗",
+"challengeHandlingCanceled" : "已取消盤查處理程式作業。",
+"unsupportedEnvironment" : "不支援的環境"
 }
+

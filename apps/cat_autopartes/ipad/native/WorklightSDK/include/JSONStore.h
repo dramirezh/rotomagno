@@ -87,9 +87,9 @@
 
 /**
  Changes the password that is associated with the security artifacts that are used to provide data encryption.
- @param oldPassword The old password
- @param newPassword The new password
- @param username The username
+ @param oldPassword Old password
+ @param newPassword New password
+ @param username Username
  @param error Error
  @return Boolean that indicates the operation failed (false) or succeeded (true)
  @since IBM Worklight V6.2.0

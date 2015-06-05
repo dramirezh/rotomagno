@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="4.0">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|AnyCPU">
       <Configuration>Debug</Configuration>
@@ -37,9 +37,9 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>cae68434-62ff-4671-ad53-d1ca8cd95c40</ProjectGuid>
   </PropertyGroup>
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).Default.props" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props" />
+  <Import Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"/>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).Default.props"/>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props"/>
   <PropertyGroup>
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
@@ -50,10 +50,10 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="images\logo.png" />
-    <Content Include="images\smalllogo.png" />
-    <Content Include="images\splashscreen.png" />
-    <Content Include="images\storelogo.png" />
+    <Content Include="images\logo.png"/>
+    <Content Include="images\smalllogo.png"/>
+    <Content Include="images\splashscreen.png"/>
+    <Content Include="images\storelogo.png"/>
    	<!-- __start_worklight_web_resources__ -->
 <Content Include="www\default\.DS_Store" />
 <Content Include="www\default\css\.DS_Store" />
@@ -267,6 +267,7 @@
 <Content Include="www\default\css\styles.css" />
 <Content Include="www\default\css\swiper.min.css" />
 <Content Include="www\default\filelist" />
+<Content Include="www\default\images\cclogos.gif" />
 <Content Include="www\default\images\general\autos\.DS_Store" />
 <Content Include="www\default\images\general\autos\compacto\.DS_Store" />
 <Content Include="www\default\images\general\autos\compacto\atras.jpg" />
@@ -313,6 +314,7 @@
 <Content Include="www\default\images\general\marcas\toyotaLogo.png" />
 <Content Include="www\default\images\general\marcas\vwLogo.png" />
 <Content Include="www\default\images\icon.png" />
+<Content Include="www\default\images\PP_Logo.png" />
 <Content Include="www\default\images\thumbnail.png" />
 <Content Include="www\default\index.html" />
 <Content Include="www\default\js\.DS_Store" />
@@ -331,10 +333,12 @@
 <Content Include="www\default\js\main.js" />
 <Content Include="www\default\js\messages.js" />
 <Content Include="www\default\js\restHelper.js" />
+<Content Include="www\default\js\simpleCart.js" />
 <Content Include="www\default\js\swiper.jquery.min.js" />
 <Content Include="www\default\js\swiper.min.js" />
 <Content Include="www\default\pages\detalles.html" />
 <Content Include="www\default\pages\familias.html" />
+<Content Include="www\default\pages\general\Cart.html" />
 <Content Include="www\default\pages\general\header.html" />
 <Content Include="www\default\pages\general\left_panel.html" />
 <Content Include="www\default\pages\general\popup.html" />
@@ -444,26 +448,29 @@
 <!-- __end_worklight_web_resources__ -->    
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
+    <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0"/>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="WLWin8Native">
-      <HintPath>WLWin8Native.winmd</HintPath>
+      <HintPath>.\buildtarget\$(Platform)\WLWin8Native.winmd</HintPath>
       <IsWinMDFile>true</IsWinMDFile>
     </Reference>
-  </ItemGroup>
+  <Reference Include="Newtonsoft.Json">
+            <HintPath>.\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+    </ItemGroup>
   <ItemGroup Condition="Exists('buildtarget\$(Platform)\sqlite3.dll')">
-    <Content Include="buildtarget\$(Platform)\sqlite3.dll" >
+    <Content Include="buildtarget\$(Platform)\sqlite3.dll">
       <Link>sqlite3.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Reference Include="JSONStoreWin8" >
+    <Reference Include="JSONStoreWin8">
       <HintPath>JSONStoreWin8.winmd</HintPath>
       <IsWinMDFile>true</IsWinMDFile>
     </Reference>
   </ItemGroup>
-  <Import Condition="Exists('buildtarget\JSONStore.targets')" Project="buildtarget\JSONStore.targets" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+  <Import Condition="Exists('buildtarget\JSONStore.targets')" Project="buildtarget\JSONStore.targets"/>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets"/>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -471,4 +478,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+<Import Project=".\AuthWinRT.targets"/>
 </Project>
