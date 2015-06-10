@@ -431,12 +431,18 @@ function detalles(pCarac, pDer, pImagen, pIzq, pMarca, pModelo, pProducto, pProv
 }
 
 function search(sSearching){
+	var sSplit=sSearching.split(" ");
 	var jsonRes;
 	if(sSearching == ""){
 		jsonRes = data.GetBuscarProductosResult;
-	}else{
-		jsonRes = JSON.search(Defiant.getSnapshot(data), '//*[contains(*,"' + sSearching + '")]');
-	}
+	}else if(sSplit.length==1){
+		jsonRes = JSON.search(Defiant.getSnapshot(data), '//*[contains(*,"' + sSplit[0] + '")]');
+	}else if(sSplit.length==2){
+		jsonRes = JSON.search(Defiant.getSnapshot(data), '//*[contains(*,"' + sSplit[0] + '") or contains(*,"' + sSplit[1] + '") ]');
+	}else if(sSplit.length==3)
+	{
+		jsonRes = JSON.search(Defiant.getSnapshot(data), '//*[contains(*,"' + sSplit[0] + '") or contains(*,"' + sSplit[1] + '") or contains(*,"' + sSplit[2] + '") ]');
+		}
 	$('#columns').html('');
 	$.each(jsonRes, function(index,obj){
 		$('#columns').append(lo.createColumn(obj));

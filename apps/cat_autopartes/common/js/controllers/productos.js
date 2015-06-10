@@ -17,7 +17,7 @@ function detallesProducto(pCarac, pDer, pImagen, pIzq, pMarca, pModelo, pProduct
 function openImage(pImagen){
 	var url ="";
 	url = $(pImagen).attr('src');
-	$('#divPopupImg').html('<img class="popphoto" src="' + url + '" style="width:100%; height:100%; max-height:512px;">');
+	$('#divPopupImg').html('<img class="popphoto" src="' + url + '" style="width:100%; height:100%; max-height:480px; max-width:320px">');
 	$('#popupImg').popup('open');
 }
 

@@ -197,10 +197,11 @@ function setElementEvents(){
 	});
 	
 	$('#txtSearchini').donetyping(function(){
-		search($('#txtSearchini').val());
+		search($('#txtSearchini').val());	
 		location.href="#productos";
-		
 	});
+	
+	
 	
 	
 	/*$('#productos').ready(function() {
